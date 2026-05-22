@@ -87,7 +87,7 @@
   100% { transform: scale(1.7); opacity: 0; }
 }
 @keyframes rise {
-  from { opacity: 0; transform: translateY(28px); }
+  from { opacity: 1; transform: translateY(22px); }
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes orbit-cw {
@@ -160,9 +160,9 @@
     font-weight: 800;
     font-style: italic;
     text-transform: uppercase;
-    font-size: clamp(2.9rem, 7.4vw, 6.7rem);
+    font-size: clamp(2.9rem, 6.4vw, 6rem);
     line-height: 0.92;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
   }
   .section-title {
     font-family: var(--font-display);
@@ -170,13 +170,13 @@
     text-transform: uppercase;
     font-size: clamp(2.1rem, 4.6vw, 3.7rem);
     line-height: 1.05;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
   .display-sm {
     font-family: var(--font-display);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
     line-height: 1.05;
   }
 
@@ -369,8 +369,9 @@
   /* — Nav — */
   .nav-link {
     position: relative;
-    font-size: 0.86rem;
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: clamp(0.92rem, 0.9vw, 1.02rem);
+    font-weight: 700;
     padding: 0.4rem 0.15rem;
     text-decoration: none;
     color: inherit;

@@ -1,6 +1,7 @@
 'use client';
 import { useState, type CSSProperties } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import TacticalPattern from '@/components/TacticalPattern';
 import PlayerCard from '@/components/PlayerCard';
 import SectionTitle from '@/components/ui/SectionTitle';
@@ -18,10 +19,35 @@ const STAGES: {
   icon: IconName;
   image?: string;
 }[] = [
-  { category: 'U6-U9', label: 'École de foot', age: '5 à 9 ans', icon: 'star', image: '/assets/player_u6_u9.png' },
-  { category: 'U10-U13', label: 'Préformation', age: '10 à 13 ans', icon: 'ball', image: '/assets/player_u10_u13.png' },
+  { category: 'U6-U9', label: 'École de foot', age: '5 à 9 ans', icon: 'star', image: '/assets/player_u6_u9.webp' },
+  { category: 'U10-U13', label: 'Préformation', age: '10 à 13 ans', icon: 'ball', image: '/assets/player_u10_u13.webp' },
   { category: 'U14-U17', label: 'Formation', age: '14 à 17 ans', icon: 'target' },
   { category: 'U18-Seniors', label: 'Performance', age: '18 ans et +', icon: 'trophy' },
+];
+
+const PLAYER_PATHWAY: { title: string; desc: string; icon: IconName }[] = [
+  {
+    title: 'Observer',
+    desc: "Identifier l'âge, le niveau et l'envie du joueur avant de l'orienter.",
+    icon: 'search',
+  },
+  {
+    title: 'Intégrer',
+    desc: "Trouver le bon groupe, les bons créneaux et un cadre d'entraînement stable.",
+    icon: 'users',
+  },
+  {
+    title: 'Progresser',
+    desc: 'Fixer des objectifs simples : technique, attitude, régularité, plaisir du jeu.',
+    icon: 'target',
+  },
+];
+
+const TRAINING_INFO = [
+  ['École de foot', 'Mercredi + samedi'],
+  ['Préformation', '2 à 3 séances / semaine'],
+  ['Formation', 'Projet de jeu + compétition'],
+  ['Seniors', 'Performance et vie de groupe'],
 ];
 
 function Jersey({ className = '', style }: { className?: string; style?: CSSProperties }) {
@@ -137,8 +163,79 @@ export default function EquipesPage() {
         </div>
       </section>
 
+      {/* ===================== PLAYER JOURNEY ===================== */}
+      <section className="relative overflow-hidden bg-mist py-20">
+        <div className="absolute inset-0 bg-grid-ink opacity-70" />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
+          <Reveal>
+            <div className="relative h-full min-h-[420px] overflow-hidden rounded-[1.5rem] bg-deep shadow-[0_28px_80px_-42px_rgba(13,27,75,0.82)]">
+              <Image
+                src="/assets/club_hero.webp"
+                alt="Vue du stade et du territoire autour du SDUS FC 93."
+                fill
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,12,32,0.08)_0%,rgba(7,12,32,0.88)_100%)]" />
+              <div className="absolute bottom-0 left-0 right-0 p-7">
+                <p className="eyebrow mb-4 text-flame">Trouver sa place</p>
+                <h2 className="section-title max-w-md text-white">
+                  Un parcours clair pour chaque joueur
+                </h2>
+                <p className="mt-4 max-w-md text-sm leading-relaxed text-white/68">
+                  Le bon groupe n&apos;est pas seulement une question d&apos;âge : rythme, niveau, motivation et cadre
+                  familial comptent aussi.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="grid gap-5">
+            <Reveal>
+              <div className="grid gap-4 md:grid-cols-3">
+                {PLAYER_PATHWAY.map((item, i) => (
+                  <article key={item.title} className="card p-6">
+                    <div className="flex items-center justify-between">
+                      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-royal text-white">
+                        <Icon name={item.icon} size={23} />
+                      </span>
+                      <span className="display-sm text-3xl text-flame/70">0{i + 1}</span>
+                    </div>
+                    <h3 className="display-sm mt-6 text-2xl italic text-navy">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-soft">{item.desc}</p>
+                  </article>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.08}>
+              <div className="relative overflow-hidden rounded-[1.5rem] bg-white p-6 shadow-[0_20px_60px_-38px_rgba(13,27,75,0.5)]">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {TRAINING_INFO.map(([label, value]) => (
+                    <div key={label} className="rounded-2xl bg-mist px-5 py-4">
+                      <p className="text-xs font-bold uppercase tracking-[0.16em] text-flame">{label}</p>
+                      <p className="mt-1 font-semibold text-navy">{value}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="max-w-xl text-sm leading-relaxed text-slate-soft">
+                    Pour une première inscription ou un changement de catégorie, le club confirme toujours le bon
+                    groupe avant validation.
+                  </p>
+                  <Link href="/contact" className="btn-primary group shrink-0">
+                    Trouver son équipe
+                    <Icon name="arrow-right" size={16} strokeWidth={2.4} className="transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ===================== ROSTER ===================== */}
-      <section id="roster" className="py-24 bg-mist scroll-mt-24">
+      <section id="roster" className="bg-surface py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal>
             <SectionTitle

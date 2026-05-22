@@ -16,10 +16,8 @@ const CLUB: [string, string][] = [
   ['/contact', 'Contact'],
 ];
 
-const SOCIALS: { name: IconName; label: string }[] = [
-  { name: 'instagram', label: 'Instagram' },
-  { name: 'facebook', label: 'Facebook' },
-  { name: 'youtube', label: 'YouTube' },
+const SOCIALS: { name: IconName; label: string; href: string }[] = [
+  { name: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/sdus_football/' },
 ];
 
 export default function Footer() {
@@ -39,7 +37,9 @@ export default function Footer() {
               {SOCIALS.map((s) => (
                 <a
                   key={s.name}
-                  href="#"
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={s.label}
                   className="grid place-items-center w-10 h-10 rounded-full border border-white/20 text-white/70 hover:text-flame hover:border-flame hover:-translate-y-1 transition-all"
                 >
@@ -65,7 +65,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Icon name="phone" size={17} className="text-flame shrink-0" />
-                01 23 45 67 89
+                Sur demande par email
               </li>
             </ul>
           </div>

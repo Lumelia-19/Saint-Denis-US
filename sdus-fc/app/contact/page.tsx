@@ -18,11 +18,13 @@ const EMPTY_FORM: ContactFormData = {
 const COORDS: { icon: IconName; label: string; value: string }[] = [
   { icon: 'map-pin', label: 'Adresse', value: 'Stade Marville, Saint-Denis (93)' },
   { icon: 'mail', label: 'Email', value: 'contact@sdus-fc93.fr' },
-  { icon: 'phone', label: 'Téléphone', value: '01 23 45 67 89' },
+  { icon: 'phone', label: 'Téléphone', value: 'Sur demande par email' },
   { icon: 'clock', label: 'Horaires', value: 'Lun – Sam · 9h – 19h' },
 ];
 
-const SOCIALS: IconName[] = ['instagram', 'facebook', 'youtube'];
+const SOCIALS: { icon: IconName; label: string; href: string }[] = [
+  { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/sdus_football/' },
+];
 
 export default function ContactPage() {
   const [form, setForm] = useState<ContactFormData>(EMPTY_FORM);
@@ -35,7 +37,16 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: brancher l'envoi réel (route API ou service mail)
+    const body = [
+      `Nom: ${form.firstName} ${form.lastName}`,
+      `Email: ${form.email}`,
+      `Objet: ${form.subject}`,
+      '',
+      form.message,
+    ].join('\n');
+    window.location.href = `mailto:contact@sdus-fc93.fr?subject=${encodeURIComponent(
+      `[Site SDUS] ${form.subject}`
+    )}&body=${encodeURIComponent(body)}`;
     setSent(true);
     setForm(EMPTY_FORM);
   };
@@ -63,7 +74,7 @@ export default function ContactPage() {
                     <Icon name="check" size={18} strokeWidth={3} />
                   </span>
                   <p className="text-sm text-navy">
-                    Merci ! Votre message a bien été envoyé. Le club vous répondra rapidement.
+                    Votre logiciel mail va s&apos;ouvrir avec le message prérempli pour le club.
                   </p>
                 </div>
               )}
@@ -126,12 +137,14 @@ export default function ContactPage() {
                 <div className="flex gap-3">
                   {SOCIALS.map((s) => (
                     <a
-                      key={s}
-                      href="#"
-                      aria-label={s}
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={s.label}
                       className="grid place-items-center w-12 h-12 rounded-xl border border-cloud text-accent hover:bg-royal hover:text-white hover:-translate-y-1 transition-all"
                     >
-                      <Icon name={s} size={20} />
+                      <Icon name={s.icon} size={20} />
                     </a>
                   ))}
                 </div>

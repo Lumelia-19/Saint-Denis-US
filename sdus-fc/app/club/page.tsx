@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import TacticalPattern from '@/components/TacticalPattern';
 import SectionTitle from '@/components/ui/SectionTitle';
 import Reveal from '@/components/Reveal';
@@ -18,12 +19,24 @@ const VALUES: { icon: IconName; title: string; desc: string }[] = [
   { icon: 'users', title: 'Esprit collectif', desc: 'Avancer ensemble, se soutenir, se dépasser pour le maillot et le club.' },
 ];
 
+export const metadata: Metadata = {
+  title: 'Le Club | Saint-Denis U.S. Football Club',
+  description:
+    "Découvrez l'histoire, les valeurs et le projet formateur du Saint-Denis U.S. Football Club depuis 1993.",
+};
+
 export default function ClubPage() {
   return (
     <>
       {/* ===================== HERO ===================== */}
       <section className="relative h-[78vh] min-h-[520px] flex items-end overflow-hidden">
-        <Image src="/assets/club_hero.jpeg" alt="" fill priority className="object-cover" />
+        <Image
+          src="/assets/club_hero.webp"
+          alt="Joueurs du Saint-Denis U.S. Football Club réunis sur le terrain."
+          fill
+          priority
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-deep via-deep/65 to-deep/25" />
         <div className="absolute inset-0 bg-grid opacity-50" />
         <TacticalPattern />

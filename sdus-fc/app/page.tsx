@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import TacticalPattern from '@/components/TacticalPattern';
-import StatCounter from '@/components/StatCounter';
 import MatchCard from '@/components/MatchCard';
 import SectionTitle from '@/components/ui/SectionTitle';
-import Reveal from '@/components/Reveal';
+import PartnerSponsoringSection from '@/components/PartnerSponsoringSection';
+import StatCounter from '@/components/StatCounter';
 import Icon, { type IconName } from '@/components/Icon';
 import { fetchMatches } from '@/lib/matches';
 
@@ -36,198 +37,302 @@ const STATS: { value: number; suffix: string; label: string; icon: IconName }[] 
   { value: 1, suffix: '', label: 'Stade de France', icon: 'map-pin' },
 ];
 
+const SPOTLIGHTS = [
+  {
+    image: '/assets/player_u6_u9.webp',
+    kicker: 'École de foot',
+    title: 'U6 - U9',
+    meta: 'Découverte + motricité',
+    stat: '2 séances / semaine',
+    desc: 'Premiers appuis, premiers repères, et le plaisir du ballon au centre de chaque séance.',
+    href: '/equipes',
+  },
+  {
+    image: '/assets/player_u10_u13.webp',
+    kicker: 'Préformation',
+    title: 'U10 - U13',
+    meta: 'Technique + jeu collectif',
+    stat: 'Plateaux & matchs',
+    desc: 'Un cadre exigeant pour progresser techniquement, apprendre le jeu et grandir ensemble.',
+    href: '/equipes',
+  },
+  {
+    image: '/assets/club_hero.webp',
+    kicker: 'Vie du club',
+    title: 'Une maison bleue et orange',
+    meta: 'Familles + bénévoles',
+    stat: 'Depuis 1993',
+    desc: 'Des éducateurs, des familles, des bénévoles et des joueurs réunis autour du même maillot.',
+    href: '/club',
+  },
+];
+
+export const metadata: Metadata = {
+  title: 'Accueil',
+  description:
+    'Saint-Denis U.S. Football Club : inscriptions, équipes, prochains matchs et actualités du SDUS FC 93.',
+};
+
 export default async function HomePage() {
   const { upcoming } = await fetchMatches();
 
   return (
     <>
       {/* ===================== HERO ===================== */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <Image src="/assets/hero_bg.jpeg" alt="" fill priority className="object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-deep/96 via-deep/82 to-deep/35" />
-        <div className="absolute inset-0 bg-grid opacity-60" />
-        <TacticalPattern />
+      <section className="relative isolate min-h-screen overflow-hidden bg-white md:min-h-[820px] lg:min-h-[820px] xl:min-h-screen">
+        <Image
+          src="/assets/hero_bg.jpeg"
+          alt="Jeunes joueurs du SDUS FC 93 entrant sur un terrain de football."
+          fill
+          priority
+          className="object-cover object-[66%_50%] lg:object-center"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.82)_52%,rgba(255,255,255,0.22)_100%)] md:hidden" />
+        <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(255,255,255,0.74)_0%,rgba(255,255,255,0.58)_34%,rgba(255,255,255,0.16)_58%,rgba(255,255,255,0)_100%)] md:block" />
+        <TacticalPattern tone="onLight" className="z-[1] opacity-80" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-32 w-full">
-          <div className="max-w-3xl">
-            <p
-              className="eyebrow text-flame mb-6 animate-rise"
-              style={{ animationDelay: '80ms' }}
-            >
-              Saint-Denis U.S. Football Club · 93
-            </p>
-            <h1 className="hero-title text-white animate-rise" style={{ animationDelay: '160ms' }}>
+        <div className="relative z-10 mx-auto flex min-h-[620px] w-full max-w-[1420px] flex-col justify-center px-5 pt-28 pb-8 sm:min-h-[700px] sm:px-8 md:min-h-[760px] md:pb-16 lg:min-h-[820px] lg:px-10 lg:pt-32 lg:pb-36 xl:min-h-screen xl:px-12 xl:pb-40">
+          <div className="max-w-[700px]">
+            <div className="mb-5 h-1.5 w-20 rounded-full bg-flame animate-rise md:mb-6" style={{ animationDelay: '80ms' }} />
+            <h1 className="hero-title text-royal drop-shadow-[0_10px_30px_rgba(255,255,255,0.35)] animate-rise" style={{ animationDelay: '150ms' }}>
               Saint-Denis
               <br />
               dans le cœur.
-            </h1>
-            <h1
-              className="hero-title text-gradient mt-1 animate-rise"
-              style={{ animationDelay: '240ms' }}
-            >
-              Le football
               <br />
-              dans les veines.
+              <span className="mt-2 block text-flame">Le football</span>
+              <span className="block text-flame">dans les veines.</span>
             </h1>
-            <p
-              className="text-white/75 text-lg max-w-xl mt-7 leading-relaxed animate-rise"
-              style={{ animationDelay: '320ms' }}
-            >
-              Plus qu&apos;un club, une famille.{' '}
-              <strong className="text-white font-semibold">Formateur, populaire et ambitieux</strong>, nous
+            <p className="mt-6 max-w-[520px] text-[1.02rem] leading-relaxed text-deep/82 animate-rise sm:text-lg lg:mt-7" style={{ animationDelay: '310ms' }}>
+              Le Saint-Denis U.S. Football Club, c&apos;est plus qu&apos;un club : c&apos;est une famille.{' '}
+              <strong className="font-extrabold text-royal">Formateur, populaire et ambitieux</strong>, nous
               faisons grandir les talents et les valeurs depuis 1993.
             </p>
-            <div className="flex flex-wrap gap-4 mt-9 animate-rise" style={{ animationDelay: '400ms' }}>
-              <Link href="/inscriptions" className="btn-primary group">
-                S&apos;inscrire au club
+            <div className="mt-7 flex flex-wrap gap-4 animate-rise lg:mt-8" style={{ animationDelay: '390ms' }}>
+              <Link href="/inscriptions" className="btn-primary group min-w-44">
+                S&apos;inscrire
                 <Icon
                   name="arrow-right"
-                  size={17}
+                  size={18}
                   strokeWidth={2.4}
                   className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </Link>
-              <Link href="/equipes" className="btn-ghost group">
+              <Link href="/equipes" className="btn-outline group min-w-44 bg-white/72 backdrop-blur">
                 Voir les équipes
                 <Icon
-                  name="arrow-up-right"
-                  size={17}
+                  name="arrow-right"
+                  size={18}
                   strokeWidth={2.4}
-                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/45">
-          <span className="text-[0.62rem] uppercase tracking-[0.26em]">Découvrir</span>
-          <Icon name="chevron-down" size={20} className="animate-float" />
+        <div className="relative z-20 mx-auto grid max-w-[900px] grid-cols-1 gap-4 px-5 pb-8 sm:px-8 md:grid-cols-3 2xl:absolute 2xl:bottom-7 2xl:left-auto 2xl:right-20 2xl:px-0 2xl:pb-0">
+          {PILLARS.map((p, i) => (
+            <Link
+              key={p.title}
+              href={p.href}
+              className="group relative overflow-hidden rounded-[1.15rem] border border-white/80 bg-white/94 p-5 shadow-[0_22px_60px_-28px_rgba(13,27,75,0.65)] backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:shadow-[0_30px_80px_-34px_rgba(13,27,75,0.78)] xl:p-6"
+              style={{ animationDelay: `${460 + i * 90}ms` }}
+            >
+              <span className="absolute inset-x-6 top-0 h-1 bg-flame" />
+              <span className="mb-4 grid h-12 w-12 place-items-center rounded-full bg-royal text-white shadow-[0_14px_24px_-16px_rgba(13,27,75,0.7)] ring-4 ring-flame/12 transition-colors duration-300 group-hover:bg-flame xl:mb-5 xl:h-14 xl:w-14">
+                <Icon name={p.icon} size={23} />
+              </span>
+              <h3 className="display-sm text-[1.28rem] italic text-royal xl:text-[1.45rem]">{p.title}</h3>
+              <div className="mt-2 mb-4 h-0.5 w-9 rounded-full bg-flame" />
+              <p className="text-[0.82rem] leading-relaxed text-slate-soft xl:text-[0.86rem]">{p.desc}</p>
+              <Icon
+                name="arrow-right"
+                size={25}
+                strokeWidth={2}
+                className="absolute bottom-5 right-5 text-flame transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* ===================== PILLARS ===================== */}
-      <section className="relative py-24 bg-mist overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal>
+      {/* ===================== FORMATION ===================== */}
+      <section className="relative overflow-hidden bg-mist py-20 sm:py-24">
+        <div className="absolute inset-0 bg-grid-ink opacity-70" />
+        <div className="absolute -left-10 top-12 hidden text-[10rem] font-black uppercase leading-none text-royal/[0.035] lg:block" style={{ fontFamily: 'var(--font-display)' }}>
+          Formation
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
             <SectionTitle
-              eyebrow="L'ADN du club"
-              blue="Ce qui nous"
-              orange="rassemble"
-              subtitle="Trois piliers qui font du SDUS FC un lieu de passion, de progrès et de partage."
+              eyebrow="Au quotidien"
+              blue="Un club qui"
+              orange="fait grandir"
+              subtitle="Des catégories lisibles, un cadre clair, et une progression pensée pour chaque âge."
             />
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            {PILLARS.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.1}>
+            <div className="max-w-2xl border-l-4 border-flame bg-white/72 px-5 py-5 text-sm leading-relaxed text-slate-soft shadow-[0_18px_48px_-34px_rgba(13,27,75,0.45)] backdrop-blur">
+              <strong className="text-royal">L&apos;expérience SDUS</strong>, c&apos;est un parcours complet :
+              accueil des plus jeunes, préformation exigeante, éducateurs présents, matchs, tournois et vie de club.
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-[1.08fr_0.92fr]">
+            <Link
+              href={SPOTLIGHTS[0].href}
+              className="group relative min-h-[500px] overflow-hidden rounded-[1.35rem] bg-deep shadow-[0_30px_80px_-42px_rgba(13,27,75,0.85)]"
+            >
+              <Image
+                src={SPOTLIGHTS[0].image}
+                alt={`Jeune joueur du SDUS FC 93 - ${SPOTLIGHTS[0].kicker} ${SPOTLIGHTS[0].title}`}
+                fill
+                sizes="(min-width: 1024px) 54vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,12,32,0.02)_0%,rgba(7,12,32,0.28)_45%,rgba(7,12,32,0.92)_100%)]" />
+              <div className="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-royal">
+                {SPOTLIGHTS[0].kicker}
+              </div>
+              <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                <p className="text-sm font-bold uppercase text-flame">{SPOTLIGHTS[0].meta}</p>
+                <h3 className="display-sm mt-2 text-5xl italic text-white sm:text-6xl">{SPOTLIGHTS[0].title}</h3>
+                <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/76">{SPOTLIGHTS[0].desc}</p>
+                <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-royal transition-colors duration-300 group-hover:bg-flame group-hover:text-white">
+                  Découvrir la catégorie
+                  <Icon name="arrow-right" size={15} strokeWidth={2.4} />
+                </span>
+              </div>
+            </Link>
+
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+              {SPOTLIGHTS.slice(1).map((item) => (
                 <Link
-                  href={p.href}
-                  className="card card-hover sheen group p-8 h-full flex flex-col items-start"
+                  key={item.title}
+                  href={item.href}
+                  className="group relative min-h-[240px] overflow-hidden rounded-[1.35rem] bg-deep shadow-[0_24px_70px_-42px_rgba(13,27,75,0.8)]"
                 >
-                  <span className="grid place-items-center w-16 h-16 rounded-2xl bg-deep text-flame mb-6 transition-colors duration-300 group-hover:bg-flame group-hover:text-white">
-                    <Icon name={p.icon} size={28} />
-                  </span>
-                  <h3 className="display-sm text-2xl text-navy mb-3">{p.title}</h3>
-                  <p className="text-slate-soft text-sm leading-relaxed mb-5 flex-1">{p.desc}</p>
-                  <span className="inline-flex items-center gap-1.5 text-flame font-semibold text-sm">
-                    Découvrir
-                    <Icon
-                      name="arrow-right"
-                      size={15}
-                      strokeWidth={2.4}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                  </span>
+                  <Image
+                    src={item.image}
+                    alt={`Illustration SDUS FC 93 - ${item.kicker} ${item.title}`}
+                    fill
+                    sizes="(min-width: 1024px) 46vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,12,32,0.88)_0%,rgba(7,12,32,0.48)_54%,rgba(7,12,32,0.04)_100%)]" />
+                  <div className="relative z-10 flex h-full min-h-[240px] max-w-[72%] flex-col justify-end p-6">
+                    <p className="text-[0.7rem] font-black uppercase tracking-[0.16em] text-flame">{item.kicker}</p>
+                    <h3 className="display-sm mt-2 text-3xl italic text-white">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-white/72">{item.desc}</p>
+                    <p className="mt-5 inline-flex w-fit rounded-full border border-white/25 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white/84">
+                      {item.stat}
+                    </p>
+                  </div>
                 </Link>
-              </Reveal>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ===================== STATS ===================== */}
-      <section className="relative py-20 bg-mesh overflow-hidden">
+      <section className="relative overflow-hidden bg-mesh py-16 sm:py-20">
         <TacticalPattern />
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
-            {STATS.map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.08}>
-                <StatCounter value={s.value} suffix={s.suffix} label={s.label} icon={s.icon} />
-              </Reveal>
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+          <div>
+            <p className="eyebrow mb-5 text-flame">Repères</p>
+            <h2 className="section-title text-white">
+              Le club en <span className="text-gradient">chiffres</span>
+            </h2>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/64">
+              Un club populaire, structuré et ancré à Saint-Denis, avec des catégories pour progresser toute l&apos;année.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {STATS.map((s) => (
+              <div
+                key={s.label}
+                className="flex flex-col items-center rounded-[1.1rem] border border-white/12 bg-white/[0.07] px-4 py-6 text-center backdrop-blur"
+              >
+                <StatCounter value={s.value} suffix={s.suffix} label={s.label} icon={s.icon} animate={false} />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* ===================== UPCOMING MATCHES ===================== */}
-      <section className="py-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-6">
-              <SectionTitle eyebrow="Saison 25/26" blue="Prochains" orange="matchs" />
-              <Link
-                href="/calendrier"
-                className="hidden sm:inline-flex items-center gap-1.5 text-accent font-semibold text-sm hover:text-flame transition-colors group"
-              >
+      <section className="relative overflow-hidden bg-surface py-20 sm:py-24">
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-mist to-transparent" />
+        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <SectionTitle
+              eyebrow="Saison 25/26"
+              blue="Prochains"
+              orange="matchs"
+              subtitle="Les rendez-vous à venir pour suivre les équipes du club sur les terrains."
+            />
+            <div className="flex flex-wrap gap-3 lg:justify-end">
+              <Link href="/calendrier" className="btn-outline group bg-white">
                 Tout le calendrier
                 <Icon
                   name="arrow-right"
-                  size={15}
+                  size={16}
                   strokeWidth={2.4}
                   className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </Link>
             </div>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            {upcoming.slice(0, 3).map((match, i) => (
-              <Reveal key={match.id} delay={i * 0.1}>
-                <MatchCard match={match} />
-              </Reveal>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+            {upcoming.slice(0, 3).map((match) => (
+              <MatchCard key={match.id} match={match} />
             ))}
           </div>
-          <Reveal>
-            <div className="text-center mt-10 sm:hidden">
-              <Link href="/calendrier" className="btn-outline">
-                Tout le calendrier
-                <Icon name="arrow-right" size={16} strokeWidth={2.4} />
-              </Link>
-            </div>
-          </Reveal>
         </div>
       </section>
 
+      <PartnerSponsoringSection />
+
       {/* ===================== CTA ===================== */}
-      <section className="pb-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-[2.4rem] bg-mesh px-8 py-16 sm:px-16 text-center">
-              <TacticalPattern />
-              <div className="relative z-10 max-w-2xl mx-auto">
-                <p className="eyebrow text-flame justify-center mb-5">Rejoignez l&apos;aventure</p>
-                <h2 className="section-title text-white">
-                  Prêt à porter le <span className="text-gradient">bleu &amp; orange</span> ?
-                </h2>
-                <p className="text-white/70 mt-4 leading-relaxed">
-                  Inscriptions ouvertes pour toutes les catégories, de l&apos;école de foot aux seniors.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4 mt-8">
-                  <Link href="/inscriptions" className="btn-primary group">
-                    Démarrer mon inscription
-                    <Icon
-                      name="arrow-right"
-                      size={17}
-                      strokeWidth={2.4}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                  </Link>
-                  <Link href="/contact" className="btn-ghost">
-                    Nous contacter
-                  </Link>
-                </div>
+      <section className="bg-surface pt-16 pb-20 sm:pt-20 sm:pb-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <div className="relative grid overflow-hidden rounded-[2rem] bg-mesh lg:grid-cols-[0.92fr_1.08fr]">
+            <TacticalPattern />
+            <div className="relative min-h-[280px] lg:min-h-[420px]">
+              <Image
+                src="/assets/club_hero.webp"
+                alt="Joueurs et éducateurs du SDUS FC 93 réunis au club."
+                fill
+                sizes="(min-width: 1024px) 46vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-deep/25 via-deep/10 to-deep/78 lg:bg-gradient-to-r lg:from-transparent lg:to-deep/88" />
+            </div>
+            <div className="relative z-10 flex flex-col justify-center px-6 py-10 sm:px-10 lg:px-14">
+              <p className="eyebrow mb-5 text-flame">Rejoignez l&apos;aventure</p>
+              <h2 className="section-title max-w-2xl text-white">
+                Prêt à porter le <span className="text-gradient">bleu &amp; orange</span> ?
+              </h2>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/70">
+                Inscriptions ouvertes pour toutes les catégories, de l&apos;école de foot aux seniors. Le club vous
+                accompagne pour trouver la bonne équipe et le bon créneau.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link href="/inscriptions" className="btn-primary group">
+                  Démarrer mon inscription
+                  <Icon
+                    name="arrow-right"
+                    size={17}
+                    strokeWidth={2.4}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
+                <Link href="/contact" className="btn-ghost">
+                  Nous contacter
+                </Link>
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
     </>

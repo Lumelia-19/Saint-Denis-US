@@ -1,160 +1,234 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import TacticalPattern from '@/components/TacticalPattern';
-import SectionTitle from '@/components/ui/SectionTitle';
-import Reveal from '@/components/Reveal';
+import type { Metadata } from 'next';
 import Icon, { type IconName } from '@/components/Icon';
 
-const PIECES = [
-  "Photo d'identité récente",
+const REQUIREMENTS = [
+  "Formulaire d'inscription dûment rempli",
+  "Photo d'identité (format officiel)",
   'Certificat médical de non contre-indication',
-  "Copie d'une pièce d'identité",
-  'Justificatif de domicile',
+  'Justificatif de domicile (moins de 3 mois)',
 ];
 
-const ETAPES: { icon: IconName; title: string; desc: string }[] = [
-  { icon: 'file-text', title: 'Pré-inscription en ligne', desc: 'Remplissez le formulaire et choisissez votre catégorie.' },
-  { icon: 'ticket', title: 'Dépôt des documents', desc: 'Transmettez les pièces justificatives au club.' },
-  { icon: 'shield', title: 'Validation & licence', desc: 'Le club valide le dossier et délivre la licence FFF.' },
+const STEPS: { icon: IconName; title: string; desc: string }[] = [
+  {
+    icon: 'users',
+    title: 'Choisir sa catégorie',
+    desc: "Sélectionnez la catégorie correspondant à l'âge et au niveau du joueur.",
+  },
+  {
+    icon: 'folder',
+    title: 'Préparer son dossier',
+    desc: 'Rassemblez les pièces demandées pour constituer un dossier complet.',
+  },
+  {
+    icon: 'send',
+    title: 'Envoyer sa demande',
+    desc: 'Envoyez votre dossier en ligne et recevez une confirmation par email.',
+  },
 ];
 
 const OFFERS: { icon: IconName; title: string; desc: string; cta: string }[] = [
   {
-    icon: 'target',
+    icon: 'search',
     title: 'Détections',
-    desc: 'Vous visez une équipe compétitive ? Participez à nos séances de détection.',
-    cta: 'Passer une détection',
+    desc: "Intégrez nos détections et tentez de rejoindre l'aventure SDUS.",
+    cta: 'Demander une détection',
   },
   {
-    icon: 'flame',
+    icon: 'runner',
     title: 'Stages vacances',
-    desc: 'Stages multi-niveaux pendant les vacances scolaires : progression, fun et cohésion.',
-    cta: 'Réserver un stage',
+    desc: 'Progressez pendant les vacances avec nos stages accessibles à tous les niveaux.',
+    cta: 'Découvrir les stages',
   },
 ];
 
-export default function InscriptionsPage() {
+export const metadata: Metadata = {
+  title: 'Inscriptions',
+  description:
+    'Rejoignez le SDUS FC 93 : inscriptions, détections, stages et pièces à fournir pour la saison 2025/2026.',
+};
+
+function TicketNotches({ side }: { side: 'left' | 'right' }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={`pointer-events-none absolute top-7 hidden h-[calc(100%-3.5rem)] flex-col justify-between lg:flex ${
+        side === 'left' ? '-left-2' : '-right-2'
+      }`}
+    >
+      {Array.from({ length: 10 }).map((_, i) => (
+        <span key={i} className="block h-4 w-4 rounded-full bg-white shadow-[inset_0_0_0_1px_rgba(13,27,75,0.08)]" />
+      ))}
+    </span>
+  );
+}
+
+function TacticalDecor() {
   return (
     <>
-      {/* ===================== HEADER ===================== */}
-      <section className="relative pt-32 pb-16 bg-surface overflow-hidden">
-        <div className="absolute inset-0 bg-grid-ink opacity-70" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center flex flex-col items-center">
-          <Reveal>
-            <span className="chip bg-mist text-accent border border-cloud mb-6">
-              <Icon name="sparkles" size={14} className="text-flame" />
-              Saison 2025 / 2026
-            </span>
-            <h1 className="hero-title text-navy">
-              Rejoindre le <span className="text-gradient">club.</span>
-            </h1>
-            <p className="text-slate-soft text-lg mt-4 max-w-xl mx-auto">
-              Inscriptions, détections &amp; stages — une procédure simple et 100% en ligne.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <svg
+        className="pointer-events-none absolute right-4 top-24 hidden h-64 w-64 text-white lg:block"
+        viewBox="0 0 260 260"
+        aria-hidden="true"
+      >
+        <circle cx="190" cy="38" r="14" fill="none" stroke="#fff" strokeWidth="6" />
+        <circle cx="204" cy="106" r="14" fill="none" stroke="#f26522" strokeWidth="6" />
+        <path d="M202 56c42 44 40 104 3 150" fill="none" stroke="#fff" strokeWidth="4" strokeDasharray="12 14" strokeLinecap="round" />
+        <path d="M78 74l24 24M102 74 78 98M82 150l24 24M106 150l-24 24" stroke="#fff" strokeWidth="6" strokeLinecap="round" />
+        <path d="m170 70 18-16M188 54l2 24M174 202l-22 10M152 212l16 16" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
+      </svg>
+      <svg
+        className="pointer-events-none absolute bottom-2 left-0 h-44 w-80 text-flame sm:w-[32rem]"
+        viewBox="0 0 520 190"
+        aria-hidden="true"
+      >
+        <path d="M4 156c82-48 182-54 304-21" fill="none" stroke="#f26522" strokeWidth="5" strokeLinecap="round" />
+        <path d="M20 166c94-30 182-28 292 2" fill="none" stroke="#1b3a8c" strokeWidth="3" strokeLinecap="round" opacity=".85" />
+        <path d="M226 70c44-20 90-22 142 0" fill="none" stroke="#f26522" strokeWidth="3" strokeDasharray="9 14" strokeLinecap="round" />
+        <path d="m360 56 24 17-29 11" fill="none" stroke="#f26522" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="72" cy="118" r="13" fill="none" stroke="#fff" strokeWidth="6" />
+        <path d="M112 110l20 20M132 110l-20 20M206 126l17 17M223 126l-17 17" stroke="#f26522" strokeWidth="6" strokeLinecap="round" />
+        <path d="M300 122l17 17M317 122l-17 17" stroke="#fff" strokeWidth="5" strokeLinecap="round" />
+      </svg>
+    </>
+  );
+}
 
-      {/* ===================== STEPS ===================== */}
-      <section className="py-20 bg-mist">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal>
-            <SectionTitle eyebrow="La marche à suivre" blue="S'inscrire en" orange="3 étapes" center />
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            {ETAPES.map((e, i) => (
-              <Reveal key={e.title} delay={i * 0.1}>
-                <div className="card card-hover relative p-8 h-full">
-                  <span className="absolute top-6 right-7 display-sm text-5xl text-slate-soft">0{i + 1}</span>
-                  <span className="grid place-items-center w-16 h-16 rounded-2xl bg-flame text-white mb-6">
-                    <Icon name={e.icon} size={28} />
-                  </span>
-                  <h3 className="display-sm text-xl text-navy mb-2">{e.title}</h3>
-                  <p className="text-slate-soft text-sm leading-relaxed">{e.desc}</p>
-                </div>
-              </Reveal>
-            ))}
+export default function InscriptionsPage() {
+  return (
+    <section className="relative overflow-hidden bg-white" aria-labelledby="inscriptions-title">
+      <div className="relative isolate min-h-screen overflow-hidden pt-28 lg:pt-24">
+        <Image
+          src="/assets/inscriptions-bg.webp"
+          alt="Jeune joueur du SDUS FC 93 en action pendant une séance d'entraînement."
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center lg:translate-x-[12vw] lg:scale-[1.16]"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.82)_34%,rgba(255,255,255,0.18)_62%,rgba(255,255,255,0)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.66)_0%,rgba(255,255,255,0.06)_48%,rgba(255,255,255,0.62)_100%)]" />
+        <TacticalDecor />
+
+        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6rem)] max-w-[1536px] grid-rows-[auto_1fr] px-5 pb-8 sm:px-8 lg:px-10 min-[1400px]:px-24">
+          <div className="grid items-start gap-7 lg:grid-cols-[500px_180px_1fr] min-[1400px]:grid-cols-[540px_190px_1fr]">
+            <div className="max-w-[620px] pt-12 lg:pt-24">
+              <h1 id="inscriptions-title" className="hero-title text-royal lg:text-[6.95rem]">
+                Rejoindre
+                <br />
+                <span className="text-flame">le club.</span>
+              </h1>
+              <p className="mt-4 text-xl font-semibold text-deep sm:text-2xl">
+                Inscriptions, Détections &amp; Stages.
+              </p>
+            </div>
+
+            <div className="hidden h-48 w-48 place-items-center rounded-full border-4 border-flame bg-royal text-center text-white shadow-[0_24px_60px_-30px_rgba(13,27,75,0.75)] lg:mt-28 lg:grid">
+              <p className="display-sm italic leading-[0.9]">
+                <span className="block text-3xl">Saison</span>
+                <span className="block text-6xl">2025</span>
+                <span className="block text-3xl text-flame">/</span>
+                <span className="block text-5xl text-flame">2026</span>
+              </p>
+            </div>
+
+            <div className="hidden lg:block" />
           </div>
-        </div>
-      </section>
 
-      {/* ===================== DOCS + OFFERS ===================== */}
-      <section className="py-20 bg-surface">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-[2rem] bg-mesh p-9 h-full">
-              <TacticalPattern />
-              <div className="relative z-10">
-                <p className="eyebrow text-flame mb-4">Le dossier</p>
-                <h3 className="section-title text-white !text-3xl mb-7">Pièces à fournir</h3>
-                <ul className="space-y-4">
-                  {PIECES.map((p) => (
-                    <li key={p} className="flex items-start gap-3">
-                      <span className="grid place-items-center w-7 h-7 rounded-lg bg-flame text-white shrink-0 mt-0.5">
-                        <Icon name="check" size={16} strokeWidth={3} />
+          <div className="mt-6 grid items-start gap-5 lg:mt-8 lg:grid-cols-[250px_minmax(520px,1fr)_280px] min-[1400px]:grid-cols-[270px_minmax(0,1fr)_310px]">
+            <aside className="relative rounded-[1.2rem] bg-royal px-6 py-6 text-white shadow-[0_24px_60px_-28px_rgba(13,27,75,0.65)] min-[1400px]:px-7">
+              <TicketNotches side="left" />
+              <TicketNotches side="right" />
+              <div className="mb-6 h-1.5 w-28 rounded-full bg-flame" />
+              <h2 className="display-sm text-2xl italic">Pièces à fournir</h2>
+              <ul className="mt-5 space-y-3.5">
+                {REQUIREMENTS.map((item) => (
+                  <li key={item} className="flex gap-3 text-[0.82rem] font-semibold leading-snug text-white/90">
+                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full border-2 border-flame text-flame">
+                      <Icon name="check" size={16} strokeWidth={3} />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+
+            <div>
+              <div className="relative grid overflow-hidden rounded-[1.35rem] bg-white/96 shadow-[0_24px_70px_-36px_rgba(13,27,75,0.45)] backdrop-blur md:grid-cols-3">
+                {STEPS.map((step, i) => (
+                  <article key={step.title} className="relative min-h-[300px] px-5 py-5 min-[1400px]:min-h-[334px] min-[1400px]:px-7 min-[1400px]:py-6">
+                    {i > 0 && (
+                      <span className="absolute left-0 top-0 hidden h-full border-l-2 border-dashed border-slate-soft/25 md:block" />
+                    )}
+                    <div className="flex min-h-14 items-center gap-4 min-[1400px]:min-h-16">
+                      <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-royal text-2xl font-black italic text-white min-[1400px]:h-16 min-[1400px]:w-16 min-[1400px]:text-3xl" style={{ fontFamily: 'var(--font-display)' }}>
+                        {i + 1}
                       </span>
-                      <span className="text-white/80 text-sm leading-relaxed">{p}</span>
-                    </li>
-                  ))}
-                </ul>
+                      <h3 className="display-sm text-[1.12rem] italic text-royal min-[1400px]:text-[1.35rem]">{step.title}</h3>
+                    </div>
+                    <div className="mx-auto my-4 grid h-[4.5rem] w-[4.5rem] place-items-center text-royal min-[1400px]:my-6 min-[1400px]:h-20 min-[1400px]:w-20">
+                      <Icon name={step.icon} size={72} strokeWidth={1.6} className={i === 0 ? 'text-royal [&_*]:stroke-current' : ''} />
+                    </div>
+                    <p className="mx-auto max-w-[210px] text-center text-[0.78rem] leading-relaxed text-deep/78 min-[1400px]:text-[0.82rem]">{step.desc}</p>
+                    {i < STEPS.length - 1 && (
+                      <svg className="absolute right-[-22px] top-1/2 z-10 hidden h-10 w-20 -translate-y-1/2 md:block" viewBox="0 0 80 40" aria-hidden="true">
+                        <path d="M5 25c22-13 42-13 62 0" fill="none" stroke="#f26522" strokeWidth="3" strokeDasharray="9 12" strokeLinecap="round" />
+                        <path d="m58 10 17 15-21 8" fill="none" stroke="#f26522" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                    <div className="absolute bottom-4 left-1/2 h-7 w-36 -translate-x-1/2 bg-[radial-gradient(circle,#f26522_1.7px,transparent_2px)] [background-size:17px_11px] min-[1400px]:bottom-5" />
+                  </article>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-col items-center gap-5 lg:flex-row lg:justify-center">
+                <Link href="/contact" className="btn-primary group min-w-56">
+                  S&apos;inscrire
+                  <Icon
+                    name="arrow-right"
+                    size={18}
+                    strokeWidth={2.4}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
+                <div className="flex items-center gap-3 text-sm font-bold uppercase text-royal">
+                  <span className="grid h-10 w-10 place-items-center rounded-full bg-royal text-white">
+                    <Icon name="shield" size={20} />
+                  </span>
+                  <span>
+                    Procédure 100% en ligne
+                    <span className="block text-xs font-semibold text-deep/60">Simple, rapide et sécurisée.</span>
+                  </span>
+                </div>
               </div>
             </div>
-          </Reveal>
 
-          <div className="flex flex-col gap-6">
-            {OFFERS.map((o, i) => (
-              <Reveal key={o.title} delay={i * 0.1}>
-                <div className="card card-hover group p-7 flex items-start gap-5">
-                  <span className="grid place-items-center w-14 h-14 rounded-2xl bg-mist text-accent shrink-0 transition-colors duration-300 group-hover:bg-royal group-hover:text-white">
-                    <Icon name={o.icon} size={26} />
-                  </span>
-                  <div>
-                    <h3 className="display-sm text-xl text-navy mb-1">{o.title}</h3>
-                    <p className="text-slate-soft text-sm leading-relaxed mb-4">{o.desc}</p>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-1.5 text-flame font-semibold text-sm"
-                    >
-                      {o.cta}
-                      <Icon
-                        name="arrow-right"
-                        size={15}
-                        strokeWidth={2.4}
-                        className="transition-transform duration-300 group-hover:translate-x-1"
-                      />
-                    </Link>
+            <div className="grid gap-5">
+              {OFFERS.map((offer) => (
+                <article
+                  key={offer.title}
+                  className="rounded-[1.15rem] bg-white/96 p-5 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] backdrop-blur"
+                >
+                  <div className="flex items-start gap-4">
+                    <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-royal text-white">
+                      <Icon name={offer.icon} size={28} strokeWidth={1.9} />
+                    </span>
+                    <div>
+                      <h3 className="display-sm text-[1.35rem] italic text-royal">{offer.title}</h3>
+                      <p className="mt-1.5 text-[0.8rem] leading-relaxed text-deep/74">{offer.desc}</p>
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                  <Link href="/contact" className="btn-primary group mt-4 w-full justify-between px-6 py-2.5 text-sm">
+                    {offer.cta}
+                    <Icon name="arrow-right" size={18} strokeWidth={2.4} />
+                  </Link>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* ===================== CTA ===================== */}
-      <section className="pb-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal>
-            <div className="rounded-[2.4rem] border border-cloud bg-mist px-8 py-14 text-center flex flex-col items-center">
-              <h2 className="section-title text-navy">
-                Prêt à <span className="text-gradient">nous rejoindre</span> ?
-              </h2>
-              <Link href="/contact" className="btn-primary group mt-7">
-                Démarrer mon inscription
-                <Icon
-                  name="arrow-right"
-                  size={17}
-                  strokeWidth={2.4}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </Link>
-              <span className="chip bg-surface border border-cloud text-accent mt-5">
-                <Icon name="check" size={14} strokeWidth={3} className="text-flame" />
-                Procédure 100% en ligne
-              </span>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

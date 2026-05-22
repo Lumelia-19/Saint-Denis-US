@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import TacticalPattern from '@/components/TacticalPattern';
@@ -22,13 +23,59 @@ const AVANTAGES: { icon: IconName; title: string; desc: string }[] = [
   { icon: 'flame', title: 'Jeunesse', desc: 'Associez votre image à plus de 500 jeunes et à des valeurs positives.' },
 ];
 
+const OFFERS: { title: string; desc: string; points: string[]; icon: IconName }[] = [
+  {
+    title: 'Partenaire local',
+    desc: 'Pour les commerces et entreprises qui veulent soutenir un projet visible sur le territoire.',
+    points: ['Présence digitale', 'Visibilité événements', 'Mention club'],
+    icon: 'store',
+  },
+  {
+    title: 'Soutien formation',
+    desc: "Pour financer l'équipement, les stages et l'accompagnement des jeunes joueurs.",
+    points: ['Actions jeunesse', 'Reportage photo', 'Bilan de saison'],
+    icon: 'graduation',
+  },
+  {
+    title: 'Partenaire majeur',
+    desc: 'Pour associer durablement votre image au développement du SDUS FC 93.',
+    points: ['Activation sur mesure', 'Supports premium', 'Opérations terrain'],
+    icon: 'handshake',
+  },
+];
+
+const IMPACT_STATS: { value: number; suffix: string; label: string; icon: IconName }[] = [
+  { value: 500, suffix: '+', label: 'Jeunes licenciés', icon: 'users' },
+  { value: 12, suffix: '', label: 'Équipes engagées', icon: 'shield' },
+  { value: 30, suffix: ' ans', label: "D'ancrage local", icon: 'star' },
+  { value: 1, suffix: '', label: 'Stade emblématique', icon: 'map-pin' },
+];
+
 const ORBIT_DURATION = 32;
+
+export const metadata: Metadata = {
+  title: 'Partenaires & Sponsoring | Saint-Denis U.S. Football Club',
+  description:
+    'Devenez partenaire du SDUS FC 93 et soutenez un club formateur, populaire et ancré à Saint-Denis.',
+};
 
 export default function PartenairesPage() {
   return (
     <>
       {/* ===================== HERO + ORBIT ===================== */}
       <section className="relative pt-36 pb-20 bg-mesh overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.18]">
+          <Image
+            src="/assets/sponsor-bg.webp"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-deep/86 via-deep/78 to-deep/96" />
         <TacticalPattern />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto">
@@ -86,18 +133,15 @@ export default function PartenairesPage() {
       </section>
 
       {/* ===================== STATS ===================== */}
-      <section className="py-16 bg-surface">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-[2rem] bg-mesh p-10">
-              <StatCounter value={500} suffix="+" label="Jeunes licenciés" icon="users" />
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="relative overflow-hidden rounded-[2rem] bg-deep bg-grid p-10">
-              <StatCounter value={1} suffix="" label="Stade au cœur de Saint-Denis" icon="map-pin" />
-            </div>
-          </Reveal>
+      <section className="relative -mt-10 bg-surface pb-20">
+        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 lg:grid-cols-4">
+          {IMPACT_STATS.map((stat, i) => (
+            <Reveal key={stat.label} delay={i * 0.05}>
+              <div className="relative overflow-hidden rounded-[1.25rem] bg-mesh px-5 py-7 shadow-[0_24px_70px_-40px_rgba(13,27,75,0.7)]">
+                <StatCounter value={stat.value} suffix={stat.suffix} label={stat.label} icon={stat.icon} animate={false} />
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -128,26 +172,92 @@ export default function PartenairesPage() {
         </div>
       </section>
 
+      {/* ===================== OFFRES ===================== */}
+      <section className="relative overflow-hidden bg-surface py-20">
+        <div className="absolute inset-0 bg-grid-ink opacity-70" />
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
+          <Reveal>
+            <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+              <SectionTitle
+                eyebrow="Offres partenaires"
+                blue="Choisir le bon"
+                orange="niveau d'engagement"
+                subtitle="Une base claire, puis une activation adaptée à votre image, votre budget et votre présence locale."
+              />
+              <div className="rounded-[1.35rem] border border-cloud bg-white px-6 py-5 text-sm leading-relaxed text-slate-soft shadow-[0_18px_48px_-34px_rgba(13,27,75,0.45)]">
+                <strong className="text-royal">Chaque partenariat doit être utile.</strong> Visibilité, jeunesse,
+                territoire : le club privilégie des actions simples à comprendre et faciles à valoriser.
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {OFFERS.map((offer, i) => (
+              <Reveal key={offer.title} delay={i * 0.08}>
+                <article className="card card-hover flex h-full flex-col p-7">
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="grid h-14 w-14 place-items-center rounded-2xl bg-royal text-white">
+                      <Icon name={offer.icon} size={26} />
+                    </span>
+                    <span className="display-sm text-3xl text-flame/70">0{i + 1}</span>
+                  </div>
+                  <h3 className="display-sm mt-7 text-3xl italic text-navy">{offer.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-soft">{offer.desc}</p>
+                  <ul className="mt-7 space-y-3">
+                    {offer.points.map((point) => (
+                      <li key={point} className="flex items-center gap-3 text-sm font-semibold text-navy">
+                        <span className="grid h-6 w-6 place-items-center rounded-full border border-flame text-flame">
+                          <Icon name="check" size={14} strokeWidth={3} />
+                        </span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/contact" className="btn-outline group mt-8 w-full">
+                    Discuter de cette offre
+                    <Icon name="arrow-right" size={16} strokeWidth={2.4} className="transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===================== CTA ===================== */}
-      <section className="py-24 bg-surface">
+      <section className="bg-mist py-20">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal>
-            <div className="rounded-[2.4rem] border border-cloud bg-mist px-8 py-14 text-center flex flex-col items-center">
-              <h2 className="section-title text-navy">
-                Devenez <span className="text-gradient">partenaire</span> du SDUS
-              </h2>
-              <p className="text-slate-soft mt-3 max-w-lg">
-                Construisons ensemble un projet à votre image, à la hauteur de vos ambitions.
-              </p>
-              <Link href="/contact" className="btn-primary group mt-7">
-                Devenir partenaire
-                <Icon
-                  name="arrow-right"
-                  size={17}
-                  strokeWidth={2.4}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
+            <div className="relative grid overflow-hidden rounded-[2rem] bg-mesh lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="relative min-h-[260px]">
+                <Image
+                  src="/assets/sponsor-bg.webp"
+                  alt="Vue du territoire de Saint-Denis autour du stade."
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover"
                 />
-              </Link>
+                <div className="absolute inset-0 bg-gradient-to-r from-deep/10 to-deep/82" />
+              </div>
+              <div className="relative z-10 flex flex-col justify-center px-7 py-10 sm:px-10 lg:px-14">
+                <p className="eyebrow mb-5 text-flame">Passer à l&apos;action</p>
+                <h2 className="section-title max-w-xl text-white">
+                  Construire un partenariat utile au club et au territoire
+                </h2>
+                <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/68">
+                  Une proposition claire, des contreparties lisibles, et des actions que vos équipes comme les
+                  familles du club peuvent comprendre.
+                </p>
+                <Link href="/contact" className="btn-primary group mt-8 w-fit">
+                  Devenir partenaire
+                  <Icon
+                    name="arrow-right"
+                    size={17}
+                    strokeWidth={2.4}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
+              </div>
             </div>
           </Reveal>
         </div>

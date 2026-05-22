@@ -5,7 +5,7 @@ import type { ReactNode } from 'react';
 export default function Template({ children }: { children: ReactNode }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 14 }}
+      initial={{ opacity: 1, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 0.7, 0.2, 1] }}
     >
