@@ -39,7 +39,7 @@ const STATS: { value: number; suffix: string; label: string; icon: IconName }[] 
 
 const SPOTLIGHTS = [
   {
-    image: '/assets/player_u6_u9.webp',
+    image: '/assets/player_u6_u9.png',
     kicker: 'École de foot',
     title: 'U6 - U9',
     meta: 'Découverte + motricité',
@@ -48,7 +48,7 @@ const SPOTLIGHTS = [
     href: '/equipes',
   },
   {
-    image: '/assets/player_u10_u13.webp',
+    image: '/assets/player_u10_13.png',
     kicker: 'Préformation',
     title: 'U10 - U13',
     meta: 'Technique + jeu collectif',

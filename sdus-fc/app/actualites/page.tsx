@@ -29,8 +29,8 @@ const ARTICLES = [
 const SOCIAL_IMAGES = [
   '/assets/bg-article.png',
   '/assets/inscriptions-bg.webp',
-  '/assets/player_u10_u13.webp',
-  '/assets/player_u6_u9.webp',
+  '/assets/player_u10_13.png',
+  '/assets/player_u6_u9.png',
 ];
 
 export const metadata: Metadata = {
