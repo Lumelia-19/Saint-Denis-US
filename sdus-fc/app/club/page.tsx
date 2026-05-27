@@ -32,12 +32,19 @@ export default function ClubPage() {
         className="pointer-events-none absolute inset-0 -z-10 bg-[url('/assets/logo.png')] bg-[length:46rem_auto] bg-[position:30%_42%] bg-no-repeat opacity-[0.06] dark:opacity-[0.08]"
       />
 
-      {/* ===== Bandeau Stade de France (top, plein large, courbé) ===== */}
-      <div className="relative h-[36vh] min-h-[260px] w-full overflow-hidden lg:h-[42vh] lg:min-h-[320px]">
-        <div
-          className="absolute inset-0"
-          style={{ clipPath: 'ellipse(110% 110% at 65% -10%)' }}
-        >
+      {/* ===== SVG clip path partagé pour le bandeau ===== */}
+      <svg className="absolute h-0 w-0" aria-hidden="true">
+        <defs>
+          <clipPath id="club-banner-wave" clipPathUnits="objectBoundingBox">
+            {/* Vague : court à gauche (~55% de h), plein à droite. Courbe cubique douce. */}
+            <path d="M 0,0 L 1,0 L 1,1 C 0.62,1 0.3,0.55 0,0.55 L 0,0 Z" />
+          </clipPath>
+        </defs>
+      </svg>
+
+      {/* ===== Bandeau Stade de France (top, plein large, vague) ===== */}
+      <div className="relative h-[38vh] min-h-[280px] w-full overflow-hidden lg:h-[46vh] lg:min-h-[360px]">
+        <div className="absolute inset-0" style={{ clipPath: 'url(#club-banner-wave)' }}>
           <Image
             src="/assets/club_hero.webp"
             alt="Vue aérienne du Stade de France à Saint-Denis."
