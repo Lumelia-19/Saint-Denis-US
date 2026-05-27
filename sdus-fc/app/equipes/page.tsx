@@ -15,15 +15,17 @@ type StageDef = {
   category: MatchCategory;
   title: string;
   tagline: string;
-  image?: string;
+  image: string;
   height: number;
+  flip?: boolean;
 };
 
+// Photos reutilisees (on n'a que 2 visuels) pour eviter les silhouettes SVG
 const STAGES: StageDef[] = [
   { category: 'U6-U9', title: 'U6 - U9', tagline: 'Découverte & plaisir', image: '/assets/player_u6_u9.webp', height: 240 },
   { category: 'U10-U13', title: 'U10 - U13', tagline: 'Apprentissage & fondations', image: '/assets/player_u10_u13.webp', height: 290 },
-  { category: 'U14-U17', title: 'U14 - U17', tagline: 'Progression & performance', height: 340 },
-  { category: 'U18-Seniors', title: 'U18 - SENIORS', tagline: 'Compétition & ambition', height: 400 },
+  { category: 'U14-U17', title: 'U14 - U17', tagline: 'Progression & performance', image: '/assets/player_u6_u9.webp', height: 340, flip: true },
+  { category: 'U18-Seniors', title: 'U18 - SENIORS', tagline: 'Compétition & ambition', image: '/assets/player_u10_u13.webp', height: 400, flip: true },
 ];
 
 const PATHWAY: { icon: IconName; label: string }[] = [
@@ -38,44 +40,6 @@ const ALUMNI = [
   { firstName: 'Jérôme', lastName: 'Roussillon', initials: 'JR' },
 ];
 
-function PlayerSilhouette({ height, jerseyNumber }: { height: number; jerseyNumber: string }) {
-  return (
-    <svg
-      viewBox="0 0 220 320"
-      style={{ height: `${height}px`, width: 'auto' }}
-      className="text-royal animate-float drop-shadow-[0_22px_30px_rgba(13,27,75,0.28)]"
-      aria-hidden="true"
-    >
-      {/* Tête */}
-      <circle cx="110" cy="48" r="28" fill="currentColor" opacity="0.92" />
-      {/* Maillot */}
-      <path
-        d="M44 110 L82 86 Q100 100 110 100 Q120 100 138 86 L176 110 L168 152 L148 144 L148 232 Q148 244 138 244 L82 244 Q72 244 72 232 L72 144 L52 152 Z"
-        fill="currentColor"
-      />
-      {/* Liseré orange */}
-      <path d="M82 100 L110 116 L138 100" stroke="#f26522" strokeWidth="3" fill="none" strokeLinecap="round" />
-      <text
-        x="110"
-        y="190"
-        textAnchor="middle"
-        fontFamily="var(--font-display)"
-        fontWeight="800"
-        fontStyle="italic"
-        fontSize="64"
-        fill="#f26522"
-      >
-        {jerseyNumber}
-      </text>
-      {/* Shorts */}
-      <path d="M82 244 L72 290 L102 290 L110 256 L118 290 L148 290 L138 244 Z" fill="#0d1b4b" />
-      {/* Jambes */}
-      <rect x="86" y="290" width="22" height="28" rx="4" fill="currentColor" opacity="0.85" />
-      <rect x="112" y="290" width="22" height="28" rx="4" fill="currentColor" opacity="0.85" />
-    </svg>
-  );
-}
-
 export default function EquipesPage() {
   const [active, setActive] = useState<MatchCategory | 'Tous'>('Tous');
 
@@ -89,7 +53,7 @@ export default function EquipesPage() {
   return (
     <>
       {/* ============ HERO ============ */}
-      <section className="relative isolate overflow-hidden bg-white pt-28 lg:pt-24" aria-labelledby="equipes-title">
+      <section className="relative isolate overflow-hidden bg-white pt-16 lg:pt-10" aria-labelledby="equipes-title">
         {/* Mascotte tigre en fond */}
         <div
           aria-hidden="true"
@@ -98,7 +62,7 @@ export default function EquipesPage() {
 
         <div className="relative z-10 mx-auto grid max-w-[1500px] gap-10 px-5 pb-16 sm:px-8 lg:grid-cols-[1fr_280px] lg:gap-12 lg:px-10 min-[1400px]:px-16">
           {/* ===== Colonne principale ===== */}
-          <div className="pt-8 lg:pt-12">
+          <div className="pt-1 lg:pt-2">
             <Reveal>
               <p className="eyebrow text-flame mb-4">Nos équipes</p>
               <h1 id="equipes-title" className="hero-title text-royal lg:text-[6rem]">
@@ -114,22 +78,18 @@ export default function EquipesPage() {
 
             {/* ===== 4 joueurs + chevrons ===== */}
             <Reveal delay={0.12}>
-              <div className="mt-10 flex items-end justify-center gap-2 sm:gap-4 lg:gap-3 lg:justify-start">
+              <div className="mt-6 flex items-end justify-center gap-2 sm:gap-4 lg:gap-3 lg:justify-start">
                 {STAGES.map((stage, i) => (
                   <div key={stage.category} className="flex flex-col items-center" style={{ width: `${24 + i * 2}%` }}>
                     <div className="flex h-[420px] items-end justify-center sm:h-[440px]">
-                      {stage.image ? (
-                        <Image
-                          src={stage.image}
-                          alt={`Joueur SDUS FC catégorie ${stage.title}`}
-                          width={220}
-                          height={400}
-                          className="w-auto object-contain animate-float drop-shadow-[0_22px_30px_rgba(13,27,75,0.28)]"
-                          style={{ height: `${stage.height}px`, animationDelay: `${i * 0.4}s` }}
-                        />
-                      ) : (
-                        <PlayerSilhouette height={stage.height} jerseyNumber={i === 2 ? '7' : '9'} />
-                      )}
+                      <Image
+                        src={stage.image}
+                        alt={`Joueur SDUS FC catégorie ${stage.title}`}
+                        width={220}
+                        height={400}
+                        className={`w-auto object-contain animate-float drop-shadow-[0_22px_30px_rgba(13,27,75,0.28)] ${stage.flip ? 'scale-x-[-1]' : ''}`}
+                        style={{ height: `${stage.height}px`, animationDelay: `${i * 0.4}s` }}
+                      />
                     </div>
                   </div>
                 ))}

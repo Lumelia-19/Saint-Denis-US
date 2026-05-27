@@ -43,7 +43,7 @@ export default function ClubPage() {
       </svg>
 
       {/* ===== Bandeau Stade de France (top, plein large, vague) ===== */}
-      <div className="relative h-[38vh] min-h-[280px] w-full overflow-hidden lg:h-[46vh] lg:min-h-[360px]">
+      <div className="relative h-[28vh] min-h-[220px] w-full overflow-hidden lg:h-[34vh] lg:min-h-[280px]">
         <div className="absolute inset-0" style={{ clipPath: 'url(#club-banner-wave)' }}>
           <Image
             src="/assets/club_hero.webp"
@@ -59,7 +59,7 @@ export default function ClubPage() {
       {/* ===== Contenu principal ===== */}
       <div className="relative z-10 mx-auto grid max-w-[1500px] gap-10 px-5 pb-20 sm:px-8 lg:grid-cols-[1fr_440px] lg:gap-14 lg:px-10 min-[1400px]:px-16">
         {/* ====== Colonne gauche ====== */}
-        <div className="pt-10 lg:pt-14">
+        <div className="pt-4 lg:pt-6">
           <Reveal>
             <p className="eyebrow text-flame mb-4 animate-rise">Le Club · À propos</p>
             <h1
