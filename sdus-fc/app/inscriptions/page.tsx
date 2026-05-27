@@ -167,8 +167,8 @@ export default function InscriptionsPage() {
                       </span>
                       <h3 className="display-sm text-[1.12rem] italic text-royal min-[1400px]:text-[1.35rem]">{step.title}</h3>
                     </div>
-                    <div className="mx-auto my-4 grid h-[4.5rem] w-[4.5rem] place-items-center text-royal min-[1400px]:my-6 min-[1400px]:h-20 min-[1400px]:w-20">
-                      <Icon name={step.icon} size={72} strokeWidth={1.6} className={i === 0 ? 'text-royal [&_*]:stroke-current' : ''} />
+                    <div className="mx-auto my-4 grid h-[4.5rem] w-[4.5rem] place-items-center text-flame min-[1400px]:my-6 min-[1400px]:h-20 min-[1400px]:w-20">
+                      <Icon name={step.icon} size={72} strokeWidth={1.6} />
                     </div>
                     <p className="mx-auto max-w-[210px] text-center text-[0.78rem] leading-relaxed text-deep/78 min-[1400px]:text-[0.82rem]">{step.desc}</p>
                     {i < STEPS.length - 1 && (

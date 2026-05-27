@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import SectionTitle from '@/components/ui/SectionTitle';
 import Reveal from '@/components/Reveal';
 import Icon, { type IconName } from '@/components/Icon';
 import { ContactFormData } from '@/lib/types';
@@ -56,12 +55,15 @@ export default function ContactPage() {
       <div className="absolute inset-0 bg-grid-ink opacity-70" />
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <Reveal>
-          <SectionTitle
-            eyebrow="Une question ?"
-            blue="Contactez-"
-            orange="nous"
-            subtitle="Le club vous répond rapidement — inscriptions, détections, partenariats ou simple curiosité."
-          />
+          <p className="eyebrow text-flame mb-4">Une question ?</p>
+          <h1 className="hero-title text-royal lg:text-[5.6rem]">
+            Nous{' '}
+            <span className="text-flame">contacter</span>
+          </h1>
+          <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep/82 sm:text-lg">
+            Le club vous répond rapidement — inscriptions, détections, partenariats ou simple curiosité.
+          </p>
         </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">

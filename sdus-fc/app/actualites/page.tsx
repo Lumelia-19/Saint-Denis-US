@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import Icon from '@/components/Icon';
+import Reveal from '@/components/Reveal';
 
 const ARTICLES = [
   {
@@ -32,130 +33,114 @@ const SOCIAL_IMAGES = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Actualités | Saint-Denis U.S. Football Club',
+  title: 'Actualités',
   description:
-    'Toute l’actualité du Saint-Denis U.S. Football Club : matchs, stages, événements, bénévoles et vie du club.',
+    "Toute l'actualité du Saint-Denis U.S. Football Club : matchs, stages, événements, bénévoles et vie du club.",
 };
 
 function formatDate(date: string) {
-  return new Date(date).toLocaleDateString('fr-FR', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  });
-}
-
-function NewsDecor() {
-  return (
-    <>
-      <svg
-        className="pointer-events-none absolute right-5 top-28 hidden h-72 w-56 lg:block"
-        viewBox="0 0 220 300"
-        aria-hidden="true"
-      >
-        <circle cx="150" cy="32" r="16" fill="none" stroke="#f26522" strokeWidth="7" />
-        <circle cx="158" cy="108" r="15" fill="none" stroke="#fff" strokeWidth="7" />
-        <circle cx="144" cy="214" r="10" fill="none" stroke="#fff" strokeWidth="5" />
-        <path d="M178 48c42 36 40 78 8 116" fill="none" stroke="#f26522" strokeWidth="5" strokeLinecap="round" />
-        <path d="M158 166c-22 24-19 47 5 68" fill="none" stroke="#fff" strokeWidth="3.5" strokeDasharray="12 12" strokeLinecap="round" />
-        <path d="M70 68l23 23M93 68 70 91M62 170l24 24M86 170l-24 24M154 176l24 24M178 176l-24 24" stroke="#fff" strokeWidth="6" strokeLinecap="round" />
-        <path d="m182 54-25-4M157 50l15 21M152 164l19-20M171 144l4 26" fill="none" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
-      </svg>
-      <svg
-        className="pointer-events-none absolute bottom-4 left-0 hidden h-48 w-72 text-flame sm:block"
-        viewBox="0 0 360 240"
-        aria-hidden="true"
-      >
-        <path d="M12 186c72-52 170-58 294-16" fill="none" stroke="#f26522" strokeWidth="5" strokeLinecap="round" />
-        <path d="M30 206c84-30 162-30 252 2" fill="none" stroke="#1b3a8c" strokeWidth="3" strokeLinecap="round" />
-        <path d="M6 70l22 22M28 70 6 92M62 178l22 22M84 178l-22 22M142 194l20 20M162 194l-20 20" stroke="#0d1b4b" strokeWidth="5" strokeLinecap="round" />
-        <circle cx="52" cy="124" r="15" fill="none" stroke="#0d1b4b" strokeWidth="5" />
-        <circle cx="104" cy="188" r="13" fill="none" stroke="#f26522" strokeWidth="5" />
-      </svg>
-    </>
-  );
+  return new Date(date)
+    .toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' })
+    .toUpperCase();
 }
 
 export default function ActualitesPage() {
   return (
-    <>
-      <section className="relative isolate min-h-screen overflow-hidden bg-white pt-28 lg:pt-24" aria-labelledby="actualites-title">
-        <Image
-          src="/assets/bg-article.png"
-          alt="Joueurs du Saint-Denis U.S. Football Club célébrant un moment de match."
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[62%_0%]"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.88)_31%,rgba(255,255,255,0.16)_58%,rgba(255,255,255,0)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.58)_0%,rgba(255,255,255,0.04)_42%,rgba(18,54,143,0.72)_100%)]" />
-        <NewsDecor />
+    <section className="relative isolate overflow-hidden bg-white pt-28 lg:pt-24" aria-labelledby="actualites-title">
+      {/* Mascotte tigre en fond */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/assets/logo.png')] bg-[length:46rem_auto] bg-[position:18%_18%] bg-no-repeat opacity-[0.04] dark:opacity-[0.07]"
+      />
 
-        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6rem)] max-w-[1500px] content-center gap-6 px-5 pb-8 sm:px-8 lg:grid-cols-[1.18fr_0.82fr] lg:px-12 min-[1400px]:px-20">
-          <div className="pt-8 lg:pt-16">
-            <div className="max-w-[620px]">
-              <h1 id="actualites-title" className="hero-title text-royal lg:text-[5.4rem]">
-                Actualités
-                <br />
-                <span className="text-flame">&amp; vie du club</span>
-              </h1>
-              <div className="mt-4 h-1.5 w-14 rounded-full bg-flame" />
-              <p className="mt-5 max-w-[520px] text-base font-semibold leading-relaxed text-deep sm:text-lg">
-                Retrouvez toute l’actualité du Saint-Denis U.S. Football Club : résumés de matchs, stages,
-                actions des bénévoles, moments forts avec les familles, événements et initiatives qui font
-                vivre notre club au quotidien.
-              </p>
-            </div>
+      <div className="relative z-10 mx-auto grid max-w-[1500px] gap-10 px-5 pb-16 sm:px-8 lg:grid-cols-[1.18fr_0.82fr] lg:gap-12 lg:px-10 min-[1400px]:px-16">
+        {/* ============ COLONNE GAUCHE ============ */}
+        <div className="pt-8 lg:pt-12">
+          <Reveal>
+            <p className="eyebrow text-flame mb-4">Vie du club</p>
+            <h1 id="actualites-title" className="hero-title text-royal lg:text-[5.6rem]">
+              Actualités
+              <br />
+              <span className="text-flame">&amp; vie du club</span>
+            </h1>
+            <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-deep/82 sm:text-lg">
+              Retrouvez toute l&apos;actualité du Saint-Denis U.S. Football Club : résumés de matchs, stages,
+              actions des bénévoles, moments forts avec les familles, événements et initiatives qui font vivre
+              notre club au quotidien.
+            </p>
+          </Reveal>
 
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
-              {ARTICLES.map((article) => (
-                <article
-                  key={article.title}
-                  className="group overflow-hidden rounded-[1.15rem] bg-white shadow-[0_22px_60px_-34px_rgba(13,27,75,0.65)]"
-                >
-                  <div className="relative h-24 overflow-hidden bg-royal min-[1500px]:h-28">
+          {/* ===== 3 articles ===== */}
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            {ARTICLES.map((article, i) => (
+              <Reveal key={article.title} delay={i * 0.08}>
+                <article className="group flex h-full flex-col overflow-hidden rounded-[1.15rem] border border-cloud bg-white shadow-[0_22px_60px_-34px_rgba(13,27,75,0.55)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-30px_rgba(13,27,75,0.7)]">
+                  <div className="relative h-32 overflow-hidden bg-royal">
                     <Image
                       src={article.image}
                       alt={`Photo liée à l'article : ${article.title}`}
                       fill
-                      sizes="(min-width: 1024px) 23vw, (min-width: 768px) 33vw, 100vw"
+                      sizes="(min-width: 1024px) 22vw, (min-width: 640px) 30vw, 100vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,27,75,0)_25%,rgba(13,27,75,0.22)_100%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,27,75,0)_30%,rgba(13,27,75,0.4)_100%)]" />
                   </div>
-                  <div className="p-4">
-                    <p className="flex items-center gap-2 text-[0.68rem] font-extrabold uppercase tracking-wide text-royal/80">
+                  <div className="flex flex-1 flex-col p-5">
+                    <p className="flex items-center gap-2 text-[0.7rem] font-extrabold uppercase tracking-wide text-royal">
                       <Icon name="calendar" size={14} className="text-flame" />
                       {formatDate(article.date)}
                     </p>
-                    <h2 className="display-sm mt-3 min-h-[2.45rem] text-[1.05rem] italic text-royal min-[1500px]:text-[1.1rem]">
+                    <h2 className="display-sm mt-3 text-[1.05rem] italic leading-tight text-royal group-hover:text-flame transition-colors">
                       {article.title}
                     </h2>
-                    <p className="mt-2 min-h-[3.25rem] text-[0.74rem] font-medium leading-relaxed text-deep/78 min-[1500px]:text-[0.76rem]">
-                      {article.excerpt}
-                    </p>
-                    <Link href="/contact" className="mt-3 flex justify-end text-flame">
-                      <Icon name="arrow-right" size={24} strokeWidth={2.4} />
+                    <p className="mt-2 flex-1 text-[0.78rem] leading-relaxed text-deep/72">{article.excerpt}</p>
+                    <Link href="/contact" aria-label={`Lire l'article : ${article.title}`} className="mt-4 flex justify-end text-flame">
+                      <Icon name="arrow-right" size={22} strokeWidth={2.4} className="transition-transform duration-300 group-hover:translate-x-1" />
                     </Link>
                   </div>
                 </article>
-              ))}
-            </div>
+              </Reveal>
+            ))}
+          </div>
 
-            <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href="/actualites" className="btn-primary group min-w-64">
+          {/* ===== CTA bas ===== */}
+          <Reveal delay={0.18}>
+            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <Link href="/contact" className="btn-primary group">
                 Voir toutes les actualités
                 <Icon name="arrow-right" size={18} strokeWidth={2.4} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              <p className="text-sm font-semibold text-white lg:text-white/95">
-                Rejoignez-nous et vivez l’actualité du club au plus près.
+              <p className="text-sm font-semibold text-deep/72">
+                Rejoignez-nous et vivez l&apos;actualité du club au plus près.
               </p>
             </div>
-          </div>
+          </Reveal>
+        </div>
 
-          <aside className="grid content-end gap-5 lg:pt-72">
-            <section className="rounded-[1.15rem] bg-white/96 p-5 shadow-[0_22px_60px_-34px_rgba(13,27,75,0.62)] backdrop-blur">
+        {/* ============ COLONNE DROITE ============ */}
+        <aside className="flex flex-col gap-6 lg:pt-8">
+          {/* Image héros en arc */}
+          <Reveal>
+            <div
+              className="relative aspect-[4/3] w-full overflow-hidden shadow-[0_40px_100px_-40px_rgba(13,27,75,0.6)]"
+              style={{ clipPath: 'ellipse(85% 95% at 55% 50%)' }}
+            >
+              <Image
+                src="/assets/bg-article.png"
+                alt="Joueur du SDUS FC 93 célébrant un moment de match."
+                fill
+                priority
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover object-[62%_28%]"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,27,75,0)_60%,rgba(13,27,75,0.45)_100%)]" />
+            </div>
+          </Reveal>
+
+          {/* Panel Instagram */}
+          <Reveal delay={0.1}>
+            <section className="rounded-[1.15rem] border border-cloud bg-white p-5 shadow-[0_22px_60px_-34px_rgba(13,27,75,0.6)]">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <Icon name="instagram" size={28} className="text-flame" />
@@ -165,10 +150,10 @@ export default function ActualitesPage() {
                   href="https://www.instagram.com/sdus_football/"
                   target="_blank"
                   rel="noreferrer"
-                  className="btn-primary group px-5 py-3 text-sm"
+                  className="btn-primary group px-5 py-2.5 text-sm"
                 >
-                  S’abonner
-                  <Icon name="arrow-right" size={17} strokeWidth={2.4} />
+                  S&apos;abonner
+                  <Icon name="arrow-right" size={16} strokeWidth={2.4} />
                 </a>
               </div>
               <div className="mt-4 grid grid-cols-4 gap-2">
@@ -178,7 +163,7 @@ export default function ActualitesPage() {
                     href="https://www.instagram.com/sdus_football/"
                     target="_blank"
                     rel="noreferrer"
-                    className="relative aspect-[1.08] overflow-hidden rounded-lg bg-royal"
+                    className="relative aspect-square overflow-hidden rounded-lg bg-royal"
                   >
                     <Image
                       src={src}
@@ -191,20 +176,23 @@ export default function ActualitesPage() {
                 ))}
               </div>
             </section>
+          </Reveal>
 
-            <figure className="relative overflow-hidden rounded-[1.15rem] bg-white/96 p-6 shadow-[0_22px_60px_-34px_rgba(13,27,75,0.62)] backdrop-blur">
-              <Icon name="quote" size={38} className="text-flame" />
-              <blockquote className="relative z-10 mt-3 display-sm text-[1.45rem] italic leading-[1.03] text-royal">
-                Ce club, c’est plus qu’un maillot. C’est une famille, des valeurs, et une passion partagée.
+          {/* Citation */}
+          <Reveal delay={0.18}>
+            <figure className="relative overflow-hidden rounded-[1.15rem] border border-cloud bg-white p-6 shadow-[0_22px_60px_-34px_rgba(13,27,75,0.6)]">
+              <Icon name="quote" size={42} className="text-flame" />
+              <blockquote className="display-sm relative z-10 mt-3 text-[1.4rem] italic leading-[1.05] text-royal">
+                Ce club, c&apos;est plus qu&apos;un maillot. C&apos;est une famille, des valeurs, et une passion partagée.
               </blockquote>
-              <figcaption className="relative z-10 mt-5 text-sm font-bold text-flame">- Samir, parent bénévole</figcaption>
-              <div className="absolute -bottom-10 -right-8 text-royal/8">
-                <Icon name="shield" size={180} strokeWidth={1.15} />
+              <figcaption className="relative z-10 mt-5 text-sm font-bold text-flame">— Samir, parent bénévole</figcaption>
+              <div className="pointer-events-none absolute -bottom-10 -right-8 text-royal/[0.07]">
+                <Icon name="shield" size={180} strokeWidth={1.2} />
               </div>
             </figure>
-          </aside>
-        </div>
-      </section>
-    </>
+          </Reveal>
+        </aside>
+      </div>
+    </section>
   );
 }

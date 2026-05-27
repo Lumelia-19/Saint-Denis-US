@@ -1,267 +1,221 @@
-import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import TacticalPattern from '@/components/TacticalPattern';
-import SectionTitle from '@/components/ui/SectionTitle';
-import StatCounter from '@/components/StatCounter';
 import Reveal from '@/components/Reveal';
 import Icon, { type IconName } from '@/components/Icon';
 
-const NODES: { label: string; icon: IconName }[] = [
-  { label: 'Commerces de proximité', icon: 'building' },
-  { label: 'Entreprises locales', icon: 'flame' },
-  { label: 'Collectivités & institutions', icon: 'shield' },
-  { label: 'Acteurs économiques', icon: 'star' },
-  { label: 'Éducation & formation', icon: 'graduation' },
-  { label: 'Associations & citoyens', icon: 'users' },
-];
-
-const AVANTAGES: { icon: IconName; title: string; desc: string }[] = [
-  { icon: 'eye', title: 'Visibilité', desc: 'Votre marque exposée sur nos équipements, terrains et supports digitaux.' },
-  { icon: 'map-pin', title: 'Territoire', desc: 'Un ancrage fort à Saint-Denis et un lien direct avec les habitants.' },
-  { icon: 'flame', title: 'Jeunesse', desc: 'Associez votre image à plus de 500 jeunes et à des valeurs positives.' },
-];
-
-const OFFERS: { title: string; desc: string; points: string[]; icon: IconName }[] = [
+const NODES: { icon: IconName; title: string; className: string }[] = [
   {
-    title: 'Partenaire local',
-    desc: 'Pour les commerces et entreprises qui veulent soutenir un projet visible sur le territoire.',
-    points: ['Présence digitale', 'Visibilité événements', 'Mention club'],
     icon: 'store',
+    title: 'Commerces\nde proximité',
+    className: 'lg:left-[22%] lg:top-[2%]',
   },
   {
-    title: 'Soutien formation',
-    desc: "Pour financer l'équipement, les stages et l'accompagnement des jeunes joueurs.",
-    points: ['Actions jeunesse', 'Reportage photo', 'Bilan de saison'],
-    icon: 'graduation',
+    icon: 'building',
+    title: 'Entreprises\nlocales',
+    className: 'lg:right-[22%] lg:top-[2%]',
   },
   {
-    title: 'Partenaire majeur',
-    desc: 'Pour associer durablement votre image au développement du SDUS FC 93.',
-    points: ['Activation sur mesure', 'Supports premium', 'Opérations terrain'],
+    icon: 'institution',
+    title: 'Collectivités\n& institutions',
+    className: 'lg:left-[4%] lg:top-[37%]',
+  },
+  {
     icon: 'handshake',
+    title: 'Acteurs\néconomiques',
+    className: 'lg:right-[4%] lg:top-[37%]',
+  },
+  {
+    icon: 'users',
+    title: 'Associations\n& citoyens',
+    className: 'lg:left-[25%] lg:bottom-[8%]',
+  },
+  {
+    icon: 'graduation',
+    title: 'Éducation\n& formation',
+    className: 'lg:right-[25%] lg:bottom-[8%]',
   },
 ];
 
-const IMPACT_STATS: { value: number; suffix: string; label: string; icon: IconName }[] = [
-  { value: 500, suffix: '+', label: 'Jeunes licenciés', icon: 'users' },
-  { value: 12, suffix: '', label: 'Équipes engagées', icon: 'shield' },
-  { value: 30, suffix: ' ans', label: "D'ancrage local", icon: 'star' },
-  { value: 1, suffix: '', label: 'Stade emblématique', icon: 'map-pin' },
+const BENEFITS: { icon: IconName; title: string; desc: string }[] = [
+  {
+    icon: 'eye',
+    title: 'Visibilité',
+    desc: "Valorisez votre image auprès d'un public engagé, local et grandissant.",
+  },
+  {
+    icon: 'map-pin',
+    title: 'Territoire',
+    desc: 'Associez votre marque au développement et à la dynamique de Saint-Denis.',
+  },
+  {
+    icon: 'users',
+    title: 'Jeunesse',
+    desc: "Soutenez la formation, l'éducation et l'insertion par le sport de la nouvelle génération.",
+  },
 ];
-
-const ORBIT_DURATION = 32;
 
 export const metadata: Metadata = {
-  title: 'Partenaires & Sponsoring | Saint-Denis U.S. Football Club',
+  title: 'Partenaires & Sponsoring',
   description:
     'Devenez partenaire du SDUS FC 93 et soutenez un club formateur, populaire et ancré à Saint-Denis.',
 };
 
 export default function PartenairesPage() {
   return (
-    <>
-      {/* ===================== HERO + ORBIT ===================== */}
-      <section className="relative pt-36 pb-20 bg-mesh overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.18]">
-          <Image
-            src="/assets/sponsor-bg.webp"
-            alt=""
-            aria-hidden="true"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-deep/86 via-deep/78 to-deep/96" />
-        <TacticalPattern />
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto">
-            <p className="eyebrow text-flame justify-center mb-4 animate-rise">Ensemble, plus forts</p>
-            <h1 className="hero-title text-white animate-rise" style={{ animationDelay: '120ms' }}>
-              Partenaires &amp;
-              <br />
-              <span className="text-gradient">Sponsoring</span>
-            </h1>
-            <p
-              className="text-white/70 mt-5 leading-relaxed animate-rise"
-              style={{ animationDelay: '200ms' }}
-            >
-              Un club, c&apos;est un écosystème. Rejoignez celles et ceux qui font grandir le SDUS FC.
+    <section
+      className="relative isolate overflow-hidden bg-white pt-28 pb-16 lg:pt-24 lg:min-h-screen"
+      aria-labelledby="partenaires-title"
+    >
+      {/* ===== Background avec image skyline ===== */}
+      <div aria-hidden="true" className="absolute inset-0 -z-10">
+        <Image
+          src="/assets/sponsor-bg.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.88)_34%,rgba(255,255,255,0.56)_58%,rgba(255,255,255,0.18)_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.3)_52%,rgba(27,58,140,0.18)_82%,rgba(255,255,255,0.96)_100%)]"
+      />
+      <TacticalPattern tone="onLight" className="z-[1] opacity-55" />
+
+      <div className="relative z-10 mx-auto max-w-[1500px] px-5 sm:px-8 lg:min-h-[900px] lg:px-10 min-[1400px]:px-16">
+        {/* ===== Stat 500+ JEUNES LICENCIÉS (gauche) ===== */}
+        <Reveal delay={0.04} className="lg:absolute lg:left-6 lg:top-[28%] lg:w-[230px]">
+          <div className="mb-8 max-w-xs lg:mb-0">
+            <span className="mb-4 grid h-14 w-14 place-items-center rounded-full border border-flame/30 bg-white/76 text-flame shadow-[0_18px_40px_-28px_rgba(13,27,75,0.55)] backdrop-blur">
+              <Icon name="users" size={28} />
+            </span>
+            <p className="nums text-6xl font-black italic leading-none text-royal" style={{ fontFamily: 'var(--font-display)' }}>
+              500<span className="text-flame">+</span>
+            </p>
+            <p className="display-sm mt-1 text-2xl italic text-flame">Jeunes licenciés</p>
+            <p className="mt-4 text-sm leading-relaxed text-deep/78">
+              Un vivier de talents formés avec passion au cœur de Saint-Denis.
             </p>
           </div>
+        </Reveal>
 
-          {/* Orbit — md and up */}
-          <div className="relative hidden md:block h-[440px] mt-6">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full border border-white/10" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full border border-dashed border-flame/15" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center w-36 h-36 rounded-full bg-flame shadow-[var(--shadow-glow)]">
-              <div className="absolute inset-0 rounded-full bg-flame/40 animate-pulse-ring" />
-              <Image src="/assets/logo.png" alt="SDUS FC 93" width={84} height={84} className="relative h-20 w-auto" />
+        {/* ===== Stat 1 STADE (droite) ===== */}
+        <Reveal delay={0.1} className="lg:absolute lg:right-6 lg:top-[31%] lg:w-[260px]">
+          <div className="mb-8 max-w-xs lg:mb-0 lg:ml-auto">
+            <div className="relative mb-4 hidden h-24 w-full overflow-hidden rounded-[0.9rem] border border-cloud bg-white/80 shadow-[0_18px_40px_-28px_rgba(13,27,75,0.55)] backdrop-blur lg:block">
+              <Image src="/assets/sponsor-bg.webp" alt="Vue du Stade de France à Saint-Denis." fill sizes="260px" className="object-cover" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,27,75,0)_30%,rgba(13,27,75,0.6)_100%)]" />
+              <p className="absolute bottom-2 left-3 text-[0.7rem] font-extrabold uppercase tracking-wide text-white">
+                Stade de France · Saint-Denis
+              </p>
             </div>
-            {NODES.map((node, i) => (
-              <div
-                key={node.label}
-                className="orbit-node"
-                style={
-                  {
-                    '--orbit-r': '150px',
-                    animationDelay: `-${(ORBIT_DURATION / NODES.length) * i}s`,
-                  } as CSSProperties
-                }
-              >
-                <div className="-translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full glass grid place-items-center text-center p-3">
-                  <Icon name={node.icon} size={20} className="text-flame mb-1" />
-                  <span className="text-white text-[0.66rem] font-semibold leading-tight">{node.label}</span>
-                </div>
-              </div>
-            ))}
+            <span className="mb-4 grid h-14 w-14 place-items-center rounded-full border border-flame/30 bg-white/76 text-flame shadow-[0_18px_40px_-28px_rgba(13,27,75,0.55)] backdrop-blur">
+              <Icon name="target" size={28} />
+            </span>
+            <p className="nums text-6xl font-black italic leading-none text-royal" style={{ fontFamily: 'var(--font-display)' }}>
+              1
+              <span className="ml-2 align-middle text-2xl not-italic text-royal">stade</span>
+            </p>
+            <p className="display-sm mt-1 text-2xl italic text-flame">Au cœur de Saint-Denis</p>
+            <p className="mt-4 text-sm leading-relaxed text-deep/78">Le Stade de France, notre fierté, notre force.</p>
           </div>
+        </Reveal>
 
-          {/* Grid — mobile */}
-          <div className="grid grid-cols-2 gap-3 mt-10 md:hidden">
-            {NODES.map((node) => (
-              <div key={node.label} className="glass rounded-2xl p-4 flex flex-col items-center text-center gap-1">
-                <Icon name={node.icon} size={20} className="text-flame" />
-                <span className="text-white text-xs font-semibold leading-tight">{node.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* ===== Centre : Orbit + titre ===== */}
+        <div className="relative mx-auto flex min-h-[560px] max-w-[1080px] flex-col items-center justify-center py-8 text-center lg:min-h-[680px] lg:py-0">
+          <svg
+            className="pointer-events-none absolute left-1/2 top-1/2 hidden h-[620px] w-[620px] -translate-x-1/2 -translate-y-1/2 overflow-visible lg:block"
+            viewBox="0 0 620 620"
+            aria-hidden="true"
+          >
+            <circle
+              cx="310"
+              cy="310"
+              r="300"
+              fill="none"
+              stroke="rgba(27,58,140,0.58)"
+              strokeWidth="2"
+              strokeDasharray="7 8"
+            />
+            {[10, 60, 120, 180, 240, 300].map((deg) => {
+              const rad = (deg * Math.PI) / 180;
+              const x = 310 + Math.cos(rad) * 300;
+              const y = 310 + Math.sin(rad) * 300;
+              return <circle key={deg} cx={x} cy={y} r="7" fill="white" stroke="#f26522" strokeWidth="2" />;
+            })}
+          </svg>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 top-1/2 hidden h-[390px] w-[390px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/54 blur-2xl lg:block"
+          />
 
-      {/* ===================== STATS ===================== */}
-      <section className="relative -mt-10 bg-surface pb-20">
-        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 lg:grid-cols-4">
-          {IMPACT_STATS.map((stat, i) => (
-            <Reveal key={stat.label} delay={i * 0.05}>
-              <div className="relative overflow-hidden rounded-[1.25rem] bg-mesh px-5 py-7 shadow-[0_24px_70px_-40px_rgba(13,27,75,0.7)]">
-                <StatCounter value={stat.value} suffix={stat.suffix} label={stat.label} icon={stat.icon} animate={false} />
+          {NODES.map((node, i) => (
+            <Reveal key={node.title} delay={0.2 + i * 0.06} className={`lg:absolute lg:z-10 ${node.className}`}>
+              <div className="mb-3 flex items-center gap-3 rounded-[1rem] border border-royal/20 bg-white/90 px-4 py-3 text-left shadow-[0_22px_44px_-30px_rgba(13,27,75,0.72)] backdrop-blur lg:mb-0 lg:block lg:h-36 lg:w-36 lg:rounded-full lg:border-2 lg:border-royal lg:px-4 lg:py-6 lg:text-center lg:ring-4 lg:ring-white/70">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-royal lg:mx-auto lg:mb-2 lg:h-auto lg:w-auto lg:bg-transparent">
+                  <Icon name={node.icon} size={32} strokeWidth={1.8} />
+                </span>
+                <p className="display-sm whitespace-pre-line text-base italic leading-[0.98] text-royal lg:text-[1.02rem]">
+                  {node.title}
+                </p>
               </div>
             </Reveal>
           ))}
-        </div>
-      </section>
 
-      {/* ===================== AVANTAGES ===================== */}
-      <section className="py-20 bg-mist">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal>
-            <SectionTitle
-              eyebrow="Pourquoi nous soutenir"
-              blue="Un partenariat"
-              orange="qui a du sens"
-              center
-            />
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            {AVANTAGES.map((a, i) => (
-              <Reveal key={a.title} delay={i * 0.1}>
-                <div className="card card-hover group p-8 text-center h-full flex flex-col items-center">
-                  <span className="grid place-items-center w-16 h-16 rounded-2xl bg-deep text-flame mb-6 transition-colors duration-300 group-hover:bg-flame group-hover:text-white">
-                    <Icon name={a.icon} size={28} />
-                  </span>
-                  <h3 className="display-sm text-xl text-navy mb-3">{a.title}</h3>
-                  <p className="text-slate-soft text-sm leading-relaxed">{a.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== OFFRES ===================== */}
-      <section className="relative overflow-hidden bg-surface py-20">
-        <div className="absolute inset-0 bg-grid-ink opacity-70" />
-        <div className="relative z-10 mx-auto max-w-7xl px-6">
-          <Reveal>
-            <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
-              <SectionTitle
-                eyebrow="Offres partenaires"
-                blue="Choisir le bon"
-                orange="niveau d'engagement"
-                subtitle="Une base claire, puis une activation adaptée à votre image, votre budget et votre présence locale."
+          <div className="relative z-20 mx-auto max-w-xl pt-2 lg:pt-0">
+            <h1 id="partenaires-title" className="hero-title text-royal">
+              Partenaires
+              <br />
+              <span className="text-flame">&amp; Sponsoring</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-deep/78">
+              Soutenez un club formateur et ambitieux, engagé pour la jeunesse, l&apos;inclusion et le rayonnement
+              de Saint-Denis. Ensemble, construisons un avenir gagnant pour notre territoire.
+            </p>
+            <Link href="/contact" className="btn-primary group mt-8 min-w-56">
+              Devenir partenaire
+              <Icon
+                name="arrow-right"
+                size={18}
+                strokeWidth={2.4}
+                className="transition-transform duration-300 group-hover:translate-x-1"
               />
-              <div className="rounded-[1.35rem] border border-cloud bg-white px-6 py-5 text-sm leading-relaxed text-slate-soft shadow-[0_18px_48px_-34px_rgba(13,27,75,0.45)]">
-                <strong className="text-royal">Chaque partenariat doit être utile.</strong> Visibilité, jeunesse,
-                territoire : le club privilégie des actions simples à comprendre et faciles à valoriser.
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            {OFFERS.map((offer, i) => (
-              <Reveal key={offer.title} delay={i * 0.08}>
-                <article className="card card-hover flex h-full flex-col p-7">
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="grid h-14 w-14 place-items-center rounded-2xl bg-royal text-white">
-                      <Icon name={offer.icon} size={26} />
-                    </span>
-                    <span className="display-sm text-3xl text-flame/70">0{i + 1}</span>
-                  </div>
-                  <h3 className="display-sm mt-7 text-3xl italic text-navy">{offer.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-soft">{offer.desc}</p>
-                  <ul className="mt-7 space-y-3">
-                    {offer.points.map((point) => (
-                      <li key={point} className="flex items-center gap-3 text-sm font-semibold text-navy">
-                        <span className="grid h-6 w-6 place-items-center rounded-full border border-flame text-flame">
-                          <Icon name="check" size={14} strokeWidth={3} />
-                        </span>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/contact" className="btn-outline group mt-8 w-full">
-                    Discuter de cette offre
-                    <Icon name="arrow-right" size={16} strokeWidth={2.4} className="transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </article>
-              </Reveal>
-            ))}
+            </Link>
           </div>
         </div>
-      </section>
 
-      {/* ===================== CTA ===================== */}
-      <section className="bg-mist py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal>
-            <div className="relative grid overflow-hidden rounded-[2rem] bg-mesh lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="relative min-h-[260px]">
-                <Image
-                  src="/assets/sponsor-bg.webp"
-                  alt="Vue du territoire de Saint-Denis autour du stade."
-                  fill
-                  sizes="(min-width: 1024px) 42vw, 100vw"
-                  className="object-cover"
+        {/* ===== 3 cartes avantages ===== */}
+        <div className="mt-10 grid gap-4 lg:absolute lg:bottom-10 lg:left-1/2 lg:mt-0 lg:w-[780px] lg:-translate-x-1/2 lg:grid-cols-3">
+          {BENEFITS.map((item, i) => (
+            <Reveal key={item.title} delay={0.32 + i * 0.08}>
+              <Link
+                href="/contact"
+                className="group relative block h-full min-h-[170px] overflow-hidden rounded-[0.9rem] border border-royal/14 bg-white/96 p-6 shadow-[0_22px_54px_-34px_rgba(13,27,75,0.65)] backdrop-blur transition duration-300 hover:-translate-y-1"
+              >
+                <span className="mb-4 grid h-12 w-12 place-items-center rounded-full bg-royal text-white shadow-[0_14px_28px_-18px_rgba(13,27,75,0.8)] transition-colors duration-300 group-hover:bg-flame">
+                  <Icon name={item.icon} size={24} />
+                </span>
+                <h3 className="display-sm text-2xl italic text-royal">{item.title}</h3>
+                <div className="mt-2 mb-3 h-0.5 w-9 rounded-full bg-flame" />
+                <p className="text-sm leading-relaxed text-slate-soft">{item.desc}</p>
+                <Icon
+                  name="arrow-right"
+                  size={24}
+                  strokeWidth={2}
+                  className="absolute bottom-5 right-5 text-flame transition-transform duration-300 group-hover:translate-x-1"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-deep/10 to-deep/82" />
-              </div>
-              <div className="relative z-10 flex flex-col justify-center px-7 py-10 sm:px-10 lg:px-14">
-                <p className="eyebrow mb-5 text-flame">Passer à l&apos;action</p>
-                <h2 className="section-title max-w-xl text-white">
-                  Construire un partenariat utile au club et au territoire
-                </h2>
-                <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/68">
-                  Une proposition claire, des contreparties lisibles, et des actions que vos équipes comme les
-                  familles du club peuvent comprendre.
-                </p>
-                <Link href="/contact" className="btn-primary group mt-8 w-fit">
-                  Devenir partenaire
-                  <Icon
-                    name="arrow-right"
-                    size={17}
-                    strokeWidth={2.4}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </Link>
-              </div>
-            </div>
-          </Reveal>
+              </Link>
+            </Reveal>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

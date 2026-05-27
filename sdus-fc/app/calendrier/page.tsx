@@ -1,30 +1,18 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import MatchCard from '@/components/MatchCard';
-import SectionTitle from '@/components/ui/SectionTitle';
 import Reveal from '@/components/Reveal';
 import Icon from '@/components/Icon';
-import { fetchMatches, filterMatchesByCategory } from '@/lib/matches';
+import { useMatches } from '@/hooks/useMatches';
 import { Match, MatchCategory } from '@/lib/types';
 
 const TABS: (MatchCategory | 'Tous')[] = ['Tous', 'U6-U9', 'U10-U13', 'U14-U17', 'U18-Seniors', 'Seniors'];
 
 export default function CalendrierPage() {
-  const [upcoming, setUpcoming] = useState<Match[]>([]);
-  const [results, setResults] = useState<Match[]>([]);
   const [active, setActive] = useState<MatchCategory | 'Tous'>('Tous');
-
-  useEffect(() => {
-    // API_INTEGRATION_POINT — pour brancher une vraie API, changer le provider dans lib/matches.ts
-    fetchMatches().then((data) => {
-      setUpcoming(data.upcoming);
-      setResults(data.results);
-    });
-  }, []);
-
-  const filteredUpcoming = filterMatchesByCategory(upcoming, active);
-  const filteredResults = filterMatchesByCategory(results, active);
+  // API_INTEGRATION_POINT — cache + refetch gérés par useMatches ; provider dans lib/matches.ts
+  const { upcoming, results, loading, error } = useMatches(active);
 
   return (
     <>
@@ -33,12 +21,15 @@ export default function CalendrierPage() {
         <div className="absolute inset-0 bg-grid-ink opacity-70" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <Reveal>
-            <SectionTitle
-              eyebrow="Saison 2025 / 2026"
-              blue="Calendrier &"
-              orange="Résultats"
-              subtitle="Tous les matchs du club, toutes catégories confondues. Filtrez pour suivre votre équipe."
-            />
+            <p className="eyebrow text-flame mb-4">Saison 2025 / 2026</p>
+            <h1 className="hero-title text-royal lg:text-[5.6rem]">
+              Calendrier &amp;{' '}
+              <span className="text-flame">Résultats</span>
+            </h1>
+            <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep/82 sm:text-lg">
+              Tous les matchs du club, toutes catégories confondues. Filtrez pour suivre votre équipe.
+            </p>
           </Reveal>
           <Reveal>
             <div className="flex flex-wrap gap-2.5 mt-8">
@@ -54,26 +45,48 @@ export default function CalendrierPage() {
 
       {/* ===================== MATCHES ===================== */}
       <section className="pb-24 bg-mist">
-        <div className="max-w-7xl mx-auto px-6 pt-14 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <MatchColumn
-            icon="calendar"
-            title="À venir"
-            accent="bg-royal"
-            count={filteredUpcoming.length}
-            matches={filteredUpcoming}
-            emptyMsg="Aucun match à venir pour cette catégorie."
-          />
-          <MatchColumn
-            icon="trophy"
-            title="Résultats"
-            accent="bg-flame"
-            count={filteredResults.length}
-            matches={filteredResults}
-            emptyMsg="Aucun résultat enregistré pour cette catégorie."
-          />
+        <div className="max-w-7xl mx-auto px-6 pt-14">
+          {loading ? (
+            <MatchesLoader />
+          ) : error ? (
+            <p className="text-center text-red-500 text-sm py-24">{error}</p>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <MatchColumn
+                icon="calendar"
+                title="À venir"
+                accent="bg-royal"
+                count={upcoming.length}
+                matches={upcoming}
+                emptyMsg="Aucun match à venir pour cette catégorie."
+              />
+              <MatchColumn
+                icon="trophy"
+                title="Résultats"
+                accent="bg-flame"
+                count={results.length}
+                matches={results}
+                emptyMsg="Aucun résultat enregistré pour cette catégorie."
+              />
+            </div>
+          )}
         </div>
       </section>
     </>
+  );
+}
+
+function MatchesLoader() {
+  return (
+    <div className="flex items-center justify-center gap-2 py-24" role="status" aria-label="Chargement des matchs">
+      {[0, 1, 2].map((i) => (
+        <span
+          key={i}
+          className="w-3 h-3 rounded-full bg-flame animate-bounce"
+          style={{ animationDelay: `${i * 0.15}s` }}
+        />
+      ))}
+    </div>
   );
 }
 

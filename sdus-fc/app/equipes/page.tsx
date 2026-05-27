@@ -1,8 +1,7 @@
 'use client';
-import { useState, type CSSProperties } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import TacticalPattern from '@/components/TacticalPattern';
 import PlayerCard from '@/components/PlayerCard';
 import SectionTitle from '@/components/ui/SectionTitle';
 import Reveal from '@/components/Reveal';
@@ -12,48 +11,67 @@ import { MatchCategory } from '@/lib/types';
 
 const CATEGORIES = getCategories();
 
-const STAGES: {
+type StageDef = {
   category: MatchCategory;
-  label: string;
-  age: string;
-  icon: IconName;
+  title: string;
+  tagline: string;
   image?: string;
-}[] = [
-  { category: 'U6-U9', label: 'École de foot', age: '5 à 9 ans', icon: 'star', image: '/assets/player_u6_u9.webp' },
-  { category: 'U10-U13', label: 'Préformation', age: '10 à 13 ans', icon: 'ball', image: '/assets/player_u10_u13.webp' },
-  { category: 'U14-U17', label: 'Formation', age: '14 à 17 ans', icon: 'target' },
-  { category: 'U18-Seniors', label: 'Performance', age: '18 ans et +', icon: 'trophy' },
+  height: number;
+};
+
+const STAGES: StageDef[] = [
+  { category: 'U6-U9', title: 'U6 - U9', tagline: 'Découverte & plaisir', image: '/assets/player_u6_u9.webp', height: 240 },
+  { category: 'U10-U13', title: 'U10 - U13', tagline: 'Apprentissage & fondations', image: '/assets/player_u10_u13.webp', height: 290 },
+  { category: 'U14-U17', title: 'U14 - U17', tagline: 'Progression & performance', height: 340 },
+  { category: 'U18-Seniors', title: 'U18 - SENIORS', tagline: 'Compétition & ambition', height: 400 },
 ];
 
-const PLAYER_PATHWAY: { title: string; desc: string; icon: IconName }[] = [
-  {
-    title: 'Observer',
-    desc: "Identifier l'âge, le niveau et l'envie du joueur avant de l'orienter.",
-    icon: 'search',
-  },
-  {
-    title: 'Intégrer',
-    desc: "Trouver le bon groupe, les bons créneaux et un cadre d'entraînement stable.",
-    icon: 'users',
-  },
-  {
-    title: 'Progresser',
-    desc: 'Fixer des objectifs simples : technique, attitude, régularité, plaisir du jeu.',
-    icon: 'target',
-  },
+const PATHWAY: { icon: IconName; label: string }[] = [
+  { icon: 'ball', label: 'Technique' },
+  { icon: 'sparkles', label: 'Intelligence de jeu' },
+  { icon: 'users', label: 'Comportement' },
+  { icon: 'handshake', label: 'Engagement collectif' },
 ];
 
-const TRAINING_INFO = [
-  ['École de foot', 'Mercredi + samedi'],
-  ['Préformation', '2 à 3 séances / semaine'],
-  ['Formation', 'Projet de jeu + compétition'],
-  ['Seniors', 'Performance et vie de groupe'],
+const ALUMNI = [
+  { firstName: 'Wissam', lastName: 'Ben Yedder', initials: 'WB' },
+  { firstName: 'Jérôme', lastName: 'Roussillon', initials: 'JR' },
 ];
 
-function Jersey({ className = '', style }: { className?: string; style?: CSSProperties }) {
+function PlayerSilhouette({ height, jerseyNumber }: { height: number; jerseyNumber: string }) {
   return (
-    <svg viewBox="0 0 48 48" className={className} style={style} fill="currentColor" aria-hidden>
-      <path d="M16 6 6 13l4 8 5-3v22h18V18l5 3 4-8L32 6c-2 3-5 4.5-8 4.5S18 9 16 6Z" />
+    <svg
+      viewBox="0 0 220 320"
+      style={{ height: `${height}px`, width: 'auto' }}
+      className="text-royal animate-float drop-shadow-[0_22px_30px_rgba(13,27,75,0.28)]"
+      aria-hidden="true"
+    >
+      {/* Tête */}
+      <circle cx="110" cy="48" r="28" fill="currentColor" opacity="0.92" />
+      {/* Maillot */}
+      <path
+        d="M44 110 L82 86 Q100 100 110 100 Q120 100 138 86 L176 110 L168 152 L148 144 L148 232 Q148 244 138 244 L82 244 Q72 244 72 232 L72 144 L52 152 Z"
+        fill="currentColor"
+      />
+      {/* Liseré orange */}
+      <path d="M82 100 L110 116 L138 100" stroke="#f26522" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <text
+        x="110"
+        y="190"
+        textAnchor="middle"
+        fontFamily="var(--font-display)"
+        fontWeight="800"
+        fontStyle="italic"
+        fontSize="64"
+        fill="#f26522"
+      >
+        {jerseyNumber}
+      </text>
+      {/* Shorts */}
+      <path d="M82 244 L72 290 L102 290 L110 256 L118 290 L148 290 L138 244 Z" fill="#0d1b4b" />
+      {/* Jambes */}
+      <rect x="86" y="290" width="22" height="28" rx="4" fill="currentColor" opacity="0.85" />
+      <rect x="112" y="290" width="22" height="28" rx="4" fill="currentColor" opacity="0.85" />
     </svg>
   );
 }
@@ -70,173 +88,150 @@ export default function EquipesPage() {
 
   return (
     <>
-      {/* ===================== HERO ===================== */}
-      <section className="relative pt-32 pb-16 bg-mist bg-grid-ink overflow-hidden">
-        <TacticalPattern className="opacity-60" tone="onLight" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      {/* ============ HERO ============ */}
+      <section className="relative isolate overflow-hidden bg-white pt-28 lg:pt-24" aria-labelledby="equipes-title">
+        {/* Mascotte tigre en fond */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[url('/assets/logo.png')] bg-[length:46rem_auto] bg-[position:42%_44%] bg-no-repeat opacity-[0.05] dark:opacity-[0.08]"
+        />
+
+        <div className="relative z-10 mx-auto grid max-w-[1500px] gap-10 px-5 pb-16 sm:px-8 lg:grid-cols-[1fr_280px] lg:gap-12 lg:px-10 min-[1400px]:px-16">
+          {/* ===== Colonne principale ===== */}
+          <div className="pt-8 lg:pt-12">
             <Reveal>
               <p className="eyebrow text-flame mb-4">Nos équipes</p>
-              <h1 className="hero-title">
-                <span className="text-navy">Équipes &amp;</span>
+              <h1 id="equipes-title" className="hero-title text-royal lg:text-[6rem]">
+                Équipes &amp;
                 <br />
-                <span className="text-gradient">Formation</span>
+                <span className="text-flame">Formation</span>
               </h1>
-              <p className="text-slate-soft text-lg max-w-lg mt-6 leading-relaxed">
-                De l&apos;école de foot aux seniors, le SDUS FC accompagne chaque joueur dans sa progression
-                sportive et humaine.
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-deep/82 sm:text-lg">
+                Un parcours structuré, adapté à chaque âge pour développer le potentiel de chaque joueur et former
+                des citoyens sur et en dehors du terrain.
               </p>
             </Reveal>
 
+            {/* ===== 4 joueurs + chevrons ===== */}
             <Reveal delay={0.12}>
-              <div className="flex items-end justify-center gap-3 sm:gap-5">
-                {STAGES.map((s, i) => (
-                  <div key={s.category} className="flex flex-col items-center">
-                    {s.image ? (
-                      <Image
-                        src={s.image}
-                        alt={`Joueur ${s.category}`}
-                        width={170}
-                        height={250}
-                        className="w-auto object-contain animate-float"
-                        style={{ height: `${120 + i * 26}px`, animationDelay: `${i * 0.5}s` }}
-                      />
-                    ) : (
-                      <Jersey
-                        className="text-accent animate-float"
-                        style={{
-                          width: `${88 + i * 14}px`,
-                          height: `${88 + i * 14}px`,
-                          animationDelay: `${i * 0.5}s`,
-                        }}
-                      />
-                    )}
-                    <span className="chip bg-surface text-navy border border-cloud mt-2">{s.category}</span>
+              <div className="mt-10 flex items-end justify-center gap-2 sm:gap-4 lg:gap-3 lg:justify-start">
+                {STAGES.map((stage, i) => (
+                  <div key={stage.category} className="flex flex-col items-center" style={{ width: `${24 + i * 2}%` }}>
+                    <div className="flex h-[420px] items-end justify-center sm:h-[440px]">
+                      {stage.image ? (
+                        <Image
+                          src={stage.image}
+                          alt={`Joueur SDUS FC catégorie ${stage.title}`}
+                          width={220}
+                          height={400}
+                          className="w-auto object-contain animate-float drop-shadow-[0_22px_30px_rgba(13,27,75,0.28)]"
+                          style={{ height: `${stage.height}px`, animationDelay: `${i * 0.4}s` }}
+                        />
+                      ) : (
+                        <PlayerSilhouette height={stage.height} jerseyNumber={i === 2 ? '7' : '9'} />
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
+
+              <div className="mt-2 grid grid-cols-2 gap-2 sm:flex sm:items-stretch sm:gap-2 lg:gap-3">
+                {STAGES.map((stage, i) => {
+                  const isFirst = i === 0;
+                  const isLast = i === STAGES.length - 1;
+                  const clipPath = isFirst
+                    ? 'polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%)'
+                    : isLast
+                      ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%, 14px 50%)'
+                      : 'polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%)';
+                  return (
+                  <button
+                    key={stage.category}
+                    onClick={() => selectStage(stage.category)}
+                    className="group relative flex-1 overflow-hidden bg-royal px-3 py-3 text-left text-white shadow-[0_18px_40px_-24px_rgba(13,27,75,0.7)] transition hover:bg-flame sm:px-4 sm:py-4"
+                    style={{ clipPath }}
+                  >
+                    <p className="display-sm text-base italic leading-none sm:text-lg lg:text-xl">
+                      {stage.title.split('-')[0].trim()}-
+                      <span className="text-flame group-hover:text-white">{stage.title.split('-').slice(1).join('-').trim()}</span>
+                    </p>
+                    <p className="mt-1.5 text-[0.66rem] font-semibold uppercase leading-tight tracking-wide text-white/82 sm:text-[0.72rem]">
+                      {stage.tagline}
+                    </p>
+                  </button>
+                  );
+                })}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <div className="mt-10 flex justify-end">
+                <Link href="#roster" className="btn-primary group">
+                  Voir toutes les équipes
+                  <Icon
+                    name="arrow-right"
+                    size={18}
+                    strokeWidth={2.4}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
+              </div>
             </Reveal>
           </div>
-        </div>
-      </section>
 
-      {/* ===================== FORMATION PATHWAY ===================== */}
-      <section className="py-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal>
-            <SectionTitle
-              eyebrow="Le parcours"
-              blue="Un chemin de"
-              orange="progression"
-              subtitle="Chaque catégorie a son projet de jeu et son encadrement diplômé. Cliquez pour voir l'effectif."
-            />
-          </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {STAGES.map((s, i) => (
-              <Reveal key={s.category} delay={i * 0.08}>
-                <button
-                  onClick={() => selectStage(s.category)}
-                  className="card card-hover sheen group w-full text-left p-7 h-full flex flex-col"
-                >
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="grid place-items-center w-14 h-14 rounded-2xl bg-mist text-accent transition-colors duration-300 group-hover:bg-flame group-hover:text-white">
-                      <Icon name={s.icon} size={26} />
-                    </span>
-                    <span className="display-sm text-3xl text-slate-soft">0{i + 1}</span>
-                  </div>
-                  <h3 className="display-sm text-xl text-navy">{s.category}</h3>
-                  <p className="text-flame font-semibold text-sm">{s.label}</p>
-                  <p className="text-slate-soft text-sm mt-1 flex-1">{s.age}</p>
-                  <span className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm mt-4">
-                    Voir l&apos;effectif
-                    <Icon
-                      name="arrow-right"
-                      size={15}
-                      strokeWidth={2.4}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                  </span>
-                </button>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== PLAYER JOURNEY ===================== */}
-      <section className="relative overflow-hidden bg-mist py-20">
-        <div className="absolute inset-0 bg-grid-ink opacity-70" />
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
-          <Reveal>
-            <div className="relative h-full min-h-[420px] overflow-hidden rounded-[1.5rem] bg-deep shadow-[0_28px_80px_-42px_rgba(13,27,75,0.82)]">
-              <Image
-                src="/assets/club_hero.webp"
-                alt="Vue du stade et du territoire autour du SDUS FC 93."
-                fill
-                sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,12,32,0.08)_0%,rgba(7,12,32,0.88)_100%)]" />
-              <div className="absolute bottom-0 left-0 right-0 p-7">
-                <p className="eyebrow mb-4 text-flame">Trouver sa place</p>
-                <h2 className="section-title max-w-md text-white">
-                  Un parcours clair pour chaque joueur
-                </h2>
-                <p className="mt-4 max-w-md text-sm leading-relaxed text-white/68">
-                  Le bon groupe n&apos;est pas seulement une question d&apos;âge : rythme, niveau, motivation et cadre
-                  familial comptent aussi.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="grid gap-5">
-            <Reveal>
-              <div className="grid gap-4 md:grid-cols-3">
-                {PLAYER_PATHWAY.map((item, i) => (
-                  <article key={item.title} className="card p-6">
-                    <div className="flex items-center justify-between">
-                      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-royal text-white">
-                        <Icon name={item.icon} size={23} />
+          {/* ===== Sidebar droite ===== */}
+          <aside className="flex flex-col gap-5 lg:pt-20">
+            <Reveal delay={0.1}>
+              <section className="rounded-[1.2rem] border border-cloud bg-white p-6 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)]">
+                <h2 className="display-sm text-center text-[1.15rem] italic text-royal">Parcours joueur</h2>
+                <div className="mt-3 mx-auto h-1 w-12 rounded-full bg-flame" />
+                <ul className="mt-5 space-y-4">
+                  {PATHWAY.map((item) => (
+                    <li key={item.label} className="flex items-center gap-3">
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-royal text-white">
+                        <Icon name={item.icon} size={20} />
                       </span>
-                      <span className="display-sm text-3xl text-flame/70">0{i + 1}</span>
-                    </div>
-                    <h3 className="display-sm mt-6 text-2xl italic text-navy">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-soft">{item.desc}</p>
-                  </article>
-                ))}
-              </div>
+                      <span className="text-sm font-semibold text-deep">{item.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
             </Reveal>
 
-            <Reveal delay={0.08}>
-              <div className="relative overflow-hidden rounded-[1.5rem] bg-white p-6 shadow-[0_20px_60px_-38px_rgba(13,27,75,0.5)]">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {TRAINING_INFO.map(([label, value]) => (
-                    <div key={label} className="rounded-2xl bg-mist px-5 py-4">
-                      <p className="text-xs font-bold uppercase tracking-[0.16em] text-flame">{label}</p>
-                      <p className="mt-1 font-semibold text-navy">{value}</p>
-                    </div>
+            <Reveal delay={0.18}>
+              <section className="rounded-[1.2rem] border border-cloud bg-white p-6 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)]">
+                <h2 className="display-sm text-center text-[1.05rem] italic leading-tight text-royal">
+                  Anciens passés
+                  <br />
+                  par le club
+                </h2>
+                <div className="mt-3 mx-auto h-1 w-12 rounded-full bg-flame" />
+                <ul className="mt-5 space-y-4">
+                  {ALUMNI.map((p) => (
+                    <li key={p.lastName} className="flex items-center gap-3">
+                      <span
+                        className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-royal text-white shadow-[0_10px_22px_-12px_rgba(13,27,75,0.75)] ring-2 ring-flame/60"
+                        style={{ fontFamily: 'var(--font-display)' }}
+                      >
+                        <span className="text-sm font-black italic">{p.initials}</span>
+                      </span>
+                      <span className="text-sm font-semibold leading-tight text-deep">
+                        {p.firstName}
+                        <br />
+                        {p.lastName}
+                      </span>
+                    </li>
                   ))}
-                </div>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="max-w-xl text-sm leading-relaxed text-slate-soft">
-                    Pour une première inscription ou un changement de catégorie, le club confirme toujours le bon
-                    groupe avant validation.
-                  </p>
-                  <Link href="/contact" className="btn-primary group shrink-0">
-                    Trouver son équipe
-                    <Icon name="arrow-right" size={16} strokeWidth={2.4} className="transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
+                </ul>
+              </section>
             </Reveal>
-          </div>
+          </aside>
         </div>
       </section>
 
-      {/* ===================== ROSTER ===================== */}
-      <section id="roster" className="bg-surface py-20 scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ============ ROSTER ============ */}
+      <section id="roster" className="bg-mist py-20 scroll-mt-24" aria-label="Effectifs">
+        <div className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10 min-[1400px]:px-16">
           <Reveal>
             <SectionTitle
               eyebrow="Effectifs"
@@ -247,7 +242,7 @@ export default function EquipesPage() {
           </Reveal>
 
           <Reveal>
-            <div className="flex flex-wrap gap-2.5 mt-8 mb-12">
+            <div className="mt-8 mb-12 flex flex-wrap gap-2.5">
               {(['Tous', ...CATEGORIES] as (MatchCategory | 'Tous')[]).map((cat) => (
                 <button key={cat} onClick={() => setActive(cat)} className="pill" data-active={active === cat}>
                   {cat}
@@ -256,7 +251,7 @@ export default function EquipesPage() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {filtered.map((player, i) => (
               <Reveal key={player.id} delay={(i % 4) * 0.08}>
                 <PlayerCard player={player} />
@@ -265,7 +260,7 @@ export default function EquipesPage() {
           </div>
 
           {filtered.length === 0 && (
-            <p className="text-center text-slate-soft py-16">Aucun joueur dans cette catégorie.</p>
+            <p className="py-16 text-center text-slate-soft">Aucun joueur dans cette catégorie.</p>
           )}
         </div>
       </section>
