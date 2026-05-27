@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 import TacticalPattern from '@/components/TacticalPattern';
 import Reveal from '@/components/Reveal';
@@ -26,28 +25,52 @@ export const metadata: Metadata = {
 
 export default function ClubPage() {
   return (
-    <section className="relative isolate overflow-hidden bg-white pt-28 lg:pt-24" aria-labelledby="club-title">
-      {/* ===== Background tigre mascotte ===== */}
+    <section className="relative isolate overflow-hidden bg-white pt-20 lg:pt-16" aria-labelledby="club-title">
+      {/* ===== Mascotte tigre en fond ===== */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/assets/logo.png')] bg-[length:48rem_auto] bg-[position:14%_22%] bg-no-repeat opacity-[0.045] dark:opacity-[0.08]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/assets/logo.png')] bg-[length:46rem_auto] bg-[position:30%_42%] bg-no-repeat opacity-[0.06] dark:opacity-[0.08]"
       />
 
-      <div className="relative z-10 mx-auto grid max-w-[1500px] gap-12 px-5 pb-20 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:px-10 min-[1400px]:px-16">
-        {/* ============ LEFT — Hero + Timeline + Values ============ */}
-        <div className="pt-10 lg:pt-16">
-          <p className="eyebrow text-flame mb-4 animate-rise">Le Club · À propos</p>
-          <h1 id="club-title" className="hero-title text-royal animate-rise lg:text-[5.6rem]" style={{ animationDelay: '120ms' }}>
-            Qui sommes-
-            <span className="text-flame">nous ?</span>
-          </h1>
-          <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-deep/82 sm:text-lg">
-            Le Saint-Denis U.S. Football Club, c&apos;est plus qu&apos;un club : c&apos;est une famille.{' '}
-            <strong className="font-extrabold text-royal">Formateur, populaire et ambitieux</strong>, nous faisons
-            grandir les talents et les valeurs, au cœur de Saint-Denis{' '}
-            <strong className="font-extrabold text-flame">depuis 1993</strong>.
-          </p>
+      {/* ===== Bandeau Stade de France (top, plein large, courbé) ===== */}
+      <div className="relative h-[36vh] min-h-[260px] w-full overflow-hidden lg:h-[42vh] lg:min-h-[320px]">
+        <div
+          className="absolute inset-0"
+          style={{ clipPath: 'ellipse(110% 110% at 65% -10%)' }}
+        >
+          <Image
+            src="/assets/club_hero.webp"
+            alt="Vue aérienne du Stade de France à Saint-Denis."
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
+      </div>
+
+      {/* ===== Contenu principal ===== */}
+      <div className="relative z-10 mx-auto grid max-w-[1500px] gap-10 px-5 pb-20 sm:px-8 lg:grid-cols-[1fr_440px] lg:gap-14 lg:px-10 min-[1400px]:px-16">
+        {/* ====== Colonne gauche ====== */}
+        <div className="pt-10 lg:pt-14">
+          <Reveal>
+            <p className="eyebrow text-flame mb-4 animate-rise">Le Club · À propos</p>
+            <h1
+              id="club-title"
+              className="hero-title text-royal animate-rise lg:text-[5.6rem]"
+              style={{ animationDelay: '120ms' }}
+            >
+              Qui sommes-
+              <span className="text-flame">nous ?</span>
+            </h1>
+            <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-deep/82 sm:text-lg">
+              Le Saint-Denis U.S. Football Club, c&apos;est plus qu&apos;un club : c&apos;est une famille.{' '}
+              <strong className="font-extrabold text-royal">Formateur, populaire et ambitieux</strong>, nous
+              faisons grandir les talents et les valeurs, au cœur de Saint-Denis{' '}
+              <strong className="font-extrabold text-flame">depuis 1993</strong>.
+            </p>
+          </Reveal>
 
           {/* ===== Timeline horizontale ===== */}
           <div className="relative mt-14">
@@ -102,44 +125,38 @@ export default function ClubPage() {
           </div>
         </div>
 
-        {/* ============ RIGHT — Image hero en arc + citation finale ============ */}
-        <div className="relative flex flex-col gap-8 lg:pt-10">
+        {/* ====== Colonne droite : pilule ovale + citation ====== */}
+        <div className="relative flex flex-col items-center gap-10 lg:items-end">
+          {/* Motifs tactiques décoratifs autour de la pilule */}
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden lg:block">
+            <TacticalPattern tone="onLight" className="opacity-60" />
+          </div>
+
+          {/* === Pilule ovale verticale avec joueurs === */}
           <Reveal>
-            <div className="relative aspect-[4/5] w-full overflow-hidden shadow-[0_40px_100px_-40px_rgba(13,27,75,0.6)]"
-              style={{ clipPath: 'ellipse(75% 96% at 70% 50%)' }}
+            <div
+              className="relative h-[440px] w-[300px] overflow-hidden shadow-[0_40px_100px_-40px_rgba(13,27,75,0.65)] sm:h-[520px] sm:w-[360px] lg:-mt-44 lg:h-[600px] lg:w-[400px] xl:h-[640px] xl:w-[420px]"
+              style={{ borderRadius: '50%' }}
             >
               <Image
-                src="/assets/club_hero.webp"
-                alt="Stade de France et joueurs du SDUS FC 93 de dos."
+                src="/assets/hero_bg.jpeg"
+                alt="Joueurs du SDUS FC 93 sur le terrain."
                 fill
                 priority
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
+                sizes="(min-width: 1280px) 420px, (min-width: 1024px) 400px, (min-width: 640px) 360px, 300px"
+                className="object-cover object-[55%_30%]"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,27,75,0)_55%,rgba(13,27,75,0.4)_100%)]" />
-              <TacticalPattern tone="onDark" className="opacity-50" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,27,75,0)_55%,rgba(13,27,75,0.32)_100%)]" />
             </div>
           </Reveal>
 
+          {/* === Citation finale === */}
           <Reveal delay={0.15}>
-            <div className="rounded-[1.4rem] border border-cloud bg-white/96 p-8 text-right shadow-[0_24px_60px_-40px_rgba(13,27,75,0.5)] backdrop-blur lg:pr-12">
-              <p className="section-title text-royal">
-                Bleu et orange dans le <span className="text-flame">cœur</span>,
-                <br />
-                Saint-Denis comme <span className="text-flame">terrain</span>.
-              </p>
-              <div className="mt-6 flex justify-end">
-                <Link href="/equipes" className="btn-primary group">
-                  Découvrir nos équipes
-                  <Icon
-                    name="arrow-right"
-                    size={17}
-                    strokeWidth={2.4}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </Link>
-              </div>
-            </div>
+            <p className="section-title mt-2 max-w-[28rem] text-right text-royal lg:text-[2.1rem] lg:leading-[1.08] xl:text-[2.4rem]">
+              Bleu et orange dans le <span className="text-flame">cœur</span>,
+              <br />
+              Saint-Denis comme <span className="text-flame">terrain</span>.
+            </p>
           </Reveal>
         </div>
       </div>
