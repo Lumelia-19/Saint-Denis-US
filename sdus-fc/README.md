@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SDUS FC 93 — Site officiel
 
-## Getting Started
+Site du **Saint-Denis U.S. Football Club**, construit avec Next.js 16 (App Router), React 19, TypeScript et Tailwind CSS v4.
 
-First, run the development server:
+## Démarrage
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # serveur de développement → http://localhost:3000
+npm run build    # build de production
+npm run start    # sert le build de production
+npm run lint     # ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Variables d'environnement
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copier `.env.local.example` vers `.env.local` :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cp .env.local.example .env.local
+```
 
-## Learn More
+| Variable | Rôle |
+| --- | --- |
+| `NEXT_PUBLIC_MATCHES_PROVIDER` | Source des matchs : `mock`, `fff`, `footclubs`, `sporteasy`, `custom` |
+| `NEXT_PUBLIC_MATCHES_API_URL` | URL de l'API matchs (si provider distant) |
+| `NEXT_PUBLIC_MATCHES_API_KEY` | Clé d'API matchs |
+| `NEXT_PUBLIC_CLUB_ID` | Identifiant du club (`SDUS93`) |
 
-To learn more about Next.js, take a look at the following resources:
+## Connecter une vraie API de matchs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Par défaut le site utilise des données **mock**. Pour brancher une API réelle :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Mettre `NEXT_PUBLIC_MATCHES_PROVIDER` sur `fff` / `footclubs` / `sporteasy` / `custom`, et renseigner l'URL + la clé.
+2. Dans [`lib/matches.ts`](lib/matches.ts), implémenter le `case` du provider dans `fetchMatches()` et son parser (les `TODO` sont déjà en place).
+3. Aucune autre modification : le hook [`hooks/useMatches.ts`](hooks/useMatches.ts) gère le cache (TTL 5 min, `localStorage`) et le rafraîchissement automatique toutes les 5 minutes.
 
-## Deploy on Vercel
+## Couche données & fonctionnalités
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Fichier | Rôle |
+| --- | --- |
+| `hooks/useMatches.ts` | Récupère les matchs : cache `localStorage` (5 min) + refetch auto |
+| `hooks/useNotifications.ts` | Permission navigateur + abonnements par catégorie |
+| `lib/sw-register.ts` | Enregistre le Service Worker (production uniquement) |
+| `components/ServiceWorkerInit.tsx` | Déclenche l'enregistrement au montage |
+| `components/NotificationButton.tsx` | Bouton d'abonnement aux notifications d'une catégorie |
+| `public/sw.js` | Service Worker : cache d'assets + notifications push |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Ajouter un joueur
+
+Éditer le tableau `PLAYERS` dans [`lib/players.ts`](lib/players.ts) :
+
+```ts
+{
+  id: 'sen-09', firstName: 'Prénom', lastName: 'Nom', number: 12,
+  position: 'Milieu', category: 'Seniors', birthYear: 2001,
+  photo: '/assets/players/sen-09.png', // optionnel
+  stats: { matches: 0, goals: 0, assists: 0, rating: 6.5 },
+}
+```
+
+`category` doit être l'une de : `U6-U9`, `U10-U13`, `U14-U17`, `U18-Seniors`, `Seniors`.
+
+## Thème clair / sombre
+
+Le site gère un mode clair et un mode sombre (bouton dans la navbar). La préférence est mémorisée dans `localStorage` et un script anti-flash l'applique avant le rendu.
+
+## Déploiement sur Vercel
+
+1. Importer le dépôt sur [vercel.com](https://vercel.com/new).
+2. Configurer les variables d'environnement (`NEXT_PUBLIC_*`) dans **Project Settings → Environment Variables**.
+3. Vercel détecte Next.js automatiquement — aucun réglage de build supplémentaire.
+
+## Structure
+
+```
+app/            Pages (App Router) + layout + globals.css
+components/     Composants UI (Navbar, Footer, cartes, Icon, …)
+hooks/          Hooks de données (useMatches, useNotifications)
+lib/            Données & logique (types, matches, players, sw-register)
+public/         Assets statiques + sw.js
+```

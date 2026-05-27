@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -5,37 +6,27 @@ import TacticalPattern from '@/components/TacticalPattern';
 import Reveal from '@/components/Reveal';
 import Icon, { type IconName } from '@/components/Icon';
 
-const NODES: { icon: IconName; title: string; className: string }[] = [
-  {
-    icon: 'store',
-    title: 'Commerces\nde proximité',
-    className: 'lg:left-[22%] lg:top-[2%]',
-  },
-  {
-    icon: 'building',
-    title: 'Entreprises\nlocales',
-    className: 'lg:right-[22%] lg:top-[2%]',
-  },
-  {
-    icon: 'institution',
-    title: 'Collectivités\n& institutions',
-    className: 'lg:left-[4%] lg:top-[37%]',
-  },
-  {
-    icon: 'handshake',
-    title: 'Acteurs\néconomiques',
-    className: 'lg:right-[4%] lg:top-[37%]',
-  },
-  {
-    icon: 'users',
-    title: 'Associations\n& citoyens',
-    className: 'lg:left-[25%] lg:bottom-[8%]',
-  },
-  {
-    icon: 'graduation',
-    title: 'Éducation\n& formation',
-    className: 'lg:right-[25%] lg:bottom-[8%]',
-  },
+// Vrai cercle (pas ellipse), positions calculees sur le cercle
+const ORBIT = 640;     // taille du conteneur carre de l'orbite (px)
+const RADIUS = 260;    // rayon du cercle pointille
+const NODE = 128;      // diametre de chaque bulle (lg:w-32 = 128px)
+const C = ORBIT / 2;   // centre
+
+function nodePos(angleDeg: number): CSSProperties {
+  const rad = (angleDeg * Math.PI) / 180;
+  return {
+    left: `${C + RADIUS * Math.cos(rad) - NODE / 2}px`,
+    top: `${C + RADIUS * Math.sin(rad) - NODE / 2}px`,
+  };
+}
+
+const NODES: { icon: IconName; title: string; angle: number }[] = [
+  { icon: 'store', title: 'Commerces\nde proximité', angle: 235 },     // haut-gauche
+  { icon: 'building', title: 'Entreprises\nlocales', angle: 305 },     // haut-droite
+  { icon: 'institution', title: 'Collectivités\n& institutions', angle: 180 }, // gauche
+  { icon: 'handshake', title: 'Acteurs\néconomiques', angle: 0 },      // droite
+  { icon: 'users', title: 'Associations\n& citoyens', angle: 125 },    // bas-gauche
+  { icon: 'graduation', title: 'Éducation\n& formation', angle: 55 },  // bas-droite
 ];
 
 const BENEFITS: { icon: IconName; title: string; desc: string }[] = [
@@ -91,7 +82,7 @@ export default function PartenairesPage() {
 
       <div className="relative z-10 mx-auto max-w-[1500px] px-5 sm:px-8 lg:min-h-[900px] lg:px-10 min-[1400px]:px-16">
         {/* ===== Stat 500+ JEUNES LICENCIÉS (gauche) ===== */}
-        <Reveal delay={0.04} className="lg:absolute lg:left-6 lg:top-[28%] lg:w-[230px]">
+        <Reveal delay={0.04} className="lg:absolute lg:left-[8%] lg:top-[36%] lg:w-[180px]">
           <div className="mb-8 max-w-xs lg:mb-0">
             <span className="mb-4 grid h-14 w-14 place-items-center rounded-full border border-flame/30 bg-white/76 text-flame shadow-[0_18px_40px_-28px_rgba(13,27,75,0.55)] backdrop-blur">
               <Icon name="users" size={28} />
@@ -107,15 +98,8 @@ export default function PartenairesPage() {
         </Reveal>
 
         {/* ===== Stat 1 STADE (droite) ===== */}
-        <Reveal delay={0.1} className="lg:absolute lg:right-6 lg:top-[31%] lg:w-[260px]">
+        <Reveal delay={0.1} className="lg:absolute lg:right-[8%] lg:top-[36%] lg:w-[180px]">
           <div className="mb-8 max-w-xs lg:mb-0 lg:ml-auto">
-            <div className="relative mb-4 hidden h-24 w-full overflow-hidden rounded-[0.9rem] border border-cloud bg-white/80 shadow-[0_18px_40px_-28px_rgba(13,27,75,0.55)] backdrop-blur lg:block">
-              <Image src="/assets/sponsor-bg.webp" alt="Vue du Stade de France à Saint-Denis." fill sizes="260px" className="object-cover" />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,27,75,0)_30%,rgba(13,27,75,0.6)_100%)]" />
-              <p className="absolute bottom-2 left-3 text-[0.7rem] font-extrabold uppercase tracking-wide text-white">
-                Stade de France · Saint-Denis
-              </p>
-            </div>
             <span className="mb-4 grid h-14 w-14 place-items-center rounded-full border border-flame/30 bg-white/76 text-flame shadow-[0_18px_40px_-28px_rgba(13,27,75,0.55)] backdrop-blur">
               <Icon name="target" size={28} />
             </span>
@@ -128,58 +112,63 @@ export default function PartenairesPage() {
           </div>
         </Reveal>
 
-        {/* ===== Centre : Orbit + titre ===== */}
-        <div className="relative mx-auto flex min-h-[560px] max-w-[1080px] flex-col items-center justify-center py-8 text-center lg:min-h-[680px] lg:py-0">
+        {/* ===== Centre : Orbit (VRAI cercle) + titre ===== */}
+        <div
+          className="relative mx-auto flex flex-col items-center justify-center py-8 text-center lg:py-0"
+          style={{ width: `${ORBIT}px`, height: `${ORBIT}px`, maxWidth: '100%' }}
+        >
           <svg
-            className="pointer-events-none absolute left-1/2 top-1/2 hidden h-[620px] w-[620px] -translate-x-1/2 -translate-y-1/2 overflow-visible lg:block"
-            viewBox="0 0 620 620"
+            className="pointer-events-none absolute inset-0 hidden h-full w-full overflow-visible lg:block"
+            viewBox={`0 0 ${ORBIT} ${ORBIT}`}
             aria-hidden="true"
           >
             <circle
-              cx="310"
-              cy="310"
-              r="300"
+              cx={C}
+              cy={C}
+              r={RADIUS}
               fill="none"
               stroke="rgba(27,58,140,0.58)"
               strokeWidth="2"
               strokeDasharray="7 8"
             />
-            {[10, 60, 120, 180, 240, 300].map((deg) => {
+            {[15, 65, 115, 195, 245, 295].map((deg) => {
               const rad = (deg * Math.PI) / 180;
-              const x = 310 + Math.cos(rad) * 300;
-              const y = 310 + Math.sin(rad) * 300;
-              return <circle key={deg} cx={x} cy={y} r="7" fill="white" stroke="#f26522" strokeWidth="2" />;
+              const x = C + Math.cos(rad) * RADIUS;
+              const y = C + Math.sin(rad) * RADIUS;
+              return <circle key={deg} cx={x} cy={y} r="6" fill="white" stroke="#f26522" strokeWidth="2" />;
             })}
           </svg>
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-1/2 hidden h-[390px] w-[390px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/54 blur-2xl lg:block"
+            className="pointer-events-none absolute left-1/2 top-1/2 hidden h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/54 blur-2xl lg:block"
           />
 
-          {NODES.map((node, i) => (
-            <Reveal key={node.title} delay={0.2 + i * 0.06} className={`lg:absolute lg:z-10 ${node.className}`}>
-              <div className="mb-3 flex items-center gap-3 rounded-[1rem] border border-royal/20 bg-white/90 px-4 py-3 text-left shadow-[0_22px_44px_-30px_rgba(13,27,75,0.72)] backdrop-blur lg:mb-0 lg:block lg:h-36 lg:w-36 lg:rounded-full lg:border-2 lg:border-royal lg:px-4 lg:py-6 lg:text-center lg:ring-4 lg:ring-white/70">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-royal lg:mx-auto lg:mb-2 lg:h-auto lg:w-auto lg:bg-transparent">
-                  <Icon name={node.icon} size={32} strokeWidth={1.8} />
-                </span>
-                <p className="display-sm whitespace-pre-line text-base italic leading-[0.98] text-royal lg:text-[1.02rem]">
-                  {node.title}
-                </p>
-              </div>
-            </Reveal>
+          {NODES.map((node) => (
+            <div
+              key={node.title}
+              className="mb-3 flex items-center gap-3 rounded-[1rem] border border-royal/20 bg-white/95 px-4 py-3 text-left shadow-[0_22px_44px_-30px_rgba(13,27,75,0.72)] backdrop-blur lg:absolute lg:z-10 lg:mb-0 lg:flex-col lg:justify-center lg:h-32 lg:w-32 lg:gap-1 lg:rounded-full lg:border-2 lg:border-royal lg:px-3 lg:py-3 lg:text-center lg:ring-4 lg:ring-white/70"
+              style={nodePos(node.angle)}
+            >
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-royal lg:h-auto lg:w-auto lg:shrink lg:bg-transparent">
+                <Icon name={node.icon} size={24} strokeWidth={1.8} />
+              </span>
+              <p className="display-sm whitespace-pre-line text-base italic leading-[0.98] text-royal lg:text-[0.78rem]">
+                {node.title}
+              </p>
+            </div>
           ))}
 
-          <div className="relative z-20 mx-auto max-w-xl pt-2 lg:pt-0">
-            <h1 id="partenaires-title" className="hero-title text-royal">
+          <div className="relative z-20 mx-auto max-w-md pt-2 lg:pt-0">
+            <h1 id="partenaires-title" className="hero-title text-royal lg:text-[3.6rem]">
               Partenaires
               <br />
               <span className="text-flame">&amp; Sponsoring</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-deep/78">
+            <p className="mx-auto mt-5 max-w-sm text-[0.92rem] leading-relaxed text-deep/78">
               Soutenez un club formateur et ambitieux, engagé pour la jeunesse, l&apos;inclusion et le rayonnement
               de Saint-Denis. Ensemble, construisons un avenir gagnant pour notre territoire.
             </p>
-            <Link href="/contact" className="btn-primary group mt-8 min-w-56">
+            <Link href="/contact" className="btn-primary group mt-6 min-w-52">
               Devenir partenaire
               <Icon
                 name="arrow-right"

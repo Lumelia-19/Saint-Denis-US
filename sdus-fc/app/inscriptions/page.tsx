@@ -1,7 +1,26 @@
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import Icon, { type IconName } from '@/components/Icon';
+
+// Perforation reelle : trous semi-circulaires decoupes sur les bords gauche
+// et droit via mask-image. Les tickets sont colles bord a bord et les demi
+// cercles d'un ticket se completent avec ceux du voisin pour former un cercle.
+const TICKET_PERF: CSSProperties = {
+  WebkitMaskImage:
+    'radial-gradient(circle 6px at 0 12px, transparent 5.5px, black 6px), radial-gradient(circle 6px at 100% 12px, transparent 5.5px, black 6px)',
+  WebkitMaskSize: '100% 24px, 100% 24px',
+  WebkitMaskPosition: '0 0, 0 0',
+  WebkitMaskRepeat: 'repeat-y, repeat-y',
+  WebkitMaskComposite: 'source-in',
+  maskImage:
+    'radial-gradient(circle 6px at 0 12px, transparent 5.5px, black 6px), radial-gradient(circle 6px at 100% 12px, transparent 5.5px, black 6px)',
+  maskSize: '100% 24px, 100% 24px',
+  maskPosition: '0 0, 0 0',
+  maskRepeat: 'repeat-y, repeat-y',
+  maskComposite: 'intersect',
+};
 
 const REQUIREMENTS = [
   "Formulaire d'inscription dûment rempli",
@@ -49,21 +68,6 @@ export const metadata: Metadata = {
     'Rejoignez le SDUS FC 93 : inscriptions, détections, stages et pièces à fournir pour la saison 2025/2026.',
 };
 
-function TicketNotches({ side }: { side: 'left' | 'right' }) {
-  return (
-    <span
-      aria-hidden="true"
-      className={`pointer-events-none absolute top-7 hidden h-[calc(100%-3.5rem)] flex-col justify-between lg:flex ${
-        side === 'left' ? '-left-2' : '-right-2'
-      }`}
-    >
-      {Array.from({ length: 10 }).map((_, i) => (
-        <span key={i} className="block h-4 w-4 rounded-full bg-white shadow-[inset_0_0_0_1px_rgba(13,27,75,0.08)]" />
-      ))}
-    </span>
-  );
-}
-
 function TacticalDecor() {
   return (
     <>
@@ -105,10 +109,10 @@ export default function InscriptionsPage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center lg:translate-x-[12vw] lg:scale-[1.16]"
+          className="object-cover object-[42%_18%] lg:object-[55%_15%]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.82)_34%,rgba(255,255,255,0.18)_62%,rgba(255,255,255,0)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.66)_0%,rgba(255,255,255,0.06)_48%,rgba(255,255,255,0.62)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.86)_30%,rgba(255,255,255,0.28)_54%,rgba(255,255,255,0)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.42)_0%,rgba(255,255,255,0)_36%,rgba(255,255,255,0)_58%,rgba(255,255,255,0.82)_100%)]" />
         <TacticalDecor />
 
         <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6rem)] max-w-[1536px] grid-rows-[auto_1fr] px-5 pb-8 sm:px-8 lg:px-10 min-[1400px]:px-24">
@@ -125,10 +129,10 @@ export default function InscriptionsPage() {
             </div>
 
             <div className="hidden h-48 w-48 place-items-center rounded-full border-4 border-flame bg-royal text-center text-white shadow-[0_24px_60px_-30px_rgba(13,27,75,0.75)] lg:mt-28 lg:grid">
-              <p className="display-sm italic leading-[0.9]">
-                <span className="block text-3xl">Saison</span>
-                <span className="block text-6xl">2025</span>
-                <span className="block text-3xl text-flame">/</span>
+              <p className="display-sm italic leading-[1]">
+                <span className="block text-lg tracking-wide">Saison</span>
+                <span className="mt-1 block text-5xl">2025</span>
+                <span className="block text-base text-flame">/</span>
                 <span className="block text-5xl text-flame">2026</span>
               </p>
             </div>
@@ -136,53 +140,86 @@ export default function InscriptionsPage() {
             <div className="hidden lg:block" />
           </div>
 
-          <div className="mt-6 grid items-start gap-5 lg:mt-8 lg:grid-cols-[250px_minmax(520px,1fr)_280px] min-[1400px]:grid-cols-[270px_minmax(0,1fr)_310px]">
-            <aside className="relative rounded-[1.2rem] bg-royal px-6 py-6 text-white shadow-[0_24px_60px_-28px_rgba(13,27,75,0.65)] min-[1400px]:px-7">
-              <TicketNotches side="left" />
-              <TicketNotches side="right" />
-              <div className="mb-6 h-1.5 w-28 rounded-full bg-flame" />
-              <h2 className="display-sm text-2xl italic">Pièces à fournir</h2>
-              <ul className="mt-5 space-y-3.5">
-                {REQUIREMENTS.map((item) => (
-                  <li key={item} className="flex gap-3 text-[0.82rem] font-semibold leading-snug text-white/90">
-                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full border-2 border-flame text-flame">
-                      <Icon name="check" size={16} strokeWidth={3} />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </aside>
-
-            <div>
-              <div className="relative grid overflow-hidden rounded-[1.35rem] bg-white/96 shadow-[0_24px_70px_-36px_rgba(13,27,75,0.45)] backdrop-blur md:grid-cols-3">
-                {STEPS.map((step, i) => (
-                  <article key={step.title} className="relative min-h-[300px] px-5 py-5 min-[1400px]:min-h-[334px] min-[1400px]:px-7 min-[1400px]:py-6">
-                    {i > 0 && (
-                      <span className="absolute left-0 top-0 hidden h-full border-l-2 border-dashed border-slate-soft/25 md:block" />
-                    )}
-                    <div className="flex min-h-14 items-center gap-4 min-[1400px]:min-h-16">
-                      <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-royal text-2xl font-black italic text-white min-[1400px]:h-16 min-[1400px]:w-16 min-[1400px]:text-3xl" style={{ fontFamily: 'var(--font-display)' }}>
-                        {i + 1}
+          <div className="mt-6 grid items-start gap-5 lg:mt-8 lg:grid-cols-[minmax(0,1fr)_280px] min-[1400px]:grid-cols-[minmax(0,1fr)_300px]">
+            {/* === Strip de 4 tickets attachés === */}
+            {/* Pas de gap : les demi cercles d'un ticket completent ceux du voisin */}
+            <div className="grid gap-y-3 sm:grid-cols-[230px_repeat(3,minmax(0,1fr))] sm:gap-x-0 min-[1400px]:grid-cols-[250px_repeat(3,minmax(0,1fr))]">
+              {/* Ticket 1 : Pièces à fournir (bleu) */}
+              <aside
+                className="relative rounded-[1.1rem] bg-royal px-6 py-6 text-white shadow-[0_24px_60px_-28px_rgba(13,27,75,0.55)]"
+                style={TICKET_PERF}
+              >
+                <div className="mb-5 h-1.5 w-20 rounded-full bg-flame" />
+                <h2 className="display-sm text-[1.45rem] italic">Pièces à fournir</h2>
+                <ul className="mt-5 space-y-3.5">
+                  {REQUIREMENTS.map((item) => (
+                    <li key={item} className="flex gap-3 text-[0.8rem] font-semibold leading-snug text-white/90">
+                      <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border-2 border-flame text-flame">
+                        <Icon name="check" size={14} strokeWidth={3} />
                       </span>
-                      <h3 className="display-sm text-[1.12rem] italic text-royal min-[1400px]:text-[1.35rem]">{step.title}</h3>
-                    </div>
-                    <div className="mx-auto my-4 grid h-[4.5rem] w-[4.5rem] place-items-center text-flame min-[1400px]:my-6 min-[1400px]:h-20 min-[1400px]:w-20">
-                      <Icon name={step.icon} size={72} strokeWidth={1.6} />
-                    </div>
-                    <p className="mx-auto max-w-[210px] text-center text-[0.78rem] leading-relaxed text-deep/78 min-[1400px]:text-[0.82rem]">{step.desc}</p>
-                    {i < STEPS.length - 1 && (
-                      <svg className="absolute right-[-22px] top-1/2 z-10 hidden h-10 w-20 -translate-y-1/2 md:block" viewBox="0 0 80 40" aria-hidden="true">
-                        <path d="M5 25c22-13 42-13 62 0" fill="none" stroke="#f26522" strokeWidth="3" strokeDasharray="9 12" strokeLinecap="round" />
-                        <path d="m58 10 17 15-21 8" fill="none" stroke="#f26522" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    )}
-                    <div className="absolute bottom-4 left-1/2 h-7 w-36 -translate-x-1/2 bg-[radial-gradient(circle,#f26522_1.7px,transparent_2px)] [background-size:17px_11px] min-[1400px]:bottom-5" />
-                  </article>
-                ))}
-              </div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
 
-              <div className="mt-6 flex flex-col items-center gap-5 lg:flex-row lg:justify-center">
+              {/* Tickets 2, 3, 4 : étapes */}
+              {STEPS.map((step, i) => (
+                <article
+                  key={step.title}
+                  className="relative rounded-[1.1rem] bg-white/96 px-4 py-5 shadow-[0_24px_60px_-32px_rgba(13,27,75,0.45)] backdrop-blur min-[1400px]:px-5 min-[1400px]:py-6"
+                  style={TICKET_PERF}
+                >
+                  <div className="flex items-center gap-3 min-h-14 min-[1400px]:gap-4">
+                    <span
+                      className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-royal text-xl font-black italic text-white min-[1400px]:h-14 min-[1400px]:w-14 min-[1400px]:text-2xl"
+                      style={{ fontFamily: 'var(--font-display)' }}
+                    >
+                      {i + 1}
+                    </span>
+                    <h3 className="display-sm text-[0.92rem] italic leading-tight text-royal min-[1400px]:text-[1.05rem]">
+                      {step.title.split(' ').slice(0, 1).join(' ').toUpperCase()}
+                      <span className="block text-[0.84rem] not-italic font-bold tracking-wide text-royal/85 min-[1400px]:text-[0.92rem]">
+                        {step.title.split(' ').slice(1).join(' ').toUpperCase()}
+                      </span>
+                    </h3>
+                  </div>
+                  <div className="mx-auto my-3 grid h-[4.5rem] w-[4.5rem] place-items-center text-flame min-[1400px]:my-4 min-[1400px]:h-20 min-[1400px]:w-20">
+                    <Icon name={step.icon} size={72} strokeWidth={1.6} />
+                  </div>
+                  <p className="mx-auto max-w-[210px] text-center text-[0.74rem] leading-relaxed text-deep/78 min-[1400px]:text-[0.8rem]">
+                    {step.desc}
+                  </p>
+                  {i < STEPS.length - 1 && (
+                    <svg
+                      className="pointer-events-none absolute right-[-30px] top-1/2 z-10 hidden h-9 w-16 -translate-y-1/2 sm:block"
+                      viewBox="0 0 80 40"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M5 25c22-13 42-13 62 0"
+                        fill="none"
+                        stroke="#f26522"
+                        strokeWidth="3"
+                        strokeDasharray="9 12"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="m58 10 17 15-21 8"
+                        fill="none"
+                        stroke="#f26522"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                  <div className="absolute bottom-4 left-1/2 h-6 w-32 -translate-x-1/2 bg-[radial-gradient(circle,#f26522_1.7px,transparent_2px)] [background-size:14px_10px]" />
+                </article>
+              ))}
+
+              {/* === CTA central (sous le strip) === */}
+              <div className="mt-4 flex flex-col items-center gap-5 sm:col-span-full lg:flex-row lg:justify-center">
                 <Link href="/contact" className="btn-primary group min-w-56">
                   S&apos;inscrire
                   <Icon
@@ -204,6 +241,7 @@ export default function InscriptionsPage() {
               </div>
             </div>
 
+            {/* === Sidebar droite : Détections + Stages === */}
             <div className="grid gap-5">
               {OFFERS.map((offer) => (
                 <article
