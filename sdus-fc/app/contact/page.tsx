@@ -25,29 +25,40 @@ const SOCIALS: { icon: IconName; label: string; href: string }[] = [
   { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/sdus_football/' },
 ];
 
+type Status = 'idle' | 'sending' | 'sent' | 'error';
+
 export default function ContactPage() {
   const [form, setForm] = useState<ContactFormData>(EMPTY_FORM);
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<Status>('idle');
+  const [errorMsg, setErrorMsg] = useState<string>('');
 
   const update =
     (field: keyof ContactFormData) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
       setForm((prev) => ({ ...prev, [field]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const body = [
-      `Nom: ${form.firstName} ${form.lastName}`,
-      `Email: ${form.email}`,
-      `Objet: ${form.subject}`,
-      '',
-      form.message,
-    ].join('\n');
-    window.location.href = `mailto:contact@sdus-fc93.fr?subject=${encodeURIComponent(
-      `[Site SDUS] ${form.subject}`
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
-    setForm(EMPTY_FORM);
+    setStatus('sending');
+    setErrorMsg('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = (await res.json().catch(() => ({}))) as { error?: string; ok?: boolean };
+      if (!res.ok || !data.ok) {
+        setStatus('error');
+        setErrorMsg(data.error || 'Erreur lors de l’envoi.');
+        return;
+      }
+      setStatus('sent');
+      setForm(EMPTY_FORM);
+    } catch {
+      setStatus('error');
+      setErrorMsg('Connexion impossible. Réessaie plus tard.');
+    }
   };
 
   return (
@@ -70,14 +81,22 @@ export default function ContactPage() {
           {/* Form */}
           <Reveal className="lg:col-span-2">
             <form onSubmit={handleSubmit} className="card p-8 h-full">
-              {sent && (
+              {status === 'sent' && (
                 <div className="mb-6 flex items-center gap-3 rounded-xl bg-mist border border-cloud p-4">
                   <span className="grid place-items-center w-9 h-9 rounded-lg bg-flame text-white shrink-0">
                     <Icon name="check" size={18} strokeWidth={3} />
                   </span>
                   <p className="text-sm text-navy">
-                    Votre logiciel mail va s&apos;ouvrir avec le message prérempli pour le club.
+                    Message envoyé ! On te répond rapidement par email.
                   </p>
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="mb-6 flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
+                  <span className="grid place-items-center w-9 h-9 rounded-lg bg-red-500 text-white shrink-0">
+                    <Icon name="close" size={18} strokeWidth={3} />
+                  </span>
+                  <p className="text-sm text-red-700">{errorMsg}</p>
                 </div>
               )}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -106,9 +125,18 @@ export default function ContactPage() {
                 <label htmlFor="message" className="field-label">Message</label>
                 <textarea id="message" required rows={5} value={form.message} onChange={update('message')} className="field resize-y" placeholder="Votre message…" />
               </div>
-              <button type="submit" className="btn-primary group mt-6">
-                Envoyer le message
-                <Icon name="send" size={16} strokeWidth={2.2} className="transition-transform duration-300 group-hover:translate-x-1" />
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="btn-primary group mt-6 disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                {status === 'sending' ? 'Envoi…' : 'Envoyer le message'}
+                <Icon
+                  name="send"
+                  size={16}
+                  strokeWidth={2.2}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
               </button>
             </form>
           </Reveal>
