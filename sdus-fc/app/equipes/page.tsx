@@ -139,9 +139,9 @@ export default function EquipesPage() {
           />
         </svg>
 
-        <div className="relative z-10 mx-auto grid max-w-[1500px] gap-10 px-5 pb-16 sm:px-8 lg:grid-cols-[1fr_280px] lg:gap-12 lg:px-10 min-[1400px]:px-16">
+        <div className="relative z-10 mx-auto grid max-w-[1500px] gap-6 px-5 pb-16 sm:gap-8 sm:px-8 lg:grid-cols-[1fr_280px] lg:gap-12 lg:px-10 min-[1400px]:px-16">
           {/* ===== Colonne principale ===== */}
-          <div className="pt-10 lg:pt-14">
+          <div className="pt-6 sm:pt-8 lg:pt-14">
             <Reveal>
               <p className="eyebrow text-flame mb-4">Nos équipes</p>
               <h1 id="equipes-title" className="hero-title text-royal lg:text-[6rem]">
@@ -205,7 +205,7 @@ export default function EquipesPage() {
                     className="group relative flex-1 overflow-hidden bg-royal px-4 py-6 text-left text-white shadow-[0_18px_40px_-24px_rgba(13,27,75,0.7)] transition hover:bg-flame sm:px-6 sm:py-7"
                     style={{ clipPath }}
                   >
-                    <p className="display-sm text-3xl italic leading-none sm:text-4xl lg:text-[2.5rem]">
+                    <p className="display-sm text-xl italic leading-none sm:text-2xl md:text-3xl lg:text-[2.5rem]">
                       {stage.title.split('-')[0].trim()}-
                       <span className="text-flame group-hover:text-white">{stage.title.split('-').slice(1).join('-').trim()}</span>
                     </p>
@@ -286,7 +286,7 @@ export default function EquipesPage() {
       </section>
 
       {/* ============ ROSTER ============ */}
-      <section id="roster" className="bg-mist py-20 scroll-mt-24" aria-label="Effectifs">
+      <section id="roster" className="bg-mist py-12 scroll-mt-20 sm:py-16 sm:scroll-mt-24 lg:py-20" aria-label="Effectifs">
         <div className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10 min-[1400px]:px-16">
           <Reveal>
             <SectionTitle
@@ -298,7 +298,7 @@ export default function EquipesPage() {
           </Reveal>
 
           <Reveal>
-            <div className="mt-8 mb-12 flex flex-wrap gap-2.5">
+            <div className="mt-8 mb-12 flex flex-wrap gap-1.5 sm:gap-2.5">
               {(['Tous', ...CATEGORIES] as (MatchCategory | 'Tous')[]).map((cat) => (
                 <button key={cat} onClick={() => setActive(cat)} className="pill" data-active={active === cat}>
                   {cat}

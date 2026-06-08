@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 export default function PartenairesPage() {
   return (
     <section
-      className="relative isolate overflow-hidden bg-white pt-28 pb-16 lg:pt-24 lg:min-h-screen"
+      className="relative isolate overflow-hidden bg-white pt-20 pb-12 sm:pt-24 sm:pb-14 lg:pt-24 lg:pb-16 lg:min-h-screen"
       aria-labelledby="partenaires-title"
     >
       {/* ===== Background avec image skyline ===== */}
@@ -94,10 +94,10 @@ export default function PartenairesPage() {
             <span className="mb-4 grid h-14 w-14 place-items-center rounded-full border border-flame/30 bg-white/76 text-flame shadow-[0_18px_40px_-28px_rgba(13,27,75,0.55)] backdrop-blur">
               <Icon name="users" size={28} />
             </span>
-            <p className="nums text-6xl font-black italic leading-none text-royal" style={{ fontFamily: 'var(--font-display)' }}>
+            <p className="nums text-4xl font-black italic leading-none text-royal sm:text-5xl lg:text-6xl" style={{ fontFamily: 'var(--font-display)' }}>
               500<span className="text-flame">+</span>
             </p>
-            <p className="display-sm mt-1 text-2xl italic text-flame">Jeunes licenciés</p>
+            <p className="display-sm mt-1 text-lg italic text-flame sm:text-xl lg:text-2xl">Jeunes licenciés</p>
             <p className="mt-4 text-sm leading-relaxed text-deep/78">
               Un vivier de talents formés avec passion au cœur de Saint-Denis.
             </p>
@@ -110,11 +110,11 @@ export default function PartenairesPage() {
             <span className="mb-4 grid h-14 w-14 place-items-center rounded-full border border-flame/30 bg-white/76 text-flame shadow-[0_18px_40px_-28px_rgba(13,27,75,0.55)] backdrop-blur">
               <Icon name="target" size={28} />
             </span>
-            <p className="nums text-6xl font-black italic leading-none text-royal" style={{ fontFamily: 'var(--font-display)' }}>
+            <p className="nums text-4xl font-black italic leading-none text-royal sm:text-5xl lg:text-6xl" style={{ fontFamily: 'var(--font-display)' }}>
               1
               <span className="ml-2 align-middle text-2xl not-italic text-royal">stade</span>
             </p>
-            <p className="display-sm mt-1 text-2xl italic text-flame">Au cœur de Saint-Denis</p>
+            <p className="display-sm mt-1 text-lg italic text-flame sm:text-xl lg:text-2xl">Au cœur de Saint-Denis</p>
             <p className="mt-4 text-sm leading-relaxed text-deep/78">Le Stade de France, notre fierté, notre force.</p>
           </div>
         </Reveal>
@@ -151,13 +151,13 @@ export default function PartenairesPage() {
           {NODES.map((node) => (
             <div
               key={node.title}
-              className="mb-3 flex items-center gap-3 rounded-[1rem] border border-royal/20 bg-white/95 px-4 py-3 text-left shadow-[0_22px_44px_-30px_rgba(13,27,75,0.72)] backdrop-blur lg:absolute lg:z-10 lg:mb-0 lg:flex-col lg:justify-center lg:h-32 lg:w-32 lg:gap-1 lg:rounded-full lg:border-2 lg:border-royal lg:px-3 lg:py-3 lg:text-center lg:ring-4 lg:ring-white/70"
+              className="mb-2 flex items-center gap-3 rounded-[1rem] border border-royal/20 bg-white/95 px-4 py-3 text-left shadow-[0_22px_44px_-30px_rgba(13,27,75,0.72)] backdrop-blur sm:mb-3 lg:absolute lg:z-10 lg:mb-0 lg:flex-col lg:justify-center lg:h-32 lg:w-32 lg:gap-1 lg:rounded-full lg:border-2 lg:border-royal lg:px-3 lg:py-3 lg:text-center lg:ring-4 lg:ring-white/70"
               style={nodePos(node.angle)}
             >
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-royal lg:h-auto lg:w-auto lg:shrink lg:bg-transparent">
                 <Icon name={node.icon} size={24} strokeWidth={1.8} />
               </span>
-              <p className="display-sm whitespace-pre-line text-base italic leading-[0.98] text-royal lg:text-[0.78rem]">
+              <p className="display-sm whitespace-pre-line text-sm italic leading-[0.98] text-royal sm:text-base lg:text-[0.78rem]">
                 {node.title}
               </p>
             </div>
@@ -169,11 +169,11 @@ export default function PartenairesPage() {
               <br />
               <span className="text-flame">&amp; Sponsoring</span>
             </h1>
-            <p className="mx-auto mt-5 max-w-sm text-[0.92rem] leading-relaxed text-deep/78">
+            <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-deep/78 sm:text-[0.92rem]">
               Soutenez un club formateur et ambitieux, engagé pour la jeunesse, l&apos;inclusion et le rayonnement
               de Saint-Denis. Ensemble, construisons un avenir gagnant pour notre territoire.
             </p>
-            <Link href="/contact" className="btn-primary group mt-6 min-w-52">
+            <Link href="/contact" className="btn-primary group mt-6 min-w-0 sm:min-w-48 lg:min-w-52">
               Devenir partenaire
               <Icon
                 name="arrow-right"
@@ -186,7 +186,7 @@ export default function PartenairesPage() {
         </div>
 
         {/* ===== 3 cartes avantages ===== */}
-        <div className="mt-10 grid gap-4 lg:absolute lg:bottom-10 lg:left-1/2 lg:mt-0 lg:w-[780px] lg:-translate-x-1/2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:absolute lg:bottom-10 lg:left-1/2 lg:mt-0 lg:w-[780px] lg:-translate-x-1/2 lg:grid-cols-3">
           {BENEFITS.map((item, i) => (
             <Reveal key={item.title} delay={0.32 + i * 0.08}>
               <Link

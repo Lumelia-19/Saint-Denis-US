@@ -50,15 +50,15 @@ export default function StatCounter({ value, suffix = '', label, icon, animate =
   return (
     <div ref={ref} className="flex flex-col items-center text-center">
       {icon && (
-        <span className="grid place-items-center w-12 h-12 rounded-2xl bg-white/10 border border-white/15 text-flame mb-3">
+        <span className="grid place-items-center w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-2xl bg-white/10 border border-white/15 text-flame mb-3">
           <Icon name={icon} size={22} />
         </span>
       )}
-      <p className="text-5xl sm:text-6xl font-black text-white nums" style={{ fontFamily: 'var(--font-display)' }}>
+      <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white nums" style={{ fontFamily: 'var(--font-display)' }}>
         {displayCount}
         <span className="text-gradient">{suffix}</span>
       </p>
-      <p className="text-white/55 text-xs font-semibold mt-1.5 uppercase tracking-[0.16em]">{label}</p>
+      <p className="text-white/55 text-[0.65rem] sm:text-xs font-semibold mt-1.5 uppercase tracking-[0.16em]">{label}</p>
     </div>
   );
 }

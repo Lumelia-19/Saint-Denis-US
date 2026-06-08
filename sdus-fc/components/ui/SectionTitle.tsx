@@ -18,7 +18,7 @@ export default function SectionTitle({
   return (
     <div className={`flex flex-col ${center ? 'items-center text-center' : 'items-start'}`}>
       {eyebrow && (
-        <span className={`eyebrow mb-4 ${light ? 'text-flame' : 'text-flame'}`}>{eyebrow}</span>
+        <span className={`eyebrow mb-3 sm:mb-4 ${light ? 'text-flame' : 'text-flame'}`}>{eyebrow}</span>
       )}
       <h2 className="section-title">
         <span className={light ? 'text-white' : 'text-navy'}>{blue} </span>
@@ -26,7 +26,7 @@ export default function SectionTitle({
       </h2>
       {subtitle && (
         <p
-          className={`mt-4 max-w-2xl text-base sm:text-lg leading-relaxed ${
+          className={`mt-3 sm:mt-4 max-w-full sm:max-w-xl md:max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed ${
             light ? 'text-white/65' : 'text-slate-soft'
           }`}
         >

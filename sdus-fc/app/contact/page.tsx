@@ -62,7 +62,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="relative pt-32 pb-24 bg-surface overflow-hidden min-h-screen">
+    <section className="relative pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-32 lg:pb-24 bg-surface overflow-hidden min-h-screen">
       <div className="absolute inset-0 bg-grid-ink opacity-70" />
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <Reveal>
@@ -72,15 +72,15 @@ export default function ContactPage() {
             <span className="text-flame">contacter</span>
           </h1>
           <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep/82 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-deep/82 sm:text-base lg:text-lg">
             Le club vous répond rapidement - inscriptions, détections, partenariats ou simple curiosité.
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 mt-12">
           {/* Form */}
           <Reveal className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="card p-8 h-full">
+            <form onSubmit={handleSubmit} className="card p-5 sm:p-6 lg:p-8 h-full">
               {status === 'sent' && (
                 <div className="mb-6 flex items-center gap-3 rounded-xl bg-mist border border-cloud p-4">
                   <span className="grid place-items-center w-9 h-9 rounded-lg bg-flame text-white shrink-0">
@@ -144,8 +144,8 @@ export default function ContactPage() {
           {/* Sidebar */}
           <div className="flex flex-col gap-6">
             <Reveal delay={0.1}>
-              <div className="relative overflow-hidden rounded-[1.6rem] bg-mesh p-7">
-                <h3 className="display-sm text-xl text-white mb-5">Coordonnées</h3>
+              <div className="relative overflow-hidden rounded-[1.6rem] bg-mesh p-5 sm:p-6 lg:p-7">
+                <h3 className="display-sm text-lg sm:text-xl text-white mb-5">Coordonnées</h3>
                 <ul className="space-y-4">
                   {COORDS.map((c) => (
                     <li key={c.label} className="flex items-start gap-3">
@@ -162,8 +162,8 @@ export default function ContactPage() {
               </div>
             </Reveal>
             <Reveal delay={0.18}>
-              <div className="card p-7">
-                <h3 className="display-sm text-xl text-navy mb-4">Réseaux sociaux</h3>
+              <div className="card p-5 sm:p-6 lg:p-7">
+                <h3 className="display-sm text-lg sm:text-xl text-navy mb-4">Réseaux sociaux</h3>
                 <div className="flex gap-3">
                   {SOCIALS.map((s) => (
                     <a

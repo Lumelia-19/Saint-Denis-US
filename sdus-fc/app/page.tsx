@@ -92,7 +92,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(255,255,255,0.74)_0%,rgba(255,255,255,0.58)_34%,rgba(255,255,255,0.16)_58%,rgba(255,255,255,0)_100%)] md:block" />
         <TacticalPattern tone="onLight" className="z-[1] opacity-80" />
 
-        <div className="relative z-10 mx-auto flex min-h-[620px] w-full max-w-[1420px] flex-col justify-center px-5 pt-28 pb-8 sm:min-h-[700px] sm:px-8 md:min-h-[760px] md:pb-16 lg:min-h-[820px] lg:px-10 lg:pt-32 lg:pb-36 xl:min-h-screen xl:px-12 xl:pb-40">
+        <div className="relative z-10 mx-auto flex min-h-[480px] w-full max-w-[1420px] flex-col justify-center px-5 pt-20 pb-6 sm:min-h-[620px] sm:px-8 sm:pt-24 md:min-h-[760px] md:pb-16 lg:min-h-[820px] lg:px-10 lg:pt-32 lg:pb-36 xl:min-h-screen xl:px-12 xl:pb-40">
           <div className="max-w-[700px]">
             <div className="mb-5 h-1.5 w-20 rounded-full bg-flame animate-rise md:mb-6" style={{ animationDelay: '80ms' }} />
             <h1 className="hero-title text-royal drop-shadow-[0_10px_30px_rgba(255,255,255,0.35)] animate-rise" style={{ animationDelay: '150ms' }}>
@@ -158,7 +158,7 @@ export default async function HomePage() {
       </section>
 
       {/* ===================== FORMATION ===================== */}
-      <section className="relative overflow-hidden bg-mist py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-mist py-12 sm:py-16 lg:py-24">
         <div className="absolute inset-0 bg-grid-ink opacity-70" />
         <div className="absolute -left-10 top-12 hidden text-[10rem] font-black uppercase leading-none text-royal/[0.035] lg:block" style={{ fontFamily: 'var(--font-display)' }}>
           Formation
@@ -180,7 +180,7 @@ export default async function HomePage() {
           <div className="mt-12 grid gap-5 lg:grid-cols-[1.08fr_0.92fr]">
             <Link
               href={SPOTLIGHTS[0].href}
-              className="group relative min-h-[500px] overflow-hidden rounded-[1.35rem] bg-deep shadow-[0_30px_80px_-42px_rgba(13,27,75,0.85)]"
+              className="group relative min-h-[320px] overflow-hidden rounded-[1.35rem] bg-deep shadow-[0_30px_80px_-42px_rgba(13,27,75,0.85)] sm:min-h-[420px] lg:min-h-[500px]"
             >
               <Image
                 src={SPOTLIGHTS[0].image}
@@ -195,7 +195,7 @@ export default async function HomePage() {
               </div>
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
                 <p className="text-sm font-bold uppercase text-flame">{SPOTLIGHTS[0].meta}</p>
-                <h3 className="display-sm mt-2 text-5xl italic text-white sm:text-6xl">{SPOTLIGHTS[0].title}</h3>
+                <h3 className="display-sm mt-2 text-4xl italic text-white sm:text-5xl lg:text-6xl">{SPOTLIGHTS[0].title}</h3>
                 <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/76">{SPOTLIGHTS[0].desc}</p>
                 <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-royal transition-colors duration-300 group-hover:bg-flame group-hover:text-white">
                   Découvrir la catégorie
@@ -209,7 +209,7 @@ export default async function HomePage() {
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="group relative min-h-[240px] overflow-hidden rounded-[1.35rem] bg-deep shadow-[0_24px_70px_-42px_rgba(13,27,75,0.8)]"
+                  className="group relative min-h-[190px] overflow-hidden rounded-[1.35rem] bg-deep shadow-[0_24px_70px_-42px_rgba(13,27,75,0.8)] sm:min-h-[220px] lg:min-h-[240px]"
                 >
                   <Image
                     src={item.image}
@@ -219,7 +219,7 @@ export default async function HomePage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,12,32,0.88)_0%,rgba(7,12,32,0.48)_54%,rgba(7,12,32,0.04)_100%)]" />
-                  <div className="relative z-10 flex h-full min-h-[240px] max-w-[72%] flex-col justify-end p-6">
+                  <div className="relative z-10 flex h-full min-h-[190px] max-w-[72%] flex-col justify-end p-6 sm:min-h-[220px] lg:min-h-[240px]">
                     <p className="text-[0.7rem] font-black uppercase tracking-[0.16em] text-flame">{item.kicker}</p>
                     <h3 className="display-sm mt-2 text-3xl italic text-white">{item.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-white/72">{item.desc}</p>
@@ -235,9 +235,9 @@ export default async function HomePage() {
       </section>
 
       {/* ===================== STATS ===================== */}
-      <section className="relative overflow-hidden bg-mesh py-16 sm:py-20">
+      <section className="relative overflow-hidden bg-mesh py-12 sm:py-16 lg:py-20">
         <TacticalPattern />
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-6 px-5 sm:px-6 sm:gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-10">
           <div>
             <p className="eyebrow mb-5 text-flame">Repères</p>
             <h2 className="section-title text-white">
@@ -261,7 +261,7 @@ export default async function HomePage() {
       </section>
 
       {/* ===================== UPCOMING MATCHES ===================== */}
-      <section className="relative overflow-hidden bg-surface py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-surface py-12 sm:py-16 lg:py-24">
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-mist to-transparent" />
         <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
@@ -295,11 +295,11 @@ export default async function HomePage() {
       <PartnerSponsoringSection />
 
       {/* ===================== CTA ===================== */}
-      <section className="bg-surface pt-16 pb-20 sm:pt-20 sm:pb-24">
+      <section className="bg-surface pt-12 pb-14 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <div className="relative grid overflow-hidden rounded-[2rem] bg-mesh lg:grid-cols-[0.92fr_1.08fr]">
             <TacticalPattern />
-            <div className="relative min-h-[280px] lg:min-h-[420px]">
+            <div className="relative min-h-[200px] sm:min-h-[240px] lg:min-h-[420px]">
               <Image
                 src="/assets/club_hero.webp"
                 alt="Joueurs et éducateurs du SDUS FC 93 réunis au club."

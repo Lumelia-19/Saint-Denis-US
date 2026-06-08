@@ -92,7 +92,7 @@ export default function ActualitesPage() {
       <TacticalPattern tone="onDark" className="opacity-65" />
 
       {/* ============== HERO : titre + intro (par-dessus l'image) ============== */}
-      <div className="relative z-10 mx-auto max-w-[1500px] px-5 pt-12 sm:px-8 lg:px-10 lg:pt-20 min-[1400px]:px-16">
+      <div className="relative z-10 mx-auto max-w-[1500px] px-5 pt-8 sm:px-8 sm:pt-10 md:pt-12 lg:px-10 lg:pt-20 min-[1400px]:px-16">
         <Reveal>
           <div className="max-w-2xl">
             <p className="eyebrow text-flame mb-4">Vie du club</p>
@@ -112,10 +112,10 @@ export default function ActualitesPage() {
       </div>
 
       {/* ============== Articles + sidebar ============== */}
-      <div className="relative z-10 mx-auto grid max-w-[1500px] gap-8 px-5 pb-20 pt-10 sm:px-8 lg:grid-cols-[1.3fr_0.7fr] lg:gap-10 lg:px-10 lg:pt-14 min-[1400px]:px-16">
+      <div className="relative z-10 mx-auto grid max-w-[1500px] gap-5 px-5 pb-12 pt-6 sm:gap-6 sm:px-8 sm:pb-14 md:gap-8 md:pb-16 lg:grid-cols-[1.3fr_0.7fr] lg:gap-10 lg:px-10 lg:pb-20 lg:pt-14 min-[1400px]:px-16">
         {/* Articles + CTA */}
         <div>
-          <div className="grid gap-5 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
             {ARTICLES.map((article, i) => (
               <Reveal key={article.title} delay={i * 0.08}>
                 <article className="group flex h-full flex-col overflow-hidden rounded-[1.15rem] border border-cloud bg-white shadow-[0_22px_60px_-34px_rgba(13,27,75,0.55)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-30px_rgba(13,27,75,0.7)]">
@@ -218,7 +218,7 @@ export default function ActualitesPage() {
           <Reveal delay={0.18}>
             <figure className="relative overflow-hidden rounded-[1.15rem] border border-cloud bg-white p-6 shadow-[0_22px_60px_-34px_rgba(13,27,75,0.6)]">
               <Icon name="quote" size={42} className="text-flame" />
-              <blockquote className="display-sm relative z-10 mt-3 text-[1.4rem] italic leading-[1.05] text-royal">
+              <blockquote className="display-sm relative z-10 mt-3 text-[1.05rem] italic leading-[1.05] text-royal sm:text-[1.2rem] lg:text-[1.4rem]">
                 Ce club, c&apos;est plus qu&apos;un maillot. C&apos;est une famille, des valeurs, et une passion partagée.
               </blockquote>
               <figcaption className="relative z-10 mt-5 text-sm font-bold text-flame">- Samir, parent bénévole</figcaption>

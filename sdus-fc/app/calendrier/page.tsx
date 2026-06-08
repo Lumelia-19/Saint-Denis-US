@@ -17,7 +17,7 @@ export default function CalendrierPage() {
   return (
     <>
       {/* ===================== HEADER ===================== */}
-      <section className="relative pt-32 pb-14 bg-surface overflow-hidden">
+      <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-12 lg:pt-32 lg:pb-14 bg-surface overflow-hidden">
         <div className="absolute inset-0 bg-grid-ink opacity-70" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <Reveal>
@@ -27,7 +27,7 @@ export default function CalendrierPage() {
               <span className="text-flame">Résultats</span>
             </h1>
             <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep/82 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-deep/82 sm:text-base lg:text-lg">
               Tous les matchs du club, toutes catégories confondues. Filtrez pour suivre votre équipe.
             </p>
           </Reveal>
@@ -44,14 +44,14 @@ export default function CalendrierPage() {
       </section>
 
       {/* ===================== MATCHES ===================== */}
-      <section className="pb-24 bg-mist">
-        <div className="max-w-7xl mx-auto px-6 pt-14">
+      <section className="pb-16 sm:pb-20 lg:pb-24 bg-mist">
+        <div className="max-w-7xl mx-auto px-6 pt-8 sm:pt-10 lg:pt-14">
           {loading ? (
             <MatchesLoader />
           ) : error ? (
             <p className="text-center text-red-500 text-sm py-24">{error}</p>
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
               <MatchColumn
                 icon="calendar"
                 title="À venir"
@@ -109,10 +109,10 @@ function MatchColumn({
     <div>
       <Reveal>
         <div className="flex items-center gap-3 mb-7">
-          <span className={`grid place-items-center w-11 h-11 rounded-xl text-white ${accent}`}>
+          <span className={`grid place-items-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl text-white ${accent}`}>
             <Icon name={icon} size={20} />
           </span>
-          <h2 className="display-sm text-3xl text-navy">{title}</h2>
+          <h2 className="display-sm text-2xl sm:text-3xl text-navy">{title}</h2>
           <span className="chip bg-surface border border-cloud text-slate-soft nums">{count}</span>
         </div>
       </Reveal>
@@ -126,7 +126,7 @@ function MatchColumn({
         </div>
       ) : (
         <Reveal>
-          <div className="card p-10 text-center">
+          <div className="card p-6 sm:p-8 lg:p-10 text-center">
             <span className="grid place-items-center w-16 h-16 rounded-2xl bg-mist text-flame mx-auto mb-4">
               <Icon name="ball" size={30} />
             </span>

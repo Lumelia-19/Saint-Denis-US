@@ -160,7 +160,9 @@
     font-weight: 800;
     font-style: italic;
     text-transform: uppercase;
-    font-size: clamp(2.9rem, 6.4vw, 6rem);
+    /* min abaisse 2.9 -> 2.4rem : ne change que < ~725px (mobile/petite tablette) ;
+       desktop identique car la valeur y reste 6.4vw puis 6rem. line-height inchange. */
+    font-size: clamp(2.4rem, 6.4vw, 6rem);
     line-height: 0.92;
     letter-spacing: 0;
   }
@@ -168,7 +170,8 @@
     font-family: var(--font-display);
     font-weight: 700;
     text-transform: uppercase;
-    font-size: clamp(2.1rem, 4.6vw, 3.7rem);
+    /* min abaisse 2.1 -> 1.75rem : impacte seulement < ~730px, desktop inchange. */
+    font-size: clamp(1.75rem, 4.6vw, 3.7rem);
     line-height: 1.05;
     letter-spacing: 0;
   }

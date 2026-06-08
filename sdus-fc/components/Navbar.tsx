@@ -46,7 +46,7 @@ export default function Navbar() {
       <nav
         className={`transition-all duration-300 ${embedded ? 'pt-3' : 'bg-surface/92 backdrop-blur-xl border-b border-cloud shadow-[0_10px_30px_-24px_rgba(16,24,43,0.5)]'}`}
       >
-        <div className="mx-auto flex h-[68px] max-w-[1360px] items-center gap-3 px-4 transition-all duration-300 sm:px-6 lg:px-7">
+        <div className="mx-auto flex h-[58px] max-w-[1360px] items-center gap-3 px-4 transition-all duration-300 sm:h-[68px] sm:px-6 lg:px-7">
           <Link href="/" aria-label="Accueil SDUS FC 93" className="group relative z-10 flex items-center">
             <span className="relative block">
               <Image
@@ -54,7 +54,7 @@ export default function Navbar() {
                 alt="SDUS FC 93"
                 width={78}
                 height={78}
-                className="h-[54px] w-auto rounded-full drop-shadow-[0_12px_22px_rgba(13,27,75,0.18)] transition-transform duration-300 group-hover:scale-[1.04] lg:h-[70px]"
+                className="h-[46px] w-auto rounded-full drop-shadow-[0_12px_22px_rgba(13,27,75,0.18)] transition-transform duration-300 group-hover:scale-[1.04] sm:h-[54px] lg:h-[70px]"
                 priority
               />
             </span>
@@ -100,55 +100,51 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-[60] bg-mesh"
+            className="fixed inset-0 z-[60] flex flex-col bg-mesh"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.28 }}
           >
-            <div className="max-w-7xl mx-auto px-6 h-[76px] flex items-center justify-between">
-              <span className="display-sm text-xl text-white">SDUS FC 93</span>
+            <div className="mx-auto flex h-[58px] w-full max-w-7xl shrink-0 items-center justify-between px-5 sm:h-[68px] sm:px-6">
+              <span className="display-sm text-lg text-white sm:text-xl">SDUS FC 93</span>
               <button
                 onClick={() => setMenuOpen(false)}
-                className="grid place-items-center w-11 h-11 rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors"
+                className="grid h-11 w-11 place-items-center rounded-full border border-white/30 text-white transition-colors hover:bg-white/10"
                 aria-label="Fermer le menu"
               >
                 <Icon name="close" size={20} strokeWidth={2.2} />
               </button>
             </div>
-            <div className="flex flex-col items-center justify-center gap-1 mt-8">
+            <nav className="flex flex-1 flex-col items-center justify-center gap-0.5 overflow-y-auto px-6 py-4 sm:gap-1">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, y: 22 }}
+                  initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.06 + i * 0.05, duration: 0.4, ease: [0.22, 0.7, 0.2, 1] }}
+                  transition={{ delay: 0.05 + i * 0.04, duration: 0.36, ease: [0.22, 0.7, 0.2, 1] }}
                 >
                   <Link
                     href={link.href}
                     data-active={pathname === link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="display-sm text-4xl text-white/90 hover:text-flame data-[active=true]:text-flame transition-colors py-1.5"
+                    className="display-sm block py-1.5 text-center text-[1.6rem] leading-tight text-white/90 transition-colors hover:text-flame data-[active=true]:text-flame sm:text-[2.1rem]"
                   >
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
               <motion.div
-                initial={{ opacity: 0, y: 22 }}
+                initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.06 + navLinks.length * 0.05, duration: 0.4 }}
+                transition={{ delay: 0.05 + navLinks.length * 0.04, duration: 0.36 }}
               >
-                <Link
-                  href="/inscriptions"
-                  onClick={() => setMenuOpen(false)}
-                  className="btn-primary mt-6"
-                >
+                <Link href="/inscriptions" onClick={() => setMenuOpen(false)} className="btn-primary mt-5">
                   S&apos;inscrire
                   <Icon name="arrow-right" size={16} strokeWidth={2.4} />
                 </Link>
               </motion.div>
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>

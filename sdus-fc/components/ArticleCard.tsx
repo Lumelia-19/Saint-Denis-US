@@ -16,7 +16,7 @@ export default function ArticleCard({ article }: { article: Article }) {
 
   return (
     <article className="card card-hover group overflow-hidden flex flex-col">
-      <div className="relative h-52 bg-mesh overflow-hidden">
+      <div className="relative h-40 sm:h-44 lg:h-52 bg-mesh overflow-hidden">
         {article.image ? (
           <Image
             src={article.image}
@@ -41,7 +41,7 @@ export default function ArticleCard({ article }: { article: Article }) {
           {date}
         </span>
       </div>
-      <div className="p-5 flex flex-col flex-1">
+      <div className="p-4 sm:p-5 flex flex-col flex-1">
         <h3 className="display-sm text-lg text-navy leading-snug mb-2 group-hover:text-flame transition-colors">
           {article.title}
         </h3>

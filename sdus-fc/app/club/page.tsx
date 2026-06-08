@@ -50,7 +50,7 @@ export default function ClubPage() {
       </svg>
 
       {/* ===== Bandeau Stade de France (top, plein large, vague) ===== */}
-      <div className="relative h-[28vh] min-h-[220px] w-full overflow-hidden lg:h-[34vh] lg:min-h-[280px]">
+      <div className="relative h-[20vh] min-h-[150px] w-full overflow-hidden sm:h-[24vh] sm:min-h-[190px] lg:h-[34vh] lg:min-h-[280px]">
         <div className="absolute inset-0" style={{ clipPath: 'url(#club-banner-wave)' }}>
           <Image
             src="/assets/club_hero.webp"
@@ -64,7 +64,7 @@ export default function ClubPage() {
       </div>
 
       {/* ===== Contenu principal ===== */}
-      <div className="relative z-10 mx-auto grid max-w-[1500px] gap-10 px-5 pb-20 sm:px-8 lg:grid-cols-[1fr_440px] lg:gap-14 lg:px-10 min-[1400px]:px-16">
+      <div className="relative z-10 mx-auto grid max-w-[1500px] gap-8 px-5 pb-14 sm:gap-9 sm:px-8 sm:pb-16 lg:grid-cols-[1fr_440px] lg:gap-14 lg:px-10 min-[1400px]:px-16">
         {/* ====== Colonne gauche ====== */}
         <div className="pt-4 lg:pt-6">
           <Reveal>
@@ -96,7 +96,7 @@ export default function ClubPage() {
                   'repeating-linear-gradient(90deg, var(--color-flame) 0, var(--color-flame) 6px, transparent 6px, transparent 14px)',
               }}
             />
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-4">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:gap-4">
               {TIMELINE.map((item, i) => (
                 <Reveal key={item.title} delay={i * 0.08}>
                   <div className="relative flex flex-col items-center text-center">
@@ -120,7 +120,7 @@ export default function ClubPage() {
           <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-3">
             {VALUES.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.08}>
-                <article className="group relative h-full overflow-hidden rounded-[1.15rem] border border-cloud bg-white p-6 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-30px_rgba(13,27,75,0.7)]">
+                <article className="group relative h-full overflow-hidden rounded-[1.15rem] border border-cloud bg-white p-5 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-30px_rgba(13,27,75,0.7)] sm:p-6">
                   <span className="mb-5 grid h-12 w-12 place-items-center rounded-full bg-royal text-white shadow-[0_14px_28px_-18px_rgba(13,27,75,0.8)] transition-colors duration-300 group-hover:bg-flame">
                     <Icon name={v.icon} size={22} />
                   </span>
@@ -149,7 +149,7 @@ export default function ClubPage() {
           {/* === Pilule ovale verticale avec joueurs === */}
           <Reveal>
             <div
-              className="relative h-[440px] w-[300px] overflow-hidden shadow-[0_40px_100px_-40px_rgba(13,27,75,0.65)] sm:h-[520px] sm:w-[360px] lg:-mt-44 lg:h-[600px] lg:w-[400px] xl:h-[640px] xl:w-[420px]"
+              className="relative h-[300px] w-[210px] overflow-hidden shadow-[0_40px_100px_-40px_rgba(13,27,75,0.65)] sm:h-[400px] sm:w-[280px] md:h-[520px] md:w-[360px] lg:-mt-44 lg:h-[600px] lg:w-[400px] xl:h-[640px] xl:w-[420px]"
               style={{ borderRadius: '50%' }}
             >
               <Image

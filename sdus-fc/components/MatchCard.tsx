@@ -14,7 +14,7 @@ function TeamBadge({ name, highlight }: { name: string; highlight: boolean }) {
   return (
     <div className="flex-1 flex flex-col items-center gap-2 text-center">
       <span
-        className={`grid place-items-center w-12 h-12 rounded-2xl text-sm font-black ${
+        className={`grid place-items-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl text-xs sm:text-sm font-black ${
           highlight ? 'bg-royal text-white' : 'bg-mist text-navy'
         }`}
         style={{ fontFamily: 'var(--font-display)' }}
@@ -34,7 +34,7 @@ export default function MatchCard({ match }: { match: Match }) {
   const color = getCategoryColor(match.category);
 
   return (
-    <article className="card card-hover p-5 flex flex-col gap-4">
+    <article className="card card-hover p-4 sm:p-5 flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <span className="chip text-white" style={{ backgroundColor: color }}>
           {match.category}
@@ -44,16 +44,16 @@ export default function MatchCard({ match }: { match: Match }) {
         </span>
       </div>
 
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex items-center justify-between gap-2 sm:gap-3">
         <TeamBadge name={match.homeTeam.name} highlight={isSDUSHome} />
-        <div className="shrink-0 grid place-items-center min-w-[64px]">
+        <div className="shrink-0 grid place-items-center min-w-[52px] sm:min-w-[64px]">
           {isFinished ? (
-            <span className="nums text-2xl font-black text-navy" style={{ fontFamily: 'var(--font-display)' }}>
+            <span className="nums text-xl sm:text-2xl font-black text-navy" style={{ fontFamily: 'var(--font-display)' }}>
               {match.homeScore}<span className="text-cloud px-1">·</span>{match.awayScore}
             </span>
           ) : (
             <>
-              <span className="text-sm font-black text-flame tracking-widest">VS</span>
+              <span className="text-xs sm:text-sm font-black text-flame tracking-widest">VS</span>
               <span className="nums text-xs text-slate-soft mt-0.5">{match.time}</span>
             </>
           )}

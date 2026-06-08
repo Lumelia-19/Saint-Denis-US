@@ -23,12 +23,12 @@ const SOCIALS: { name: IconName; label: string; href: string }[] = [
 export default function Footer() {
   return (
     <footer className="relative bg-mesh text-white overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/12">
+      <div className="relative max-w-7xl mx-auto px-6 pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 pb-12 border-b border-white/12">
           <div>
             <div className="flex items-center gap-3 mb-5">
               <Image src="/assets/logo.png" alt="SDUS FC 93" width={56} height={56} className="h-14 w-auto" />
-              <span className="display-sm text-xl">SDUS FC 93</span>
+              <span className="display-sm text-lg sm:text-xl">SDUS FC 93</span>
             </div>
             <p className="text-white/55 text-sm leading-relaxed max-w-xs">
               Formateur, populaire et ambitieux. Au cœur de Saint-Denis depuis 1993.
@@ -53,7 +53,7 @@ export default function Footer() {
           <FooterColumn title="Le Club" links={CLUB} />
 
           <div>
-            <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-white/40 mb-5">Contact</h4>
+            <h4 className="font-bold text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white/40 mb-5">Contact</h4>
             <ul className="space-y-3.5 text-sm text-white/70">
               <li className="flex items-start gap-2.5">
                 <Icon name="map-pin" size={17} className="mt-0.5 text-flame shrink-0" />
@@ -85,7 +85,7 @@ export default function Footer() {
 function FooterColumn({ title, links }: { title: string; links: [string, string][] }) {
   return (
     <div>
-      <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-white/40 mb-5">{title}</h4>
+      <h4 className="font-bold text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white/40 mb-5">{title}</h4>
       <ul className="space-y-3">
         {links.map(([href, label]) => (
           <li key={href}>

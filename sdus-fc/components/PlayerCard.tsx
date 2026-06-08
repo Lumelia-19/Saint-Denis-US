@@ -24,13 +24,13 @@ export default function PlayerCard({ player }: { player: Player }) {
         <div className="flip-face bg-mesh">
           <div className="relative h-full flex flex-col items-center justify-center p-6 text-center">
             <span
-              className="absolute top-1/2 -translate-y-1/2 text-[10rem] font-black text-white/[0.07] select-none leading-none nums"
+              className="absolute top-1/2 -translate-y-1/2 text-[6rem] sm:text-[8rem] lg:text-[10rem] font-black text-white/[0.07] select-none leading-none nums"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               {player.number}
             </span>
-            <div className="relative z-10 grid place-items-center w-24 h-24 rounded-full border-2 border-flame/60 bg-white/10 mb-4">
-              <span className="text-3xl font-black text-white" style={{ fontFamily: 'var(--font-display)' }}>
+            <div className="relative z-10 grid place-items-center w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full border-2 border-flame/60 bg-white/10 mb-4">
+              <span className="text-xl sm:text-2xl lg:text-3xl font-black text-white" style={{ fontFamily: 'var(--font-display)' }}>
                 {initials}
               </span>
             </div>
@@ -58,7 +58,7 @@ export default function PlayerCard({ player }: { player: Player }) {
               {stats.map((s) => (
                 <div key={s.label} className="rounded-xl bg-white/[0.06] border border-white/10 p-3 text-center">
                   <p
-                    className="text-flame text-2xl font-black nums"
+                    className="text-flame text-xl sm:text-2xl font-black nums"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
                     {s.value}

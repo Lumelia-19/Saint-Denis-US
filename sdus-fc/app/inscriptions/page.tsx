@@ -109,7 +109,7 @@ function TacticalDecor() {
 export default function InscriptionsPage() {
   return (
     <section className="relative overflow-hidden bg-white" aria-labelledby="inscriptions-title">
-      <div className="relative isolate min-h-screen overflow-hidden pt-28 lg:pt-24">
+      <div className="relative isolate min-h-[calc(100vh-5rem)] overflow-hidden pt-20 sm:min-h-screen sm:pt-24 lg:pt-24">
         <Image
           src="/assets/inscriptions-bg.webp"
           alt="Jeune joueur du SDUS FC 93 en action pendant une séance d'entraînement."
@@ -124,13 +124,13 @@ export default function InscriptionsPage() {
 
         <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6rem)] max-w-[1536px] grid-rows-[auto_1fr] px-5 pb-8 sm:px-8 lg:px-10 min-[1400px]:px-24">
           <div className="grid items-start gap-7 lg:grid-cols-[500px_180px_1fr] min-[1400px]:grid-cols-[540px_190px_1fr]">
-            <div className="max-w-[620px] pt-12 lg:pt-24">
+            <div className="max-w-[620px] pt-8 sm:pt-12 md:pt-16 lg:pt-24">
               <h1 id="inscriptions-title" className="hero-title text-royal lg:text-[6.95rem]">
                 Rejoindre
                 <br />
                 <span className="text-flame">le club.</span>
               </h1>
-              <p className="mt-4 text-xl font-semibold text-deep sm:text-2xl">
+              <p className="mt-4 text-base font-semibold text-deep sm:text-lg md:text-xl lg:text-2xl">
                 Inscriptions, Détections &amp; Stages.
               </p>
             </div>
@@ -150,14 +150,14 @@ export default function InscriptionsPage() {
           <div className="mt-6 grid items-start gap-5 lg:mt-8 lg:grid-cols-[minmax(0,1fr)_280px] min-[1400px]:grid-cols-[minmax(0,1fr)_300px]">
             {/* === Strip de 4 tickets attachés === */}
             {/* Pas de gap : les demi cercles d'un ticket completent ceux du voisin */}
-            <div className="grid gap-y-3 sm:grid-cols-[230px_repeat(3,minmax(0,1fr))] sm:gap-x-0 min-[1400px]:grid-cols-[250px_repeat(3,minmax(0,1fr))]">
+            <div className="grid gap-y-3 sm:grid-cols-[180px_repeat(3,minmax(0,1fr))] sm:gap-x-0 md:grid-cols-[230px_repeat(3,minmax(0,1fr))] min-[1400px]:grid-cols-[250px_repeat(3,minmax(0,1fr))]">
               {/* Ticket 1 : Pièces à fournir (bleu) */}
               <aside
-                className="relative rounded-[1.1rem] bg-royal px-6 py-6 text-white shadow-[0_24px_60px_-28px_rgba(13,27,75,0.55)]"
+                className="relative rounded-[1.1rem] bg-royal px-4 py-4 text-white shadow-[0_24px_60px_-28px_rgba(13,27,75,0.55)] sm:px-5 sm:py-5 md:px-6 md:py-6"
                 style={TICKET_PERF}
               >
                 <div className="mb-5 h-1.5 w-20 rounded-full bg-flame" />
-                <h2 className="display-sm text-[1.45rem] italic">Pièces à fournir</h2>
+                <h2 className="display-sm text-[1.15rem] italic sm:text-[1.3rem] md:text-[1.45rem]">Pièces à fournir</h2>
                 <ul className="mt-5 space-y-3.5">
                   {REQUIREMENTS.map((item) => (
                     <li key={item} className="flex gap-3 text-[0.8rem] font-semibold leading-snug text-white/90">
@@ -174,7 +174,7 @@ export default function InscriptionsPage() {
               {STEPS.map((step, i) => (
                 <article
                   key={step.title}
-                  className="relative rounded-[1.1rem] bg-white/96 px-4 py-5 shadow-[0_24px_60px_-32px_rgba(13,27,75,0.45)] backdrop-blur min-[1400px]:px-5 min-[1400px]:py-6"
+                  className="relative rounded-[1.1rem] bg-white/96 px-3 py-4 shadow-[0_24px_60px_-32px_rgba(13,27,75,0.45)] backdrop-blur sm:px-4 sm:py-5 min-[1400px]:px-5 min-[1400px]:py-6"
                   style={TICKET_PERF}
                 >
                   <div className="flex items-center gap-3 min-h-14 min-[1400px]:gap-4">
@@ -226,7 +226,7 @@ export default function InscriptionsPage() {
               ))}
 
               {/* === CTA central (sous le strip) === */}
-              <div className="mt-4 flex flex-col items-center gap-5 sm:col-span-full lg:flex-row lg:justify-center">
+              <div className="mt-4 flex flex-col items-center gap-3 sm:col-span-full sm:gap-4 lg:flex-row lg:justify-center lg:gap-5">
                 <Link href="/contact" className="btn-primary group min-w-56">
                   S&apos;inscrire
                   <Icon
