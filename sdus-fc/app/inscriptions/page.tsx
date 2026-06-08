@@ -174,7 +174,7 @@ export default function InscriptionsPage() {
               {STEPS.map((step, i) => (
                 <article
                   key={step.title}
-                  className="relative rounded-[1.1rem] bg-white/96 px-3 py-4 shadow-[0_24px_60px_-32px_rgba(13,27,75,0.45)] backdrop-blur sm:px-4 sm:py-5 min-[1400px]:px-5 min-[1400px]:py-6"
+                  className="relative rounded-[1.1rem] bg-white/96 px-4 pt-5 pb-12 shadow-[0_24px_60px_-32px_rgba(13,27,75,0.45)] backdrop-blur sm:px-4 sm:py-5 min-[1400px]:px-5 min-[1400px]:py-6"
                   style={TICKET_PERF}
                 >
                   <div className="flex items-center gap-3 min-h-14 min-[1400px]:gap-4">
@@ -194,7 +194,7 @@ export default function InscriptionsPage() {
                   <div className="mx-auto my-3 grid h-[4.5rem] w-[4.5rem] place-items-center text-flame min-[1400px]:my-4 min-[1400px]:h-20 min-[1400px]:w-20">
                     <Icon name={step.icon} size={72} strokeWidth={1.6} />
                   </div>
-                  <p className="mx-auto max-w-[210px] text-center text-[0.74rem] leading-relaxed text-deep/78 min-[1400px]:text-[0.8rem]">
+                  <p className="mx-auto max-w-[230px] text-center text-[0.82rem] leading-relaxed text-deep/78 sm:max-w-[210px] sm:text-[0.74rem] min-[1400px]:text-[0.8rem]">
                     {step.desc}
                   </p>
                   {i < STEPS.length - 1 && (

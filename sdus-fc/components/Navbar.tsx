@@ -80,7 +80,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="ml-auto flex items-center gap-3">
               <Link href="/inscriptions" className="hidden md:inline-flex btn-primary py-2.5 px-5 text-sm">
                 S&apos;inscrire
                 <Icon name="arrow-right" size={16} strokeWidth={2.4} />

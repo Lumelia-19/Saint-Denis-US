@@ -87,7 +87,7 @@ export default function ClubPage() {
           </Reveal>
 
           {/* ===== Timeline horizontale ===== */}
-          <div className="relative mt-14">
+          <div className="relative mt-10 lg:mt-14">
             <div
               aria-hidden="true"
               className="absolute left-6 right-6 top-8 hidden h-0.5 md:block"
@@ -96,28 +96,29 @@ export default function ClubPage() {
                   'repeating-linear-gradient(90deg, var(--color-flame) 0, var(--color-flame) 6px, transparent 6px, transparent 14px)',
               }}
             />
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:gap-4">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 md:gap-4">
               {TIMELINE.map((item, i) => (
                 <Reveal key={item.title} delay={i * 0.08}>
                   <div className="relative flex flex-col items-center text-center">
-                    <span className="relative z-10 grid h-16 w-16 place-items-center rounded-full bg-royal text-white shadow-[0_18px_40px_-22px_rgba(13,27,75,0.85)] ring-[6px] ring-white">
-                      <Icon name={item.icon} size={26} />
+                    <span className="relative z-10 grid h-12 w-12 place-items-center rounded-full bg-royal text-white shadow-[0_18px_40px_-22px_rgba(13,27,75,0.85)] ring-[5px] ring-white md:h-16 md:w-16 md:ring-[6px]">
+                      <Icon name={item.icon} size={22} className="md:hidden" />
+                      <Icon name={item.icon} size={26} className="hidden md:block" />
                     </span>
-                    <p className="display-sm mt-5 text-2xl italic text-royal">
+                    <p className="display-sm mt-3 text-xl italic text-royal md:mt-5 md:text-2xl">
                       {item.year || item.title.toUpperCase()}
                     </p>
                     {item.year && (
-                      <p className="mt-1 text-sm font-bold uppercase tracking-wide text-deep">{item.title}</p>
+                      <p className="mt-1 text-[0.8rem] font-bold uppercase tracking-wide text-deep md:text-sm">{item.title}</p>
                     )}
-                    <p className="mt-2 max-w-[14rem] text-sm leading-relaxed text-deep/72">{item.desc}</p>
+                    <p className="mt-1.5 max-w-[14rem] text-[0.8rem] leading-relaxed text-deep/72 md:mt-2 md:text-sm">{item.desc}</p>
                   </div>
                 </Reveal>
               ))}
             </div>
           </div>
 
-          {/* ===== 3 cartes valeurs ===== */}
-          <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-3">
+          {/* ===== 3 cartes valeurs (desktop : dans la colonne gauche) ===== */}
+          <div className="mt-14 hidden grid-cols-1 gap-5 sm:grid-cols-3 lg:grid">
             {VALUES.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.08}>
                 <article className="group relative h-full overflow-hidden rounded-[1.15rem] border border-cloud bg-white p-5 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-30px_rgba(13,27,75,0.7)] sm:p-6">
@@ -172,6 +173,24 @@ export default function ClubPage() {
               Saint-Denis comme <span className="text-flame">terrain</span>.
             </p>
           </Reveal>
+        </div>
+
+        {/* ===== 3 cartes valeurs (mobile/tablette : compactes, après photo + citation) ===== */}
+        <div className="mt-10 grid grid-cols-1 gap-3 lg:hidden">
+          {VALUES.map((v) => (
+            <article
+              key={v.title}
+              className="flex items-start gap-3 rounded-[1.1rem] border border-cloud bg-white p-4 shadow-[0_18px_44px_-32px_rgba(13,27,75,0.5)]"
+            >
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-royal text-white">
+                <Icon name={v.icon} size={20} />
+              </span>
+              <div>
+                <h3 className="display-sm text-[1.05rem] italic text-royal">{v.title}</h3>
+                <p className="mt-1 text-[0.82rem] leading-relaxed text-deep/72">{v.desc}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

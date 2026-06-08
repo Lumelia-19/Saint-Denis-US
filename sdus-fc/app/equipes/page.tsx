@@ -80,7 +80,7 @@ const ALUMNI = [
 ];
 
 export default function EquipesPage() {
-  const [active, setActive] = useState<MatchCategory | 'Tous'>('Tous');
+  const [active, setActive] = useState<MatchCategory | 'Tous'>('Seniors');
 
   const filtered = active === 'Tous' ? PLAYERS : PLAYERS.filter((p) => p.category === active);
 
