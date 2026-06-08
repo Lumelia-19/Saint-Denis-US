@@ -100,7 +100,7 @@ export async function POST(request: Request) {
 
   try {
     const resend = new Resend(apiKey);
-    const { error } = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: fromAddress,
       to: toAddress,
       replyTo: email,
@@ -110,13 +110,36 @@ export async function POST(request: Request) {
     });
 
     if (error) {
-      console.error('[contact] Resend error:', error);
-      return NextResponse.json({ error: 'Envoi impossible pour le moment.' }, { status: 502 });
+      // Log complet cote serveur (visible dans Vercel Functions logs)
+      console.error('[contact] Resend error:', JSON.stringify(error, null, 2));
+      console.error('[contact] config used:', { from: fromAddress, to: toAddress });
+
+      // Mappe les erreurs Resend frequentes vers un message clair cote client
+      const raw = `${error.name ?? ''} ${error.message ?? ''}`.toLowerCase();
+      let userMsg = error.message || 'Envoi impossible pour le moment.';
+      if (raw.includes('domain') && raw.includes('not verified')) {
+        userMsg =
+          "Le domaine de l'expéditeur n'est pas vérifié sur Resend. " +
+          'Vérifie sdus-fc93.fr sur resend.com/domains ou utilise un sender ' +
+          "déjà vérifié (ex. onboarding@resend.dev — réservé à l'email du compte Resend).";
+      } else if (raw.includes('api key') || raw.includes('unauthorized') || raw.includes('forbidden')) {
+        userMsg = 'Clé API Resend invalide ou expirée.';
+      } else if (raw.includes('testing') || raw.includes("can't send")) {
+        userMsg =
+          "Avec onboarding@resend.dev, Resend n'autorise l'envoi QUE vers l'email du compte Resend. " +
+          "Mets CONTACT_TO_EMAIL = email de ton compte Resend, ou vérifie ton domaine.";
+      }
+
+      return NextResponse.json(
+        { error: userMsg, debug: { name: error.name, message: error.message } },
+        { status: 502 },
+      );
     }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, id: data?.id });
   } catch (err) {
-    console.error('[contact] unexpected error:', err);
-    return NextResponse.json({ error: 'Erreur serveur.' }, { status: 500 });
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error('[contact] unexpected error:', msg, err);
+    return NextResponse.json({ error: `Erreur serveur : ${msg}` }, { status: 500 });
   }
 }
