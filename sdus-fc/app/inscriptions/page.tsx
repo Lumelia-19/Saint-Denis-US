@@ -66,6 +66,13 @@ export const metadata: Metadata = {
   title: 'Inscriptions',
   description:
     'Rejoignez le SDUS FC 93 : inscriptions, détections, stages et pièces à fournir pour la saison 2025/2026.',
+  alternates: { canonical: '/inscriptions' },
+  openGraph: {
+    title: 'Rejoindre le club | SDUS FC 93',
+    description: 'Inscriptions, détections et stages — saison 2025/2026 du Saint-Denis U.S. Football Club.',
+    url: '/inscriptions',
+    type: 'website',
+  },
 };
 
 function TacticalDecor() {

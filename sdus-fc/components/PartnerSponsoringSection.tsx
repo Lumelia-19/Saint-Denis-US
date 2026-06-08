@@ -66,7 +66,7 @@ export default function PartnerSponsoringSection() {
       />
       <TacticalPattern tone="onLight" className="z-[1] opacity-55" />
 
-      <div className="relative z-10 mx-auto max-w-[1500px] px-5 sm:px-8 lg:min-h-[820px] lg:px-10 min-[1400px]:px-16">
+      <div className="relative z-10 mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10 min-[1400px]:px-16">
         {/* ===== Stat 500+ JEUNES LICENCIÉS (gauche) ===== */}
         <Reveal delay={0.04} className="lg:absolute lg:left-[8%] lg:top-[34%] lg:w-[180px]">
           <div className="mb-8 max-w-xs lg:mb-0">
@@ -101,10 +101,8 @@ export default function PartnerSponsoringSection() {
         </Reveal>
 
         {/* ===== Centre : Orbit (VRAI cercle) + titre ===== */}
-        <div
-          className="relative mx-auto flex flex-col items-center justify-center py-8 text-center lg:py-0"
-          style={{ width: `${ORBIT}px`, height: `${ORBIT}px`, maxWidth: '100%' }}
-        >
+        {/* Mobile : hauteur auto (les bulles s'empilent). Desktop : carre 640px pour l'orbite. */}
+        <div className="relative mx-auto flex w-full max-w-[640px] flex-col items-center justify-center py-8 text-center lg:h-[640px] lg:w-[640px] lg:py-0">
           <svg
             className="pointer-events-none absolute inset-0 hidden h-full w-full overflow-visible lg:block"
             viewBox={`0 0 ${ORBIT} ${ORBIT}`}
@@ -168,8 +166,8 @@ export default function PartnerSponsoringSection() {
           </div>
         </div>
 
-        {/* ===== 3 cartes avantages ===== */}
-        <div className="mt-12 grid gap-5 lg:absolute lg:bottom-8 lg:left-1/2 lg:mt-0 lg:w-[820px] lg:-translate-x-1/2 lg:grid-cols-3 lg:gap-6">
+        {/* ===== 3 cartes avantages (sous l'orbite, en flux normal) ===== */}
+        <div className="mx-auto mt-12 grid max-w-[920px] gap-5 sm:grid-cols-3 lg:mt-20 lg:gap-6">
           {BENEFITS.map((item, i) => (
             <Reveal key={item.title} delay={0.32 + i * 0.08}>
               <Link

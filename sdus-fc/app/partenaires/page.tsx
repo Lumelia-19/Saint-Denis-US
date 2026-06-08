@@ -51,6 +51,13 @@ export const metadata: Metadata = {
   title: 'Partenaires & Sponsoring',
   description:
     'Devenez partenaire du SDUS FC 93 et soutenez un club formateur, populaire et ancré à Saint-Denis.',
+  alternates: { canonical: '/partenaires' },
+  openGraph: {
+    title: 'Partenaires & Sponsoring | SDUS FC 93',
+    description: 'Soutenez un club formateur et ambitieux, engagé pour la jeunesse et le territoire de Saint-Denis.',
+    url: '/partenaires',
+    type: 'website',
+  },
 };
 
 export default function PartenairesPage() {
@@ -113,10 +120,8 @@ export default function PartenairesPage() {
         </Reveal>
 
         {/* ===== Centre : Orbit (VRAI cercle) + titre ===== */}
-        <div
-          className="relative mx-auto flex flex-col items-center justify-center py-8 text-center lg:py-0"
-          style={{ width: `${ORBIT}px`, height: `${ORBIT}px`, maxWidth: '100%' }}
-        >
+        {/* Mobile : hauteur auto (les bulles s'empilent). Desktop : carre 640px pour l'orbite. */}
+        <div className="relative mx-auto flex w-full max-w-[640px] flex-col items-center justify-center py-8 text-center lg:h-[640px] lg:w-[640px] lg:py-0">
           <svg
             className="pointer-events-none absolute inset-0 hidden h-full w-full overflow-visible lg:block"
             viewBox={`0 0 ${ORBIT} ${ORBIT}`}

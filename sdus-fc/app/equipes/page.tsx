@@ -158,8 +158,9 @@ export default function EquipesPage() {
             {/* ===== 4 joueurs + chevrons + descriptions ===== */}
             <Reveal delay={0.12}>
               {/* Zone photos : faible flow + bottom decale tres bas (les photos
-                 descendent par-dessus la zone des chevrons sans pousser le layout). */}
-              <div className="relative mt-4 h-[180px] sm:h-[200px] lg:h-[220px]">
+                 descendent par-dessus la zone des chevrons sans pousser le layout).
+                 Masquee < lg (photos calibrees pour desktop, ingérables en petit). */}
+              <div className="relative mt-4 hidden lg:block lg:h-[220px]">
                 <div className="absolute inset-x-0 bottom-[-260px] flex items-end justify-center gap-2 sm:bottom-[-300px] sm:gap-4 lg:bottom-[-340px] lg:gap-3 lg:justify-start">
                   {STAGES.map((stage, i) => (
                     <div

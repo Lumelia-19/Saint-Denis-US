@@ -21,6 +21,13 @@ export const metadata: Metadata = {
   title: 'Le Club',
   description:
     "Découvrez l'histoire, les valeurs et le projet formateur du Saint-Denis U.S. Football Club depuis 1993.",
+  alternates: { canonical: '/club' },
+  openGraph: {
+    title: 'Le Club | SDUS FC 93',
+    description: "L'histoire, les valeurs et le projet formateur du Saint-Denis U.S. Football Club.",
+    url: '/club',
+    type: 'website',
+  },
 };
 
 export default function ClubPage() {

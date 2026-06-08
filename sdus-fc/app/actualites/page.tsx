@@ -37,6 +37,13 @@ export const metadata: Metadata = {
   title: 'Actualités',
   description:
     "Toute l'actualité du Saint-Denis U.S. Football Club : matchs, stages, événements, bénévoles et vie du club.",
+  alternates: { canonical: '/actualites' },
+  openGraph: {
+    title: 'Actualités & vie du club | SDUS FC 93',
+    description: "Résumés de matchs, stages, événements et vie du Saint-Denis U.S. Football Club.",
+    url: '/actualites',
+    type: 'website',
+  },
 };
 
 function formatDate(date: string) {
