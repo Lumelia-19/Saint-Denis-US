@@ -75,7 +75,7 @@ export async function POST(request: Request) {
 
   const html = `
     <div style="font-family: Inter, Arial, sans-serif; color: #0d1b4b; max-width: 560px;">
-      <h2 style="color: #1b3a8c; margin: 0 0 16px;">Nouveau message — ${escapeHtml(subject)}</h2>
+      <h2 style="color: #1b3a8c; margin: 0 0 16px;">Nouveau message - ${escapeHtml(subject)}</h2>
       <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
         <tr><td style="padding: 4px 0; color: #5a6478;">Nom</td><td style="padding: 4px 0;"><strong>${escapeHtml(fullName)}</strong></td></tr>
         <tr><td style="padding: 4px 0; color: #5a6478;">Email</td><td style="padding: 4px 0;"><a href="mailto:${escapeHtml(email)}" style="color: #f26522;">${escapeHtml(email)}</a></td></tr>
@@ -104,7 +104,7 @@ export async function POST(request: Request) {
       from: fromAddress,
       to: toAddress,
       replyTo: email,
-      subject: `[Site SDUS] ${subject} — ${fullName}`,
+      subject: `[Site SDUS] ${subject} - ${fullName}`,
       html,
       text,
     });
@@ -121,7 +121,7 @@ export async function POST(request: Request) {
         userMsg =
           "Le domaine de l'expéditeur n'est pas vérifié sur Resend. " +
           'Vérifie sdus-fc93.fr sur resend.com/domains ou utilise un sender ' +
-          "déjà vérifié (ex. onboarding@resend.dev — réservé à l'email du compte Resend).";
+          "déjà vérifié (ex. onboarding@resend.dev - réservé à l'email du compte Resend).";
       } else if (raw.includes('api key') || raw.includes('unauthorized') || raw.includes('forbidden')) {
         userMsg = 'Clé API Resend invalide ou expirée.';
       } else if (raw.includes('testing') || raw.includes("can't send")) {

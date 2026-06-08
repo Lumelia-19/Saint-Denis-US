@@ -1,5 +1,5 @@
 /* eslint-disable */
-// SDUS FC 93 — Service Worker
+// SDUS FC 93 - Service Worker
 // Squelette fonctionnel : cache d'assets + notifications push.
 
 const CACHE_NAME = 'sdus-fc-v1';
@@ -51,7 +51,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Network First (pages) — repli sur le cache hors-ligne
+  // Network First (pages) - repli sur le cache hors-ligne
   event.respondWith(
     fetch(request)
       .then((response) => {

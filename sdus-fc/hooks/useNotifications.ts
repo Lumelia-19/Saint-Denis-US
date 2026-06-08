@@ -24,7 +24,7 @@ function writeSubscriptions(list: string[]): void {
   try {
     localStorage.setItem(SUBSCRIPTIONS_KEY, JSON.stringify(list));
   } catch {
-    /* localStorage indisponible — les abonnements ne seront pas persistés */
+    /* localStorage indisponible - les abonnements ne seront pas persistés */
   }
 }
 

@@ -1,5 +1,5 @@
 // ============================================
-// SDUS FC 93 — Matches API Adapter
+// SDUS FC 93 - Matches API Adapter
 // ============================================
 // Ce fichier gère la récupération des données de matchs.
 // Par défaut, il utilise des données mock.
@@ -9,7 +9,7 @@
 
 import { Match, APIConfig, MatchCategory } from './types';
 
-// Configuration de l'API — à remplir quand disponible
+// Configuration de l'API - à remplir quand disponible
 const API_CONFIG: APIConfig = {
   provider: 'mock' as const,
   baseUrl: process.env.NEXT_PUBLIC_MATCHES_API_URL || '',
@@ -18,7 +18,7 @@ const API_CONFIG: APIConfig = {
 };
 
 // ============================================
-// MOCK DATA — Matchs à venir (Saison 2025/2026)
+// MOCK DATA - Matchs à venir (Saison 2025/2026)
 // ============================================
 const MOCK_UPCOMING_MATCHES: Match[] = [
   {
@@ -96,7 +96,7 @@ const MOCK_UPCOMING_MATCHES: Match[] = [
 ];
 
 // ============================================
-// MOCK DATA — Résultats récents
+// MOCK DATA - Résultats récents
 // ============================================
 const MOCK_RECENT_RESULTS: Match[] = [
   {

@@ -73,7 +73,7 @@ export default function Footer() {
 
         <div className="pt-7 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-white/45 text-sm">
-            © {new Date().getFullYear()} Saint-Denis U.S. Football Club — Tous droits réservés.
+            © {new Date().getFullYear()} Saint-Denis U.S. Football Club - Tous droits réservés.
           </p>
           <p className="text-white/35 text-xs uppercase tracking-[0.18em]">SDUS FC 93 · Seine-Saint-Denis</p>
         </div>

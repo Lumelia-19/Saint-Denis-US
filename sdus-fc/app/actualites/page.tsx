@@ -76,7 +76,7 @@ export default function ActualitesPage() {
         className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(13,27,75,0.15)_0%,rgba(13,27,75,0.45)_38%,rgba(255,255,255,0.85)_72%,rgb(255,255,255)_92%)]"
       />
 
-      {/* Tache blanche derriere le texte (cote gauche) — plus large */}
+      {/* Tache blanche derriere le texte (cote gauche) - plus large */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_1100px_640px_at_22%_28%,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.85)_30%,rgba(255,255,255,0.45)_55%,rgba(255,255,255,0)_80%)]"
@@ -221,7 +221,7 @@ export default function ActualitesPage() {
               <blockquote className="display-sm relative z-10 mt-3 text-[1.4rem] italic leading-[1.05] text-royal">
                 Ce club, c&apos;est plus qu&apos;un maillot. C&apos;est une famille, des valeurs, et une passion partagée.
               </blockquote>
-              <figcaption className="relative z-10 mt-5 text-sm font-bold text-flame">— Samir, parent bénévole</figcaption>
+              <figcaption className="relative z-10 mt-5 text-sm font-bold text-flame">- Samir, parent bénévole</figcaption>
               <div className="pointer-events-none absolute -bottom-10 -right-8 text-royal/[0.07]">
                 <Icon name="shield" size={180} strokeWidth={1.2} />
               </div>

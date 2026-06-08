@@ -34,7 +34,7 @@ function readCache(): CacheEntry | null {
     if (!parsed?.data || Date.now() - parsed.timestamp > CACHE_TTL) return null;
     return parsed;
   } catch {
-    /* localStorage indisponible ou JSON corrompu — on ignore le cache */
+    /* localStorage indisponible ou JSON corrompu - on ignore le cache */
     return null;
   }
 }
@@ -43,7 +43,7 @@ function writeCache(data: RawData): void {
   try {
     localStorage.setItem(CACHE_KEY, JSON.stringify({ data, timestamp: Date.now() } satisfies CacheEntry));
   } catch {
-    /* localStorage indisponible (mode privé, quota) — le cache est simplement ignoré */
+    /* localStorage indisponible (mode privé, quota) - le cache est simplement ignoré */
   }
 }
 

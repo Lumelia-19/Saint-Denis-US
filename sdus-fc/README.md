@@ -1,4 +1,4 @@
-# SDUS FC 93 — Site officiel
+# SDUS FC 93 - Site officiel
 
 Site du **Saint-Denis U.S. Football Club**, construit avec Next.js 16 (App Router), React 19, TypeScript et Tailwind CSS v4.
 
@@ -36,7 +36,7 @@ Le formulaire `/contact` poste vers la route `app/api/contact/route.ts` qui envo
 
 1. Créer un compte Resend → générer une API key → la coller dans `RESEND_API_KEY`.
 2. **Tant que le domaine n'est pas vérifié**, garder `CONTACT_FROM_EMAIL="SDUS FC 93 <onboarding@resend.dev>"`. Resend impose alors d'envoyer **vers l'email du compte Resend** uniquement.
-3. **En production**, vérifier `sdus-fc93.fr` sur Resend (DNS records SPF + DKIM), puis passer `CONTACT_FROM_EMAIL` à `"SDUS FC 93 <noreply@sdus-fc93.fr>"` — l'envoi vers `contact@sdus-fc93.fr` (ou n'importe quelle adresse) devient possible.
+3. **En production**, vérifier `sdus-fc93.fr` sur Resend (DNS records SPF + DKIM), puis passer `CONTACT_FROM_EMAIL` à `"SDUS FC 93 <noreply@sdus-fc93.fr>"` - l'envoi vers `contact@sdus-fc93.fr` (ou n'importe quelle adresse) devient possible.
 4. La route valide les champs côté serveur (longueurs, regex email, sujet dans une liste blanche) avant l'appel à Resend.
 
 ## Connecter une vraie API de matchs
@@ -81,7 +81,7 @@ Le site gère un mode clair et un mode sombre (bouton dans la navbar). La préf�
 
 1. Importer le dépôt sur [vercel.com](https://vercel.com/new).
 2. Configurer les variables d'environnement (`NEXT_PUBLIC_*`) dans **Project Settings → Environment Variables**.
-3. Vercel détecte Next.js automatiquement — aucun réglage de build supplémentaire.
+3. Vercel détecte Next.js automatiquement - aucun réglage de build supplémentaire.
 
 ## Structure
 

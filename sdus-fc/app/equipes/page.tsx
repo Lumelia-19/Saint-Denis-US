@@ -107,7 +107,7 @@ export default function EquipesPage() {
               <feDisplacementMap in="SourceGraphic" scale="14" />
             </filter>
           </defs>
-          {/* Coup de pinceau diagonal principal — bleu marine */}
+          {/* Coup de pinceau diagonal principal - bleu marine */}
           <path
             d="M -50 620 Q 380 380 760 500 T 1560 360"
             stroke="#1b3a8c"
@@ -117,7 +117,7 @@ export default function EquipesPage() {
             opacity="0.10"
             filter="url(#brush-roughen)"
           />
-          {/* Coup de pinceau secondaire — azure plus clair */}
+          {/* Coup de pinceau secondaire - azure plus clair */}
           <path
             d="M -40 280 Q 340 200 720 320 T 1540 200"
             stroke="#2d52c4"

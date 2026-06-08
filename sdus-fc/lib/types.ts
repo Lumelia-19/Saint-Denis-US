@@ -1,5 +1,5 @@
 // ============================================
-// SDUS FC 93 — Type Definitions
+// SDUS FC 93 - Type Definitions
 // ============================================
 
 export type MatchCategory = 'U6-U9' | 'U10-U13' | 'U14-U17' | 'U18-Seniors' | 'Seniors';

@@ -1,11 +1,11 @@
 // ============================================
-// SDUS FC 93 — Players Data
+// SDUS FC 93 - Players Data
 // ============================================
 
 import { Player, MatchCategory } from './types';
 
 // ============================================
-// MOCK DATA — Joueurs par catégorie
+// MOCK DATA - Joueurs par catégorie
 // ============================================
 
 export const PLAYERS: Player[] = [

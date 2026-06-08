@@ -68,7 +68,7 @@ const SPOTLIGHTS = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: 'Saint-Denis U.S. Football Club | SDUS FC 93 — Club de foot à Saint-Denis (93)' },
+  title: { absolute: 'Saint-Denis U.S. Football Club | SDUS FC 93 - Club de foot à Saint-Denis (93)' },
   description:
     'Saint-Denis U.S. Football Club : inscriptions, équipes, prochains matchs et actualités du SDUS FC 93. Club formateur, populaire et ambitieux depuis 1993.',
   alternates: { canonical: '/' },

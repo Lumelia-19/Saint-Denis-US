@@ -73,7 +73,7 @@ export default function ContactPage() {
           </h1>
           <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep/82 sm:text-lg">
-            Le club vous répond rapidement — inscriptions, détections, partenariats ou simple curiosité.
+            Le club vous répond rapidement - inscriptions, détections, partenariats ou simple curiosité.
           </p>
         </Reveal>
 

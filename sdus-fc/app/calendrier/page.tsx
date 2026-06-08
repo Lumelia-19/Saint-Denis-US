@@ -11,7 +11,7 @@ const TABS: (MatchCategory | 'Tous')[] = ['Tous', 'U6-U9', 'U10-U13', 'U14-U17',
 
 export default function CalendrierPage() {
   const [active, setActive] = useState<MatchCategory | 'Tous'>('Tous');
-  // API_INTEGRATION_POINT — cache + refetch gérés par useMatches ; provider dans lib/matches.ts
+  // API_INTEGRATION_POINT - cache + refetch gérés par useMatches ; provider dans lib/matches.ts
   const { upcoming, results, loading, error } = useMatches(active);
 
   return (
