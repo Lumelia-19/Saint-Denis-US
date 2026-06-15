@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import TacticalPattern from '@/components/TacticalPattern';
+import SectionTitle from '@/components/ui/SectionTitle';
 import Reveal from '@/components/Reveal';
 import Icon, { type IconName } from '@/components/Icon';
 
@@ -16,6 +17,31 @@ const VALUES: { icon: IconName; title: string; desc: string }[] = [
   { icon: 'handshake', title: 'Respect', desc: "Respecter l'autre, le jeu, les règles et nos couleurs." },
   { icon: 'graduation', title: 'Formation', desc: 'Accompagner chaque joueur dans son apprentissage sportif et citoyen.' },
   { icon: 'users', title: 'Esprit collectif', desc: 'Avancer ensemble, se soutenir, se dépasser pour le maillot et pour le club.' },
+];
+
+const BUREAU: { role: string; name: string; mission: string }[] = [
+  { role: 'Président', name: 'Antoine Cantaloup', mission: 'Représentation, signature des contrats, supervision générale.' },
+  { role: 'Vice-Président chargé du Sport', name: 'Mohamed Sissoko', mission: 'Activités sportives, compétitions, éducateurs, développement sportif.' },
+  { role: 'Vice-Président chargé de la Jeunesse', name: 'Sébastien Aymar Bassong Nguena', mission: 'Actions éducatives, projets jeunesse, actions citoyennes et sociales, relations familles / partenaires éducatifs.' },
+  { role: 'Trésorier', name: 'Alain Dupré', mission: 'Gestion financière, comptes, budgets et bilans.' },
+  { role: 'Secrétaire Général', name: 'Ahmed Homm', mission: 'Gestion administrative, convocations, procès-verbaux, suivi des adhésions.' },
+];
+
+const REFERENTS: { role: string; name: string }[] = [
+  { role: 'Stratégie et valorisation du club', name: 'Sami Sellami' },
+  { role: 'Réseau et accompagnement haut niveau', name: 'Adams Doumbia' },
+];
+
+const ENCADREMENT: { role: string; name: string }[] = [
+  { role: 'Responsable École de Foot', name: 'Arnaud Chéron' },
+  { role: 'Responsable Senior', name: 'Adams Doumbia' },
+  { role: 'Futsal / Foot Féminin', name: 'Arnaud Chéron' },
+];
+
+const POLES: { icon: IconName; title: string; desc: string }[] = [
+  { icon: 'graduation', title: 'Accompagnement scolaire', desc: 'Partenaire(s) associatif(s) de réussite scolaire, aide aux devoirs et coaching pédagogique.' },
+  { icon: 'star', title: 'Accompagnement mental & élite', desc: 'Professionnels de la préparation mentale et du suivi de carrière.' },
+  { icon: 'handshake', title: 'Citoyenneté, prévention & lien parents', desc: 'Associations de prévention, institutions locales, référents parents.' },
 ];
 
 export const metadata: Metadata = {
@@ -33,6 +59,7 @@ export const metadata: Metadata = {
 
 export default function ClubPage() {
   return (
+    <>
     <section className="relative isolate overflow-hidden bg-white pt-20 lg:pt-16" aria-labelledby="club-title">
       {/* ===== Mascotte tigre en fond ===== */}
       <div
@@ -200,5 +227,95 @@ export default function ClubPage() {
         </div>
       </div>
     </section>
+
+      {/* ===================== GOUVERNANCE ===================== */}
+      <section className="bg-mist py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <Reveal>
+            <SectionTitle
+              eyebrow="Gouvernance"
+              blue="L'équipe"
+              orange="dirigeante"
+              subtitle="Constituée par Assemblée Générale Constitutive le 18 mai 2026, l'association United Football Saint-Denis (UFSD) reprend les activités de la section football du SDUS et son numéro d'affiliation 523415 auprès de la Ligue de Paris Île-de-France de Football."
+            />
+          </Reveal>
+          <div className="mt-9 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:mt-12 lg:grid-cols-3">
+            {BUREAU.map((m, i) => (
+              <Reveal key={m.role} delay={(i % 3) * 0.06}>
+                <article className="h-full rounded-[1.15rem] border border-cloud bg-panel p-5 shadow-[var(--shadow-soft)] sm:p-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-flame">{m.role}</p>
+                  <p className="display-sm mt-1.5 text-lg italic text-navy sm:text-xl">{m.name}</p>
+                  <p className="mt-2 text-[0.84rem] leading-relaxed text-slate-soft">{m.mission}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal>
+            <h3 className="display-sm mt-10 text-lg italic text-navy sm:text-xl">Référents Stratégie &amp; Réseau</h3>
+          </Reveal>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5">
+            {REFERENTS.map((r, i) => (
+              <Reveal key={r.name} delay={i * 0.06}>
+                <div className="flex items-center gap-3 rounded-[1.1rem] border border-cloud bg-panel p-4 shadow-[var(--shadow-soft)]">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-royal text-white">
+                    <Icon name="target" size={20} />
+                  </span>
+                  <div>
+                    <p className="font-bold text-navy">{r.name}</p>
+                    <p className="text-[0.84rem] text-slate-soft">{r.role}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== ORGANIGRAMME ===================== */}
+      <section className="bg-surface py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <Reveal>
+            <SectionTitle eyebrow="Organisation" blue="Les pôles" orange="du club" center />
+          </Reveal>
+
+          <Reveal>
+            <h3 className="display-sm mt-10 text-center text-lg italic text-navy sm:text-xl">Pôle Encadrement Sportif</h3>
+          </Reveal>
+          <div className="mt-4 grid gap-4 sm:grid-cols-3 sm:gap-5">
+            {ENCADREMENT.map((e, i) => (
+              <Reveal key={e.role} delay={i * 0.06}>
+                <div className="rounded-[1.1rem] border border-cloud bg-panel p-5 text-center shadow-[var(--shadow-soft)]">
+                  <span className="mx-auto mb-3 grid h-11 w-11 place-items-center rounded-full bg-royal text-white">
+                    <Icon name="whistle" size={20} />
+                  </span>
+                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-flame">{e.role}</p>
+                  <p className="display-sm mt-1 text-lg italic text-navy">{e.name}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal>
+            <h3 className="display-sm mt-10 text-center text-lg italic text-navy sm:text-xl">
+              Pôles transversaux « Excellence pour la masse »
+            </h3>
+          </Reveal>
+          <div className="mt-4 grid gap-4 sm:grid-cols-3 sm:gap-5">
+            {POLES.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.06}>
+                <div className="h-full rounded-[1.1rem] border border-cloud bg-panel p-5 text-center shadow-[var(--shadow-soft)] sm:p-6">
+                  <span className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-full bg-royal text-white">
+                    <Icon name={p.icon} size={22} />
+                  </span>
+                  <p className="display-sm text-[1.05rem] italic text-navy">{p.title}</p>
+                  <p className="mt-2 text-[0.84rem] leading-relaxed text-slate-soft">{p.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import TacticalPattern from '@/components/TacticalPattern';
+import SectionTitle from '@/components/ui/SectionTitle';
 import Reveal from '@/components/Reveal';
 import Icon, { type IconName } from '@/components/Icon';
 
@@ -47,6 +48,25 @@ const BENEFITS: { icon: IconName; title: string; desc: string }[] = [
   },
 ];
 
+const COMMUNICATION: { icon: IconName; text: string }[] = [
+  { icon: 'sparkles', text: 'Refonte de l’identité visuelle du club (logo, charte graphique) pour une image moderne et fédératrice.' },
+  { icon: 'star', text: 'Valorisation des talents issus du club ayant percé au haut niveau, pour créer des modèles de réussite.' },
+  { icon: 'users', text: 'Implication d’ambassadeurs reconnus, issus du football et du monde artistique.' },
+  { icon: 'flame', text: 'Communication offensive sur les réseaux sociaux et auprès des médias locaux et nationaux.' },
+  { icon: 'trophy', text: 'Organisation d’un événement annuel phare (match de gala, invités prestigieux).' },
+  { icon: 'shield', text: 'Échanges internationaux : accueil de clubs partenaires, stages et tournois à l’étranger.' },
+];
+
+const PARTENARIATS: { volet: string; type: string }[] = [
+  { volet: 'Haut niveau / Élite', type: 'Structures d’accompagnement de sportifs de haut niveau (suivi physique, mental) et centres de formation pro, en France et à l’étranger.' },
+  { volet: 'Réussite scolaire', type: 'Associations de suivi et de réussite scolaire ; aide aux devoirs et coaching pédagogique.' },
+  { volet: 'Accompagnement mental', type: 'Professionnels (psychologues du sport, coachs mentaux) pour orienter les enfants vers la réussite sportive et sociale.' },
+  { volet: 'Insertion / Institutions', type: 'Présentations de métiers, rencontres avec les institutions locales et nationales, mairie, ligue.' },
+  { volet: 'Citoyenneté / Prévention', type: 'Associations de prévention de la délinquance et de lutte contre les violences, éducation civique.' },
+  { volet: 'Échanges internationaux', type: 'Clubs partenaires en France et à l’étranger pour stages, tournois et échanges culturels.' },
+  { volet: 'Image & Communication', type: 'Ambassadeurs (sport et culture), médias locaux et nationaux, agences de communication.' },
+];
+
 export const metadata: Metadata = {
   title: 'Partenaires & Sponsoring',
   description:
@@ -62,6 +82,7 @@ export const metadata: Metadata = {
 
 export default function PartenairesPage() {
   return (
+    <>
     <section
       className="relative isolate overflow-hidden bg-white pt-20 pb-12 sm:pt-24 sm:pb-14 lg:pt-24 lg:pb-16 lg:min-h-screen"
       aria-labelledby="partenaires-title"
@@ -217,5 +238,72 @@ export default function PartenairesPage() {
         </div>
       </div>
     </section>
+
+      {/* ===================== VALORISATION DU TERRITOIRE ===================== */}
+      <section className="bg-surface py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <Reveal>
+            <SectionTitle
+              eyebrow="Image & territoire"
+              blue="Une fierté pour"
+              orange="Saint-Denis"
+              subtitle="Associer la ville au talent, à la réussite et à l'excellence plutôt qu'aux représentations négatives qui circulent trop souvent."
+            />
+          </Reveal>
+          <div className="mt-9 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:mt-12 lg:grid-cols-3">
+            {COMMUNICATION.map((c, i) => (
+              <Reveal key={c.text} delay={(i % 3) * 0.06}>
+                <div className="h-full rounded-[1.15rem] border border-cloud bg-panel p-5 shadow-[var(--shadow-soft)] sm:p-6">
+                  <span className="mb-4 grid h-11 w-11 place-items-center rounded-full bg-mist text-flame">
+                    <Icon name={c.icon} size={20} />
+                  </span>
+                  <p className="text-[0.9rem] leading-relaxed text-slate-soft sm:text-sm">{c.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== RÉSEAU DE PARTENARIATS ===================== */}
+      <section className="bg-mist py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-5xl px-5 sm:px-6">
+          <Reveal>
+            <SectionTitle
+              eyebrow="Structuration"
+              blue="Plusieurs bras pour"
+              orange="un même objectif"
+              subtitle="La réussite du projet repose sur la mise en réseau de partenaires complémentaires, chacun apportant son expertise sur un volet."
+            />
+          </Reveal>
+          <div className="mt-9 overflow-hidden rounded-[1.2rem] border border-cloud bg-panel shadow-[var(--shadow-soft)] lg:mt-12">
+            {PARTENARIATS.map((p, i) => (
+              <Reveal key={p.volet} delay={(i % 4) * 0.05}>
+                <div
+                  className={`grid gap-1 px-5 py-4 sm:grid-cols-[210px_1fr] sm:gap-4 sm:px-6 ${
+                    i > 0 ? 'border-t border-cloud' : ''
+                  }`}
+                >
+                  <p className="display-sm text-base italic text-royal">{p.volet}</p>
+                  <p className="text-[0.9rem] leading-relaxed text-slate-soft sm:text-sm">{p.type}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link href="/contact" className="btn-primary group">
+                Devenir partenaire
+                <Icon name="arrow-right" size={17} strokeWidth={2.4} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+              <Link href="/projet" className="btn-outline group bg-surface">
+                Découvrir le projet de club
+                <Icon name="arrow-right" size={16} strokeWidth={2.4} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }
