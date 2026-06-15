@@ -29,7 +29,7 @@ function TeamBadge({ name, highlight }: { name: string; highlight: boolean }) {
 }
 
 export default function MatchCard({ match }: { match: Match }) {
-  const isSDUSHome = match.homeTeam.shortName === 'SDUS';
+  const isUFSDHome = match.homeTeam.shortName === 'UFSD';
   const isFinished = match.status === 'finished';
   const color = getCategoryColor(match.category);
 
@@ -45,7 +45,7 @@ export default function MatchCard({ match }: { match: Match }) {
       </div>
 
       <div className="flex items-center justify-between gap-2 sm:gap-3">
-        <TeamBadge name={match.homeTeam.name} highlight={isSDUSHome} />
+        <TeamBadge name={match.homeTeam.name} highlight={isUFSDHome} />
         <div className="shrink-0 grid place-items-center min-w-[52px] sm:min-w-[64px]">
           {isFinished ? (
             <span className="nums text-xl sm:text-2xl font-black text-navy" style={{ fontFamily: 'var(--font-display)' }}>
@@ -58,7 +58,7 @@ export default function MatchCard({ match }: { match: Match }) {
             </>
           )}
         </div>
-        <TeamBadge name={match.awayTeam.name} highlight={!isSDUSHome} />
+        <TeamBadge name={match.awayTeam.name} highlight={!isUFSDHome} />
       </div>
 
       <div className="border-t border-cloud pt-3 flex items-center justify-between text-xs text-slate-soft">

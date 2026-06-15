@@ -19,27 +19,27 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://sdus-fc93.fr'),
   title: {
-    default: 'Saint-Denis U.S. Football Club | SDUS FC 93',
-    template: '%s | SDUS FC 93',
+    default: 'United Football Saint-Denis (UFSD)',
+    template: '%s | UFSD',
   },
   description:
-    'Le Saint-Denis U.S. Football Club, club de football formateur et ambitieux au cœur de Saint-Denis depuis 1993.',
-  keywords: ['football', 'Saint-Denis', 'SDUS', 'FC 93', 'club de foot', 'Seine-Saint-Denis'],
+    "United Football Saint-Denis (UFSD) : former, accompagner, inspirer. L'excellence au service de la masse, au cœur de Saint-Denis (93).",
+  keywords: ['football', 'Saint-Denis', 'UFSD', 'United Football Saint-Denis', 'club de foot', 'Seine-Saint-Denis', '93'],
   openGraph: {
-    title: 'Saint-Denis U.S. Football Club | SDUS FC 93',
+    title: 'United Football Saint-Denis (UFSD)',
     description:
-      'Club de football formateur et ambitieux au cœur de Saint-Denis depuis 1993.',
+      "Former, accompagner, inspirer : l'excellence au service de la masse, au cœur de Saint-Denis.",
     url: '/',
-    siteName: 'SDUS FC 93',
+    siteName: 'United Football Saint-Denis',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/assets/hero_bg.jpeg', width: 1672, height: 941, alt: 'Saint-Denis U.S. Football Club' }],
+    images: [{ url: '/assets/hero_bg.jpeg', width: 1672, height: 941, alt: 'United Football Saint-Denis' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Saint-Denis U.S. Football Club | SDUS FC 93',
+    title: 'United Football Saint-Denis (UFSD)',
     description:
-      'Club de football formateur et ambitieux au cœur de Saint-Denis depuis 1993.',
+      "Former, accompagner, inspirer : l'excellence au service de la masse, au cœur de Saint-Denis.",
     images: ['/assets/hero_bg.jpeg'],
   },
   icons: {
@@ -62,8 +62,8 @@ const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t===
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SportsOrganization',
-  name: 'Saint-Denis U.S. Football Club',
-  alternateName: 'SDUS FC 93',
+  name: 'United Football Saint-Denis',
+  alternateName: 'UFSD',
   url: 'https://sdus-fc93.fr',
   logo: 'https://sdus-fc93.fr/assets/logo.png',
   foundingDate: '1993',

@@ -50,10 +50,10 @@ const BENEFITS: { icon: IconName; title: string; desc: string }[] = [
 export const metadata: Metadata = {
   title: 'Partenaires & Sponsoring',
   description:
-    'Devenez partenaire du SDUS FC 93 et soutenez un club formateur, populaire et ancré à Saint-Denis.',
+    "Devenez partenaire de l'UFSD et soutenez un club formateur, populaire et ancré à Saint-Denis.",
   alternates: { canonical: '/partenaires' },
   openGraph: {
-    title: 'Partenaires & Sponsoring | SDUS FC 93',
+    title: 'Partenaires & Sponsoring | United Football Saint-Denis',
     description: 'Soutenez un club formateur et ambitieux, engagé pour la jeunesse et le territoire de Saint-Denis.',
     url: '/partenaires',
     type: 'website',

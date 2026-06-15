@@ -3,12 +3,12 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Contactez le Saint-Denis U.S. Football Club : inscriptions, détections, stages, partenariats. Stade Marville, Saint-Denis (93).',
-  keywords: ['contact', 'SDUS FC 93', 'Saint-Denis', 'inscription football', 'Stade Marville'],
+    "Contactez l'UFSD : inscriptions, détections, stages, partenariats. Stade Marville, Saint-Denis (93).",
+  keywords: ['contact', 'United Football Saint-Denis', 'Saint-Denis', 'inscription football', 'Stade Marville'],
   alternates: { canonical: '/contact' },
   openGraph: {
-    title: 'Contact | SDUS FC 93',
-    description: 'Une question ? Le Saint-Denis U.S. Football Club vous répond rapidement.',
+    title: 'Contact | United Football Saint-Denis',
+    description: "Une question ? L'UFSD vous répond rapidement.",
     url: '/contact',
     type: 'website',
   },

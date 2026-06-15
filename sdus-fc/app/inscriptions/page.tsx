@@ -51,7 +51,7 @@ const OFFERS: { icon: IconName; title: string; desc: string; cta: string }[] = [
   {
     icon: 'search',
     title: 'Détections',
-    desc: "Intégrez nos détections et tentez de rejoindre l'aventure SDUS.",
+    desc: "Intégrez nos détections et tentez de rejoindre l'aventure UFSD.",
     cta: 'Demander une détection',
   },
   {
@@ -65,11 +65,11 @@ const OFFERS: { icon: IconName; title: string; desc: string; cta: string }[] = [
 export const metadata: Metadata = {
   title: 'Inscriptions',
   description:
-    'Rejoignez le SDUS FC 93 : inscriptions, détections, stages et pièces à fournir pour la saison 2025/2026.',
+    "Rejoignez l'UFSD : inscriptions, détections, stages et pièces à fournir pour la saison 2025/2026.",
   alternates: { canonical: '/inscriptions' },
   openGraph: {
-    title: 'Rejoindre le club | SDUS FC 93',
-    description: 'Inscriptions, détections et stages - saison 2025/2026 du Saint-Denis U.S. Football Club.',
+    title: 'Rejoindre le club | United Football Saint-Denis',
+    description: "Inscriptions, détections et stages - saison 2025/2026 de l'UFSD.",
     url: '/inscriptions',
     type: 'website',
   },
@@ -112,7 +112,7 @@ export default function InscriptionsPage() {
       <div className="relative isolate min-h-[calc(100vh-5rem)] overflow-hidden pt-20 sm:min-h-screen sm:pt-24 lg:pt-24">
         <Image
           src="/assets/inscriptions-bg.webp"
-          alt="Jeune joueur du SDUS FC 93 en action pendant une séance d'entraînement."
+          alt="Jeune joueur de l'UFSD en action pendant une séance d'entraînement."
           fill
           priority
           sizes="100vw"

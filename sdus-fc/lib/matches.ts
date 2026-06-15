@@ -1,5 +1,5 @@
 // ============================================
-// SDUS FC 93 - Matches API Adapter
+// United Football Saint-Denis - Matches API Adapter
 // ============================================
 // Ce fichier gère la récupération des données de matchs.
 // Par défaut, il utilise des données mock.
@@ -14,7 +14,7 @@ const API_CONFIG: APIConfig = {
   provider: 'mock' as const,
   baseUrl: process.env.NEXT_PUBLIC_MATCHES_API_URL || '',
   apiKey: process.env.NEXT_PUBLIC_MATCHES_API_KEY || '',
-  clubId: 'SDUS93',
+  clubId: 'UFSD93',
 };
 
 // ============================================
@@ -23,7 +23,7 @@ const API_CONFIG: APIConfig = {
 const MOCK_UPCOMING_MATCHES: Match[] = [
   {
     id: 'match-001',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    homeTeam: { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' },
     awayTeam: { name: 'AS Bondy', shortName: 'ASB', city: 'Bondy' },
     date: '2025-09-14',
     time: '15:00',
@@ -36,7 +36,7 @@ const MOCK_UPCOMING_MATCHES: Match[] = [
   {
     id: 'match-002',
     homeTeam: { name: 'FC Aubervilliers', shortName: 'FCA', city: 'Aubervilliers' },
-    awayTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    awayTeam: { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' },
     date: '2025-09-20',
     time: '14:00',
     venue: 'Stade André Karman',
@@ -47,7 +47,7 @@ const MOCK_UPCOMING_MATCHES: Match[] = [
   },
   {
     id: 'match-003',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    homeTeam: { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' },
     awayTeam: { name: 'US Villetaneuse', shortName: 'USV', city: 'Villetaneuse' },
     date: '2025-09-21',
     time: '10:00',
@@ -60,7 +60,7 @@ const MOCK_UPCOMING_MATCHES: Match[] = [
   {
     id: 'match-004',
     homeTeam: { name: 'Stade Français', shortName: 'SF', city: 'Paris' },
-    awayTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    awayTeam: { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' },
     date: '2025-09-27',
     time: '16:00',
     venue: 'Stade Jean Bouin, Paris',
@@ -71,7 +71,7 @@ const MOCK_UPCOMING_MATCHES: Match[] = [
   },
   {
     id: 'match-005',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    homeTeam: { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' },
     awayTeam: { name: 'Drancy JA', shortName: 'DJA', city: 'Drancy' },
     date: '2025-10-04',
     time: '15:00',
@@ -83,7 +83,7 @@ const MOCK_UPCOMING_MATCHES: Match[] = [
   },
   {
     id: 'match-006',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    homeTeam: { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' },
     awayTeam: { name: 'Épinay-sur-Seine', shortName: 'ESS', city: 'Épinay' },
     date: '2025-10-11',
     time: '10:30',
@@ -101,7 +101,7 @@ const MOCK_UPCOMING_MATCHES: Match[] = [
 const MOCK_RECENT_RESULTS: Match[] = [
   {
     id: 'result-001',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    homeTeam: { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' },
     awayTeam: { name: 'Pierrefitte AC', shortName: 'PAC', city: 'Pierrefitte' },
     date: '2025-09-07',
     time: '15:00',
@@ -116,7 +116,7 @@ const MOCK_RECENT_RESULTS: Match[] = [
   {
     id: 'result-002',
     homeTeam: { name: 'La Courneuve Sports', shortName: 'LCS', city: 'La Courneuve' },
-    awayTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    awayTeam: { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' },
     date: '2025-09-06',
     time: '14:00',
     venue: 'Stade Géo André',
@@ -129,7 +129,7 @@ const MOCK_RECENT_RESULTS: Match[] = [
   },
   {
     id: 'result-003',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    homeTeam: { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' },
     awayTeam: { name: 'Stains FC', shortName: 'SFC', city: 'Stains' },
     date: '2025-08-31',
     time: '15:00',
@@ -144,7 +144,7 @@ const MOCK_RECENT_RESULTS: Match[] = [
   {
     id: 'result-004',
     homeTeam: { name: 'US Dugny', shortName: 'USD', city: 'Dugny' },
-    awayTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    awayTeam: { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' },
     date: '2025-08-30',
     time: '10:00',
     venue: 'Stade de Dugny',
@@ -179,7 +179,7 @@ export async function fetchMatches(): Promise<{
       // 1. Authentification avec API key
       // 2. GET /api/clubs/{clubId}/matches
       // 3. Parser la réponse FFF vers notre type Match
-      console.warn('[SDUS API] Provider FFF non implémenté, fallback mock');
+      console.warn('[UFSD API] Provider FFF non implémenté, fallback mock');
       return fetchMockMatches();
 
     case 'footclubs':
@@ -187,7 +187,7 @@ export async function fetchMatches(): Promise<{
       // 1. Login via POST /api/auth
       // 2. GET /api/clubs/{clubId}/calendar
       // 3. Mapper les champs Footclubs vers Match
-      console.warn('[SDUS API] Provider Footclubs non implémenté, fallback mock');
+      console.warn('[UFSD API] Provider Footclubs non implémenté, fallback mock');
       return fetchMockMatches();
 
     case 'sporteasy':
@@ -195,7 +195,7 @@ export async function fetchMatches(): Promise<{
       // 1. OAuth2 flow avec SportEasy
       // 2. GET /api/v2/teams/{teamId}/events
       // 3. Filtrer type === 'match' et mapper
-      console.warn('[SDUS API] Provider SportEasy non implémenté, fallback mock');
+      console.warn('[UFSD API] Provider SportEasy non implémenté, fallback mock');
       return fetchMockMatches();
 
     case 'custom':
@@ -205,7 +205,7 @@ export async function fetchMatches(): Promise<{
       // });
       // const data = await response.json();
       // return parseCustomAPIResponse(data);
-      console.warn('[SDUS API] Provider custom non implémenté, fallback mock');
+      console.warn('[UFSD API] Provider custom non implémenté, fallback mock');
       return fetchMockMatches();
 
     default:

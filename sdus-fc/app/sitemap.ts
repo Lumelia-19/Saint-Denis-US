@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 const BASE_URL = 'https://sdus-fc93.fr';
 
-const ROUTES = ['', '/club', '/equipes', '/calendrier', '/inscriptions', '/actualites', '/partenaires', '/contact'];
+const ROUTES = ['', '/club', '/projet', '/equipes', '/calendrier', '/inscriptions', '/actualites', '/partenaires', '/contact'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return ROUTES.map((route) => ({

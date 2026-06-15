@@ -25,7 +25,7 @@ const PILLARS: { icon: IconName; title: string; desc: string; href: string }[] =
   {
     icon: 'trophy',
     title: 'Matchs & vie du club',
-    desc: "Compétitions, événements, convivialité. Vibrez toute l'année avec le SDUS.",
+    desc: "Compétitions, événements, convivialité. Vibrez toute l'année avec l'UFSD.",
     href: '/calendrier',
   },
 ];
@@ -68,9 +68,9 @@ const SPOTLIGHTS = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: 'Saint-Denis U.S. Football Club | SDUS FC 93 - Club de foot à Saint-Denis (93)' },
+  title: { absolute: 'United Football Saint-Denis | United Football Saint-Denis - Club de foot à Saint-Denis (93)' },
   description:
-    'Saint-Denis U.S. Football Club : inscriptions, équipes, prochains matchs et actualités du SDUS FC 93. Club formateur, populaire et ambitieux depuis 1993.',
+    "United Football Saint-Denis : inscriptions, équipes, prochains matchs et actualités de l'UFSD. Club formateur, populaire et ambitieux au cœur de Saint-Denis.",
   alternates: { canonical: '/' },
 };
 
@@ -83,7 +83,7 @@ export default async function HomePage() {
       <section className="relative isolate min-h-screen overflow-hidden bg-white md:min-h-[820px] lg:min-h-[820px] xl:min-h-screen">
         <Image
           src="/assets/hero_bg.jpeg"
-          alt="Jeunes joueurs du SDUS FC 93 entrant sur un terrain de football."
+          alt="Jeunes joueurs de l'UFSD entrant sur un terrain de football."
           fill
           priority
           className="object-cover object-[66%_50%] lg:object-center"
@@ -104,9 +104,10 @@ export default async function HomePage() {
               <span className="block text-flame">dans les veines.</span>
             </h1>
             <p className="mt-6 max-w-[520px] text-[1.02rem] leading-relaxed text-deep/82 animate-rise sm:text-lg lg:mt-7" style={{ animationDelay: '310ms' }}>
-              Le Saint-Denis U.S. Football Club, c&apos;est plus qu&apos;un club : c&apos;est une famille.{' '}
-              <strong className="font-extrabold text-royal">Formateur, populaire et ambitieux</strong>, nous
-              faisons grandir les talents et les valeurs depuis 1993.
+              L&apos;United Football Saint-Denis reprend la section football du SDUS pour porter une ambition
+              nouvelle : <strong className="font-extrabold text-royal">former, accompagner, inspirer</strong>.
+              Faire de l&apos;<strong className="font-extrabold text-flame">excellence un moteur collectif</strong>,
+              accessible à chaque enfant de Saint-Denis - sur le terrain, à l&apos;école et dans la vie.
             </p>
             <div className="mt-7 flex flex-wrap gap-4 animate-rise lg:mt-8" style={{ animationDelay: '390ms' }}>
               <Link href="/inscriptions" className="btn-primary group min-w-44">
@@ -172,7 +173,7 @@ export default async function HomePage() {
               subtitle="Des catégories lisibles, un cadre clair, et une progression pensée pour chaque âge."
             />
             <div className="max-w-2xl border-l-4 border-flame bg-white/72 px-5 py-5 text-sm leading-relaxed text-slate-soft shadow-[0_18px_48px_-34px_rgba(13,27,75,0.45)] backdrop-blur">
-              <strong className="text-royal">L&apos;expérience SDUS</strong>, c&apos;est un parcours complet :
+              <strong className="text-royal">L&apos;expérience UFSD</strong>, c&apos;est un parcours complet :
               accueil des plus jeunes, préformation exigeante, éducateurs présents, matchs, tournois et vie de club.
             </div>
           </div>
@@ -184,7 +185,7 @@ export default async function HomePage() {
             >
               <Image
                 src={SPOTLIGHTS[0].image}
-                alt={`Jeune joueur du SDUS FC 93 - ${SPOTLIGHTS[0].kicker} ${SPOTLIGHTS[0].title}`}
+                alt={`Jeune joueur de l'UFSD - ${SPOTLIGHTS[0].kicker} ${SPOTLIGHTS[0].title}`}
                 fill
                 sizes="(min-width: 1024px) 54vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -213,7 +214,7 @@ export default async function HomePage() {
                 >
                   <Image
                     src={item.image}
-                    alt={`Illustration SDUS FC 93 - ${item.kicker} ${item.title}`}
+                    alt={`Illustration United Football Saint-Denis - ${item.kicker} ${item.title}`}
                     fill
                     sizes="(min-width: 1024px) 46vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -302,7 +303,7 @@ export default async function HomePage() {
             <div className="relative min-h-[200px] sm:min-h-[240px] lg:min-h-[420px]">
               <Image
                 src="/assets/club_hero.webp"
-                alt="Joueurs et éducateurs du SDUS FC 93 réunis au club."
+                alt="Joueurs et éducateurs de l'UFSD réunis au club."
                 fill
                 sizes="(min-width: 1024px) 46vw, 100vw"
                 className="object-cover"

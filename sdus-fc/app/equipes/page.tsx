@@ -170,7 +170,7 @@ export default function EquipesPage() {
                     >
                       <Image
                         src={stage.image}
-                        alt={`Joueur SDUS FC catégorie ${stage.title}`}
+                        alt={`Joueur UFSD FC catégorie ${stage.title}`}
                         width={600}
                         height={1200}
                         className={`relative z-[100] w-auto object-contain drop-shadow-[0_22px_30px_rgba(13,27,75,0.28)] ${stage.flip ? 'scale-x-[-1]' : ''}`}

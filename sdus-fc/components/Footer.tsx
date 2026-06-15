@@ -5,6 +5,7 @@ import Icon, { type IconName } from '@/components/Icon';
 const NAV: [string, string][] = [
   ['/', 'Accueil'],
   ['/club', 'Le Club'],
+  ['/projet', 'Le Projet'],
   ['/equipes', 'Équipes'],
   ['/calendrier', 'Calendrier'],
 ];
@@ -27,11 +28,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 pb-12 border-b border-white/12">
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <Image src="/assets/logo.png" alt="SDUS FC 93" width={56} height={56} className="h-14 w-auto" />
-              <span className="display-sm text-lg sm:text-xl">SDUS FC 93</span>
+              <Image src="/assets/logo.png" alt="United Football Saint-Denis" width={56} height={56} className="h-14 w-auto" />
+              <span className="display-sm text-lg sm:text-xl">United FC Saint-Denis</span>
             </div>
             <p className="text-white/55 text-sm leading-relaxed max-w-xs">
-              Formateur, populaire et ambitieux. Au cœur de Saint-Denis depuis 1993.
+              Former, accompagner, inspirer. L&apos;excellence au service de la masse, au cœur de Saint-Denis.
             </p>
             <div className="flex gap-2.5 mt-6">
               {SOCIALS.map((s) => (
@@ -73,9 +74,9 @@ export default function Footer() {
 
         <div className="pt-7 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-white/45 text-sm">
-            © {new Date().getFullYear()} Saint-Denis U.S. Football Club - Tous droits réservés.
+            © {new Date().getFullYear()} United Football Saint-Denis - Tous droits réservés.
           </p>
-          <p className="text-white/35 text-xs uppercase tracking-[0.18em]">SDUS FC 93 · Seine-Saint-Denis</p>
+          <p className="text-white/35 text-xs uppercase tracking-[0.15em] sm:tracking-[0.18em]">UFSD · Terre des rois, terreau des talents</p>
         </div>
       </div>
     </footer>

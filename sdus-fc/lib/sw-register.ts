@@ -10,6 +10,6 @@ export async function registerServiceWorker(): Promise<void> {
   try {
     await navigator.serviceWorker.register('/sw.js');
   } catch (error) {
-    console.warn('[SDUS] Échec de l’enregistrement du Service Worker :', error);
+    console.warn('[UFSD] Échec de l’enregistrement du Service Worker :', error);
   }
 }

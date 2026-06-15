@@ -9,6 +9,7 @@ import Icon from '@/components/Icon';
 const navLinks = [
   { href: '/', label: 'Accueil' },
   { href: '/club', label: 'Le Club' },
+  { href: '/projet', label: 'Le Projet' },
   { href: '/equipes', label: 'Équipes' },
   { href: '/calendrier', label: 'Calendrier & Résultats' },
   { href: '/inscriptions', label: 'Inscriptions' },
@@ -47,11 +48,11 @@ export default function Navbar() {
         className={`transition-all duration-300 ${embedded ? 'pt-3' : 'bg-surface/92 backdrop-blur-xl border-b border-cloud shadow-[0_10px_30px_-24px_rgba(16,24,43,0.5)]'}`}
       >
         <div className="mx-auto flex h-[58px] max-w-[1360px] items-center gap-3 px-4 transition-all duration-300 sm:h-[68px] sm:px-6 lg:px-7">
-          <Link href="/" aria-label="Accueil SDUS FC 93" className="group relative z-10 flex items-center">
+          <Link href="/" aria-label="Accueil United Football Saint-Denis" className="group relative z-10 flex items-center">
             <span className="relative block">
               <Image
                 src="/assets/logo.png"
-                alt="SDUS FC 93"
+                alt="United Football Saint-Denis"
                 width={78}
                 height={78}
                 className="h-[46px] w-auto rounded-full drop-shadow-[0_12px_22px_rgba(13,27,75,0.18)] transition-transform duration-300 group-hover:scale-[1.04] sm:h-[54px] lg:h-[70px]"
@@ -107,7 +108,7 @@ export default function Navbar() {
             transition={{ duration: 0.28 }}
           >
             <div className="mx-auto flex h-[58px] w-full max-w-7xl shrink-0 items-center justify-between px-5 sm:h-[68px] sm:px-6">
-              <span className="display-sm text-lg text-white sm:text-xl">SDUS FC 93</span>
+              <span className="display-sm text-lg text-white sm:text-xl">United FC Saint-Denis</span>
               <button
                 onClick={() => setMenuOpen(false)}
                 className="grid h-11 w-11 place-items-center rounded-full border border-white/30 text-white transition-colors hover:bg-white/10"

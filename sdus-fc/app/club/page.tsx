@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import TacticalPattern from '@/components/TacticalPattern';
 import Reveal from '@/components/Reveal';
@@ -20,11 +21,11 @@ const VALUES: { icon: IconName; title: string; desc: string }[] = [
 export const metadata: Metadata = {
   title: 'Le Club',
   description:
-    "Découvrez l'histoire, les valeurs et le projet formateur du Saint-Denis U.S. Football Club depuis 1993.",
+    "Découvrez l'histoire, les valeurs et le projet formateur de l'UFSD depuis 1993.",
   alternates: { canonical: '/club' },
   openGraph: {
-    title: 'Le Club | SDUS FC 93',
-    description: "L'histoire, les valeurs et le projet formateur du Saint-Denis U.S. Football Club.",
+    title: 'Le Club | United Football Saint-Denis',
+    description: "L'histoire, les valeurs et le projet formateur de l'UFSD.",
     url: '/club',
     type: 'website',
   },
@@ -79,10 +80,15 @@ export default function ClubPage() {
             </h1>
             <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
             <p className="mt-6 max-w-xl text-base leading-relaxed text-deep/82 sm:text-lg">
-              Le Saint-Denis U.S. Football Club, c&apos;est plus qu&apos;un club : c&apos;est une famille.{' '}
-              <strong className="font-extrabold text-royal">Formateur, populaire et ambitieux</strong>, nous
-              faisons grandir les talents et les valeurs, au cœur de Saint-Denis{' '}
-              <strong className="font-extrabold text-flame">depuis 1993</strong>.
+              Né de la section football du SDUS, l&apos;<strong className="font-extrabold text-royal">United
+              Football Saint-Denis</strong> porte une conviction simple : la réussite de quelques-uns doit
+              servir la réussite de tous. Saint-Denis, terre des rois et symbole du 93, possède un vivier
+              exceptionnel de talents -{' '}
+              <strong className="font-extrabold text-flame">l&apos;excellence au service de la masse</strong>.{' '}
+              <Link href="/projet" className="font-extrabold text-flame underline-offset-2 hover:underline">
+                Découvrir le projet de club
+              </Link>
+              .
             </p>
           </Reveal>
 
@@ -155,7 +161,7 @@ export default function ClubPage() {
             >
               <Image
                 src="/assets/hero_bg.jpeg"
-                alt="Joueurs du SDUS FC 93 sur le terrain."
+                alt="Joueurs de l'UFSD sur le terrain."
                 fill
                 priority
                 sizes="(min-width: 1280px) 420px, (min-width: 1024px) 400px, (min-width: 640px) 360px, 300px"

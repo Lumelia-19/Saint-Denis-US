@@ -36,11 +36,11 @@ const SOCIAL_IMAGES = [
 export const metadata: Metadata = {
   title: 'Actualités',
   description:
-    "Toute l'actualité du Saint-Denis U.S. Football Club : matchs, stages, événements, bénévoles et vie du club.",
+    "Toute l'actualité de l'UFSD : matchs, stages, événements, bénévoles et vie du club.",
   alternates: { canonical: '/actualites' },
   openGraph: {
-    title: 'Actualités & vie du club | SDUS FC 93',
-    description: "Résumés de matchs, stages, événements et vie du Saint-Denis U.S. Football Club.",
+    title: 'Actualités & vie du club | United Football Saint-Denis',
+    description: "Résumés de matchs, stages, événements et vie de l'UFSD.",
     url: '/actualites',
     type: 'website',
   },
@@ -103,7 +103,7 @@ export default function ActualitesPage() {
             </h1>
             <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
             <p className="mt-6 max-w-xl text-base font-medium leading-relaxed text-deep sm:text-lg">
-              Retrouvez toute l&apos;actualité du Saint-Denis U.S. Football Club : résumés de matchs, stages,
+              Retrouvez toute l&apos;actualité de l&apos;UFSD : résumés de matchs, stages,
               actions des bénévoles, moments forts avec les familles, événements et initiatives qui font vivre
               notre club au quotidien.
             </p>
@@ -204,7 +204,7 @@ export default function ActualitesPage() {
                   >
                     <Image
                       src={src}
-                      alt={`Aperçu Instagram SDUS FC ${i + 1}`}
+                      alt={`Aperçu Instagram UFSD FC ${i + 1}`}
                       fill
                       sizes="120px"
                       className="object-cover"

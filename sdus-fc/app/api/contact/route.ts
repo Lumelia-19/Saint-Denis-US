@@ -51,7 +51,7 @@ function escapeHtml(s: string): string {
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
   const toAddress = process.env.CONTACT_TO_EMAIL || 'contact@sdus-fc93.fr';
-  const fromAddress = process.env.CONTACT_FROM_EMAIL || 'SDUS FC 93 <onboarding@resend.dev>';
+  const fromAddress = process.env.CONTACT_FROM_EMAIL || 'United Football Saint-Denis <onboarding@resend.dev>';
 
   if (!apiKey) {
     return NextResponse.json(
@@ -104,7 +104,7 @@ export async function POST(request: Request) {
       from: fromAddress,
       to: toAddress,
       replyTo: email,
-      subject: `[Site SDUS] ${subject} - ${fullName}`,
+      subject: `[Site UFSD] ${subject} - ${fullName}`,
       html,
       text,
     });

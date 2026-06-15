@@ -1,5 +1,5 @@
 // ============================================
-// SDUS FC 93 - Players Data
+// United Football Saint-Denis - Players Data
 // ============================================
 
 import { Player, MatchCategory } from './types';
