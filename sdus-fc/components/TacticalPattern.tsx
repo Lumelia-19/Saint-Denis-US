@@ -14,7 +14,7 @@ export default function TacticalPattern({
       : ['text-white/15', 'text-white/12', 'text-white/12', 'text-white/[0.06]'];
 
   return (
-    <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`} aria-hidden>
+    <div className={`absolute inset-0 hidden overflow-hidden pointer-events-none md:block ${className}`} aria-hidden>
       <svg
         className={`absolute top-[12%] left-[8%] w-11 h-11 ${s[0]} animate-float`}
         viewBox="0 0 40 40"

@@ -5,8 +5,7 @@
 import { Player, MatchCategory } from './types';
 
 // ============================================
-// Effectifs indicatifs - à remplacer par la liste
-// officielle des licenciés UFSD (saison 2026/2027).
+// MOCK DATA - Joueurs par catégorie
 // ============================================
 
 export const PLAYERS: Player[] = [
@@ -54,12 +53,12 @@ export const PLAYERS: Player[] = [
 
   // === U18-SENIORS ===
   {
-    id: 'u18-01', firstName: 'Ryan', lastName: 'Mendy', number: 1,
+    id: 'u18-01', firstName: 'Ryan', lastName: 'Mbappé', number: 1,
     position: 'Gardien', category: 'U18-Seniors', birthYear: 2007,
     stats: { matches: 18, goals: 0, assists: 0, rating: 7.0 },
   },
   {
-    id: 'u18-02', firstName: 'Amine', lastName: 'Ziani', number: 2,
+    id: 'u18-02', firstName: 'Amine', lastName: 'Zidane', number: 2,
     position: 'Défenseur', category: 'U18-Seniors', birthYear: 2007,
     stats: { matches: 16, goals: 1, assists: 3, rating: 6.8 },
   },

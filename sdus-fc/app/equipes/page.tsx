@@ -74,6 +74,11 @@ const PATHWAY: { icon: IconName; label: string }[] = [
   { icon: 'handshake', label: 'Engagement collectif' },
 ];
 
+const ALUMNI = [
+  { firstName: 'Wissam', lastName: 'Ben Yedder', initials: 'WB' },
+  { firstName: 'Jérôme', lastName: 'Roussillon', initials: 'JR' },
+];
+
 export default function EquipesPage() {
   const [active, setActive] = useState<MatchCategory | 'Tous'>('Tous');
 
@@ -238,17 +243,29 @@ export default function EquipesPage() {
 
             <Reveal delay={0.18}>
               <section className="rounded-[1.2rem] border border-cloud bg-panel p-7 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] lg:p-8">
-                <h2 className="display-sm text-center text-[1.25rem] italic text-navy">Pôle Élite</h2>
+                <h2 className="display-sm text-center text-[1.15rem] italic leading-tight text-navy">
+                  Anciens passés
+                  <br />
+                  par le club
+                </h2>
                 <div className="mt-3 mx-auto h-1 w-14 rounded-full bg-flame" />
-                <div className="mt-6 flex justify-center">
-                  <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-royal text-white shadow-[0_10px_22px_-12px_rgba(13,27,75,0.75)] ring-2 ring-flame/60">
-                    <Icon name="target" size={26} />
-                  </span>
-                </div>
-                <p className="mt-5 text-center text-[0.95rem] leading-relaxed text-slate-soft">
-                  Un accompagnement U13-U21 vers le haut niveau : méthodes modernes,
-                  suivi physique et mental.
-                </p>
+                <ul className="mt-7 space-y-5">
+                  {ALUMNI.map((p) => (
+                    <li key={p.lastName} className="flex items-center gap-4">
+                      <span
+                        className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-royal text-white shadow-[0_10px_22px_-12px_rgba(13,27,75,0.75)] ring-2 ring-flame/60"
+                        style={{ fontFamily: 'var(--font-display)' }}
+                      >
+                        <span className="text-base font-black italic">{p.initials}</span>
+                      </span>
+                      <span className="text-[0.95rem] font-semibold leading-tight text-navy">
+                        {p.firstName}
+                        <br />
+                        {p.lastName}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </section>
             </Reveal>
 
@@ -279,10 +296,6 @@ export default function EquipesPage() {
               subtitle="Survolez une carte pour révéler les statistiques de la saison."
             />
           </Reveal>
-
-          <p className="mt-4 text-center text-sm text-slate-soft">
-            Effectifs illustratifs - la liste officielle des licenciés sera publiée prochainement.
-          </p>
 
           <Reveal>
             <div className="mt-8 mb-12 flex flex-wrap gap-2.5">
