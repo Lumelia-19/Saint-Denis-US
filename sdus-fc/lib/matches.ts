@@ -1,69 +1,71 @@
 // ============================================
-// SDUS FC 93 - Matches API Adapter
+// United Football Saint-Denis (UFSD) - Matches API Adapter
 // ============================================
 // Ce fichier gère la récupération des données de matchs.
-// Par défaut, il utilise des données mock.
+// Par défaut, il utilise des données mock (saison 2026/2027).
 // Quand l'API est disponible, modifier API_CONFIG.provider
 // et implémenter le parser correspondant.
 // ============================================
 
 import { Match, APIConfig, MatchCategory } from './types';
 
+const HOME = { name: 'United Football Saint-Denis', shortName: 'UFSD', logo: '/assets/logo.png' };
+
 // Configuration de l'API - à remplir quand disponible
 const API_CONFIG: APIConfig = {
   provider: 'mock' as const,
   baseUrl: process.env.NEXT_PUBLIC_MATCHES_API_URL || '',
   apiKey: process.env.NEXT_PUBLIC_MATCHES_API_KEY || '',
-  clubId: 'SDUS93',
+  clubId: process.env.NEXT_PUBLIC_CLUB_ID || 'UFSD93',
 };
 
 // ============================================
-// MOCK DATA - Matchs à venir (Saison 2025/2026)
+// MOCK DATA - Matchs à venir (Saison 2026/2027)
 // ============================================
 const MOCK_UPCOMING_MATCHES: Match[] = [
   {
     id: 'match-001',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    homeTeam: HOME,
     awayTeam: { name: 'AS Bondy', shortName: 'ASB', city: 'Bondy' },
-    date: '2025-09-14',
+    date: '2026-09-13',
     time: '15:00',
     venue: 'Stade Marville, Saint-Denis',
     category: 'Seniors',
     competition: 'Championnat District',
     status: 'upcoming',
-    matchDay: 3,
+    matchDay: 2,
   },
   {
     id: 'match-002',
     homeTeam: { name: 'FC Aubervilliers', shortName: 'FCA', city: 'Aubervilliers' },
-    awayTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
-    date: '2025-09-20',
+    awayTeam: HOME,
+    date: '2026-09-19',
     time: '14:00',
-    venue: 'Stade André Karman',
+    venue: 'Stade André Karman, Aubervilliers',
     category: 'U14-U17',
     competition: 'Championnat District U17',
+    status: 'upcoming',
+    matchDay: 3,
+  },
+  {
+    id: 'match-003',
+    homeTeam: HOME,
+    awayTeam: { name: 'US Villetaneuse', shortName: 'USV', city: 'Villetaneuse' },
+    date: '2026-09-27',
+    time: '10:00',
+    venue: 'Stade Marville, Saint-Denis',
+    category: 'U10-U13',
+    competition: 'Plateau U13',
     status: 'upcoming',
     matchDay: 4,
   },
   {
-    id: 'match-003',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
-    awayTeam: { name: 'US Villetaneuse', shortName: 'USV', city: 'Villetaneuse' },
-    date: '2025-09-21',
-    time: '10:00',
-    venue: 'Stade Marville, Saint-Denis',
-    category: 'U10-U13',
-    competition: 'Plateau U11',
-    status: 'upcoming',
-    matchDay: 5,
-  },
-  {
     id: 'match-004',
-    homeTeam: { name: 'Stade Français', shortName: 'SF', city: 'Paris' },
-    awayTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
-    date: '2025-09-27',
+    homeTeam: { name: 'Drancy JA', shortName: 'DJA', city: 'Drancy' },
+    awayTeam: HOME,
+    date: '2026-10-11',
     time: '16:00',
-    venue: 'Stade Jean Bouin, Paris',
+    venue: 'Parc des Sports Guy Môquet, Drancy',
     category: 'Seniors',
     competition: 'Coupe de Paris',
     status: 'upcoming',
@@ -71,9 +73,9 @@ const MOCK_UPCOMING_MATCHES: Match[] = [
   },
   {
     id: 'match-005',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
-    awayTeam: { name: 'Drancy JA', shortName: 'DJA', city: 'Drancy' },
-    date: '2025-10-04',
+    homeTeam: HOME,
+    awayTeam: { name: 'La Courneuve Sports', shortName: 'LCS', city: 'La Courneuve' },
+    date: '2026-10-18',
     time: '15:00',
     venue: 'Stade Marville, Saint-Denis',
     category: 'U18-Seniors',
@@ -83,27 +85,27 @@ const MOCK_UPCOMING_MATCHES: Match[] = [
   },
   {
     id: 'match-006',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
-    awayTeam: { name: 'Épinay-sur-Seine', shortName: 'ESS', city: 'Épinay' },
-    date: '2025-10-11',
+    homeTeam: HOME,
+    awayTeam: { name: 'Épinay-sur-Seine FC', shortName: 'ESF', city: 'Épinay-sur-Seine' },
+    date: '2026-11-08',
     time: '10:30',
     venue: 'Stade Marville, Saint-Denis',
     category: 'U6-U9',
-    competition: 'Plateau U8',
+    competition: 'Plateau U9',
     status: 'upcoming',
     matchDay: 6,
   },
 ];
 
 // ============================================
-// MOCK DATA - Résultats récents
+// MOCK DATA - Résultats récents (fin de saison 2025/2026)
 // ============================================
 const MOCK_RECENT_RESULTS: Match[] = [
   {
     id: 'result-001',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
+    homeTeam: HOME,
     awayTeam: { name: 'Pierrefitte AC', shortName: 'PAC', city: 'Pierrefitte' },
-    date: '2025-09-07',
+    date: '2026-06-13',
     time: '15:00',
     venue: 'Stade Marville, Saint-Denis',
     category: 'Seniors',
@@ -111,27 +113,27 @@ const MOCK_RECENT_RESULTS: Match[] = [
     status: 'finished',
     homeScore: 3,
     awayScore: 1,
-    matchDay: 2,
+    matchDay: 22,
   },
   {
     id: 'result-002',
-    homeTeam: { name: 'La Courneuve Sports', shortName: 'LCS', city: 'La Courneuve' },
-    awayTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
-    date: '2025-09-06',
+    homeTeam: { name: 'Stains FC', shortName: 'SFC', city: 'Stains' },
+    awayTeam: HOME,
+    date: '2026-06-06',
     time: '14:00',
-    venue: 'Stade Géo André',
+    venue: 'Stade Le Moulin Neuf, Stains',
     category: 'U14-U17',
     competition: 'Championnat District U15',
     status: 'finished',
     homeScore: 0,
     awayScore: 2,
-    matchDay: 2,
+    matchDay: 20,
   },
   {
     id: 'result-003',
-    homeTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
-    awayTeam: { name: 'Stains FC', shortName: 'SFC', city: 'Stains' },
-    date: '2025-08-31',
+    homeTeam: HOME,
+    awayTeam: { name: 'US Dugny', shortName: 'USD', city: 'Dugny' },
+    date: '2026-05-30',
     time: '15:00',
     venue: 'Stade Marville, Saint-Denis',
     category: 'Seniors',
@@ -139,21 +141,21 @@ const MOCK_RECENT_RESULTS: Match[] = [
     status: 'finished',
     homeScore: 2,
     awayScore: 2,
-    matchDay: 1,
+    matchDay: 21,
   },
   {
     id: 'result-004',
-    homeTeam: { name: 'US Dugny', shortName: 'USD', city: 'Dugny' },
-    awayTeam: { name: 'SDUS FC 93', shortName: 'SDUS', logo: '/assets/logo.png' },
-    date: '2025-08-30',
+    homeTeam: { name: 'AS Villetaneuse', shortName: 'ASV', city: 'Villetaneuse' },
+    awayTeam: HOME,
+    date: '2026-05-23',
     time: '10:00',
-    venue: 'Stade de Dugny',
+    venue: 'Stade Jesse Owens, Villetaneuse',
     category: 'U10-U13',
     competition: 'Plateau U13',
     status: 'finished',
     homeScore: 1,
     awayScore: 4,
-    matchDay: 1,
+    matchDay: 18,
   },
 ];
 
@@ -175,37 +177,22 @@ export async function fetchMatches(): Promise<{
 
     case 'fff':
       // TODO: Implémenter l'intégration API FFF
-      // Documentation : https://www.fff.fr/api
-      // 1. Authentification avec API key
-      // 2. GET /api/clubs/{clubId}/matches
-      // 3. Parser la réponse FFF vers notre type Match
-      console.warn('[SDUS API] Provider FFF non implémenté, fallback mock');
+      console.warn('[UFSD API] Provider FFF non implémenté, fallback mock');
       return fetchMockMatches();
 
     case 'footclubs':
       // TODO: Implémenter l'intégration Footclubs
-      // 1. Login via POST /api/auth
-      // 2. GET /api/clubs/{clubId}/calendar
-      // 3. Mapper les champs Footclubs vers Match
-      console.warn('[SDUS API] Provider Footclubs non implémenté, fallback mock');
+      console.warn('[UFSD API] Provider Footclubs non implémenté, fallback mock');
       return fetchMockMatches();
 
     case 'sporteasy':
       // TODO: Implémenter l'intégration SportEasy
-      // 1. OAuth2 flow avec SportEasy
-      // 2. GET /api/v2/teams/{teamId}/events
-      // 3. Filtrer type === 'match' et mapper
-      console.warn('[SDUS API] Provider SportEasy non implémenté, fallback mock');
+      console.warn('[UFSD API] Provider SportEasy non implémenté, fallback mock');
       return fetchMockMatches();
 
     case 'custom':
       // TODO: Implémenter votre API custom
-      // const response = await fetch(`${API_CONFIG.baseUrl}/matches`, {
-      //   headers: { 'Authorization': `Bearer ${API_CONFIG.apiKey}` }
-      // });
-      // const data = await response.json();
-      // return parseCustomAPIResponse(data);
-      console.warn('[SDUS API] Provider custom non implémenté, fallback mock');
+      console.warn('[UFSD API] Provider custom non implémenté, fallback mock');
       return fetchMockMatches();
 
     default:

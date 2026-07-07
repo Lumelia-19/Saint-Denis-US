@@ -3,6 +3,8 @@ import { Barlow_Condensed, Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ServiceWorkerInit from '@/components/ServiceWorkerInit';
+import { CLUB } from '@/lib/club';
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
@@ -17,29 +19,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sdus-fc93.fr'),
+  metadataBase: new URL(CLUB.domain),
+  applicationName: CLUB.name,
   title: {
-    default: 'Saint-Denis U.S. Football Club | SDUS FC 93',
-    template: '%s | SDUS FC 93',
+    default: 'United Football Saint-Denis | UFSD',
+    template: '%s | UFSD',
   },
   description:
-    'Le Saint-Denis U.S. Football Club, club de football formateur et ambitieux au cœur de Saint-Denis depuis 1993.',
-  keywords: ['football', 'Saint-Denis', 'SDUS', 'FC 93', 'club de foot', 'Seine-Saint-Denis'],
+    'United Football Saint-Denis (UFSD) - L’excellence au service de la masse. Club de football formateur et ambitieux au cœur de Saint-Denis.',
+  keywords: ['football', 'Saint-Denis', 'UFSD', 'United Football Saint-Denis', 'club de foot', 'Seine-Saint-Denis', '93'],
+  manifest: '/manifest.webmanifest',
   openGraph: {
-    title: 'Saint-Denis U.S. Football Club | SDUS FC 93',
+    title: 'United Football Saint-Denis | UFSD',
     description:
-      'Club de football formateur et ambitieux au cœur de Saint-Denis depuis 1993.',
+      'L’excellence au service de la masse. Club de football formateur au cœur de Saint-Denis.',
     url: '/',
-    siteName: 'SDUS FC 93',
+    siteName: CLUB.name,
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/assets/hero_bg.jpeg', width: 1672, height: 941, alt: 'Saint-Denis U.S. Football Club' }],
+    images: [{ url: '/assets/hero_bg.jpeg', width: 1672, height: 941, alt: 'United Football Saint-Denis' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Saint-Denis U.S. Football Club | SDUS FC 93',
+    title: 'United Football Saint-Denis | UFSD',
     description:
-      'Club de football formateur et ambitieux au cœur de Saint-Denis depuis 1993.',
+      'L’excellence au service de la masse. Club de football formateur au cœur de Saint-Denis.',
     images: ['/assets/hero_bg.jpeg'],
   },
   icons: {
@@ -62,19 +66,19 @@ const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t===
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SportsOrganization',
-  name: 'Saint-Denis U.S. Football Club',
-  alternateName: 'SDUS FC 93',
-  url: 'https://sdus-fc93.fr',
-  logo: 'https://sdus-fc93.fr/assets/logo.png',
-  foundingDate: '1993',
+  name: CLUB.name,
+  alternateName: CLUB.shortName,
+  url: CLUB.domain,
+  logo: `${CLUB.domain}/assets/logo.png`,
+  foundingDate: CLUB.foundedYear,
   sport: 'Football',
-  email: 'contact@sdus-fc93.fr',
+  email: CLUB.email,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Stade Marville',
-    addressLocality: 'Saint-Denis',
-    postalCode: '93200',
-    addressCountry: 'FR',
+    streetAddress: CLUB.address.streetAddress,
+    addressLocality: CLUB.address.addressLocality,
+    postalCode: CLUB.address.postalCode,
+    addressCountry: CLUB.address.addressCountry,
   },
 };
 
@@ -87,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <ServiceWorkerInit />
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -25,7 +25,7 @@ const PILLARS: { icon: IconName; title: string; desc: string; href: string }[] =
   {
     icon: 'trophy',
     title: 'Matchs & vie du club',
-    desc: "Compétitions, événements, convivialité. Vibrez toute l'année avec le SDUS.",
+    desc: "Compétitions, événements, convivialité. Vibrez toute l'année avec le UFSD.",
     href: '/calendrier',
   },
 ];
@@ -68,9 +68,9 @@ const SPOTLIGHTS = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: 'Saint-Denis U.S. Football Club | SDUS FC 93 - Club de foot à Saint-Denis (93)' },
+  title: { absolute: 'United Football Saint-Denis | UFSD - Club de foot à Saint-Denis (93)' },
   description:
-    'Saint-Denis U.S. Football Club : inscriptions, équipes, prochains matchs et actualités du SDUS FC 93. Club formateur, populaire et ambitieux depuis 1993.',
+    'United Football Saint-Denis : inscriptions, équipes, prochains matchs et actualités du UFSD. Club formateur, populaire et ambitieux depuis 1993.',
   alternates: { canonical: '/' },
 };
 
@@ -80,22 +80,22 @@ export default async function HomePage() {
   return (
     <>
       {/* ===================== HERO ===================== */}
-      <section className="relative isolate min-h-screen overflow-hidden bg-white md:min-h-[820px] lg:min-h-[820px] xl:min-h-screen">
+      <section className="relative isolate min-h-screen overflow-hidden bg-surface md:min-h-[820px] lg:min-h-[820px] xl:min-h-screen">
         <Image
           src="/assets/hero_bg.jpeg"
-          alt="Jeunes joueurs du SDUS FC 93 entrant sur un terrain de football."
+          alt="Jeunes joueurs du UFSD entrant sur un terrain de football."
           fill
           priority
           className="object-cover object-[66%_50%] lg:object-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.82)_52%,rgba(255,255,255,0.22)_100%)] md:hidden" />
-        <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(255,255,255,0.74)_0%,rgba(255,255,255,0.58)_34%,rgba(255,255,255,0.16)_58%,rgba(255,255,255,0)_100%)] md:block" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-scrim)_92%,transparent)_0%,color-mix(in_srgb,var(--color-scrim)_82%,transparent)_52%,color-mix(in_srgb,var(--color-scrim)_22%,transparent)_100%)] md:hidden" />
+        <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,color-mix(in_srgb,var(--color-scrim)_74%,transparent)_0%,color-mix(in_srgb,var(--color-scrim)_58%,transparent)_34%,color-mix(in_srgb,var(--color-scrim)_16%,transparent)_58%,color-mix(in_srgb,var(--color-scrim)_0%,transparent)_100%)] md:block" />
         <TacticalPattern tone="onLight" className="z-[1] opacity-80" />
 
         <div className="relative z-10 mx-auto flex min-h-[620px] w-full max-w-[1420px] flex-col justify-center px-5 pt-28 pb-8 sm:min-h-[700px] sm:px-8 md:min-h-[760px] md:pb-16 lg:min-h-[820px] lg:px-10 lg:pt-32 lg:pb-36 xl:min-h-screen xl:px-12 xl:pb-40">
           <div className="max-w-[700px]">
             <div className="mb-5 h-1.5 w-20 rounded-full bg-flame animate-rise md:mb-6" style={{ animationDelay: '80ms' }} />
-            <h1 className="hero-title text-royal drop-shadow-[0_10px_30px_rgba(255,255,255,0.35)] animate-rise" style={{ animationDelay: '150ms' }}>
+            <h1 className="hero-title text-navy drop-shadow-[0_10px_30px_rgba(255,255,255,0.35)] animate-rise" style={{ animationDelay: '150ms' }}>
               Saint-Denis
               <br />
               dans le cœur.
@@ -103,9 +103,9 @@ export default async function HomePage() {
               <span className="mt-2 block text-flame">Le football</span>
               <span className="block text-flame">dans les veines.</span>
             </h1>
-            <p className="mt-6 max-w-[520px] text-[1.02rem] leading-relaxed text-deep/82 animate-rise sm:text-lg lg:mt-7" style={{ animationDelay: '310ms' }}>
-              Le Saint-Denis U.S. Football Club, c&apos;est plus qu&apos;un club : c&apos;est une famille.{' '}
-              <strong className="font-extrabold text-royal">Formateur, populaire et ambitieux</strong>, nous
+            <p className="mt-6 max-w-[520px] text-[1.02rem] leading-relaxed text-navy/82 animate-rise sm:text-lg lg:mt-7" style={{ animationDelay: '310ms' }}>
+              Le United Football Saint-Denis, c&apos;est plus qu&apos;un club : c&apos;est une famille.{' '}
+              <strong className="font-extrabold text-navy">Formateur, populaire et ambitieux</strong>, nous
               faisons grandir les talents et les valeurs depuis 1993.
             </p>
             <div className="mt-7 flex flex-wrap gap-4 animate-rise lg:mt-8" style={{ animationDelay: '390ms' }}>
@@ -136,14 +136,14 @@ export default async function HomePage() {
             <Link
               key={p.title}
               href={p.href}
-              className="group relative overflow-hidden rounded-[1.15rem] border border-white/80 bg-white/94 p-5 shadow-[0_22px_60px_-28px_rgba(13,27,75,0.65)] backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:shadow-[0_30px_80px_-34px_rgba(13,27,75,0.78)] xl:p-6"
+              className="group relative overflow-hidden rounded-[1.15rem] border border-cloud bg-panel/94 p-5 shadow-[0_22px_60px_-28px_rgba(13,27,75,0.65)] backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:shadow-[0_30px_80px_-34px_rgba(13,27,75,0.78)] xl:p-6"
               style={{ animationDelay: `${460 + i * 90}ms` }}
             >
               <span className="absolute inset-x-6 top-0 h-1 bg-flame" />
               <span className="mb-4 grid h-12 w-12 place-items-center rounded-full bg-royal text-white shadow-[0_14px_24px_-16px_rgba(13,27,75,0.7)] ring-4 ring-flame/12 transition-colors duration-300 group-hover:bg-flame xl:mb-5 xl:h-14 xl:w-14">
                 <Icon name={p.icon} size={23} />
               </span>
-              <h3 className="display-sm text-[1.28rem] italic text-royal xl:text-[1.45rem]">{p.title}</h3>
+              <h3 className="display-sm text-[1.28rem] italic text-navy xl:text-[1.45rem]">{p.title}</h3>
               <div className="mt-2 mb-4 h-0.5 w-9 rounded-full bg-flame" />
               <p className="text-[0.82rem] leading-relaxed text-slate-soft xl:text-[0.86rem]">{p.desc}</p>
               <Icon
@@ -171,8 +171,8 @@ export default async function HomePage() {
               orange="fait grandir"
               subtitle="Des catégories lisibles, un cadre clair, et une progression pensée pour chaque âge."
             />
-            <div className="max-w-2xl border-l-4 border-flame bg-white/72 px-5 py-5 text-sm leading-relaxed text-slate-soft shadow-[0_18px_48px_-34px_rgba(13,27,75,0.45)] backdrop-blur">
-              <strong className="text-royal">L&apos;expérience SDUS</strong>, c&apos;est un parcours complet :
+            <div className="max-w-2xl border-l-4 border-flame bg-panel/72 px-5 py-5 text-sm leading-relaxed text-slate-soft shadow-[0_18px_48px_-34px_rgba(13,27,75,0.45)] backdrop-blur">
+              <strong className="text-navy">L&apos;expérience UFSD</strong>, c&apos;est un parcours complet :
               accueil des plus jeunes, préformation exigeante, éducateurs présents, matchs, tournois et vie de club.
             </div>
           </div>
@@ -184,7 +184,7 @@ export default async function HomePage() {
             >
               <Image
                 src={SPOTLIGHTS[0].image}
-                alt={`Jeune joueur du SDUS FC 93 - ${SPOTLIGHTS[0].kicker} ${SPOTLIGHTS[0].title}`}
+                alt={`Jeune joueur du UFSD - ${SPOTLIGHTS[0].kicker} ${SPOTLIGHTS[0].title}`}
                 fill
                 sizes="(min-width: 1024px) 54vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -213,7 +213,7 @@ export default async function HomePage() {
                 >
                   <Image
                     src={item.image}
-                    alt={`Illustration SDUS FC 93 - ${item.kicker} ${item.title}`}
+                    alt={`Illustration UFSD - ${item.kicker} ${item.title}`}
                     fill
                     sizes="(min-width: 1024px) 46vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -302,7 +302,7 @@ export default async function HomePage() {
             <div className="relative min-h-[280px] lg:min-h-[420px]">
               <Image
                 src="/assets/club_hero.webp"
-                alt="Joueurs et éducateurs du SDUS FC 93 réunis au club."
+                alt="Joueurs et éducateurs du UFSD réunis au club."
                 fill
                 sizes="(min-width: 1024px) 46vw, 100vw"
                 className="object-cover"

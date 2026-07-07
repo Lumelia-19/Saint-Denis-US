@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ============================================================
-   SDUS FC 93 - Design System (Tailwind v4)
+   United Football Saint-Denis (UFSD) - Design System (Tailwind v4)
    Brand tokens are fixed; semantic tokens flip in dark mode.
    ============================================================ */
 
@@ -24,6 +24,15 @@
   --color-navy: #0d1b4b;
   --color-slate-soft: #5a6478;
   --color-accent: #1b3a8c;
+
+  /* Scrim: overlay/gradient sur les photos de hero. Blanc en clair,
+     bascule vers le fond sombre en dark pour que les images se fondent
+     dans la page au lieu de rester "blanches" en mode sombre. */
+  --color-scrim: #ffffff;
+  /* État d'erreur (formulaires) - adaptatif dark */
+  --color-danger: #c0261f;
+  --color-danger-bg: #fdecec;
+  --color-danger-border: #f6c9c6;
 
   /* - Typography - */
   --font-display: var(--font-barlow-condensed), "Barlow Condensed", sans-serif;
@@ -59,6 +68,10 @@
   --color-navy: #eef1f8;
   --color-slate-soft: #99a4bd;
   --color-accent: #7e9ce4;
+  --color-scrim: #080c17;
+  --color-danger: #ff8f87;
+  --color-danger-bg: #2a1518;
+  --color-danger-border: #5a2a26;
   /* Mesh surfaces (footer, CTA cards, heroes) go deeper / near-black in dark mode */
   --color-deep: #070c20;
   --color-mesh-top: #14275a;
@@ -178,6 +191,23 @@
     text-transform: uppercase;
     letter-spacing: 0;
     line-height: 1.05;
+  }
+  /* Titre de page de contenu (légales, calendrier, contact, formulaire) :
+     intermédiaire entre .hero-title plein écran et .section-title. */
+  .page-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: clamp(2.4rem, 5vw, 4.6rem);
+    line-height: 0.95;
+    letter-spacing: 0;
+  }
+  /* Bloc de message d'erreur de formulaire, adaptatif clair/sombre. */
+  .form-error {
+    background: var(--color-danger-bg);
+    border: 1px solid var(--color-danger-border);
+    color: var(--color-danger);
   }
 
   .eyebrow {

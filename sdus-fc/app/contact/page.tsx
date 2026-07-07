@@ -3,8 +3,9 @@ import { useState } from 'react';
 import Reveal from '@/components/Reveal';
 import Icon, { type IconName } from '@/components/Icon';
 import { ContactFormData } from '@/lib/types';
+import { CLUB } from '@/lib/club';
 
-const SUBJECTS = ['Inscription', 'Détection', 'Stage vacances', 'Partenariat', 'Autre demande'];
+const SUBJECTS = ['Inscription', 'Détection', 'Stage vacances', 'Partenariat', 'Autre'];
 
 const EMPTY_FORM: ContactFormData = {
   firstName: '',
@@ -14,15 +15,19 @@ const EMPTY_FORM: ContactFormData = {
   message: '',
 };
 
-const COORDS: { icon: IconName; label: string; value: string }[] = [
-  { icon: 'map-pin', label: 'Adresse', value: 'Stade Marville, Saint-Denis (93)' },
-  { icon: 'mail', label: 'Email', value: 'contact@sdus-fc93.fr' },
-  { icon: 'phone', label: 'Téléphone', value: 'Sur demande par email' },
-  { icon: 'clock', label: 'Horaires', value: 'Lun – Sam · 9h – 19h' },
+const MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Stade+Marville+Saint-Denis';
+const FULL_ADDRESS = `${CLUB.address.streetAddress}, ${CLUB.address.postalCode} ${CLUB.address.addressLocality}`;
+const INSTA_HANDLE = '@' + (CLUB.socials.instagram.replace(/\/$/, '').split('/').pop() ?? 'ufsd_football');
+
+const COORDS: { icon: IconName; label: string; value: string; href?: string; external?: boolean }[] = [
+  { icon: 'map-pin', label: 'Adresse', value: FULL_ADDRESS, href: MAPS_URL, external: true },
+  { icon: 'mail', label: 'Email', value: CLUB.email, href: `mailto:${CLUB.email}` },
+  { icon: 'phone', label: 'Téléphone', value: CLUB.phoneDisplay },
+  { icon: 'clock', label: 'Horaires', value: 'Lun - Sam · 9h - 19h' },
 ];
 
 const SOCIALS: { icon: IconName; label: string; href: string }[] = [
-  { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/sdus_football/' },
+  { icon: 'instagram', label: 'Instagram', href: CLUB.socials.instagram },
 ];
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
@@ -67,12 +72,12 @@ export default function ContactPage() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <Reveal>
           <p className="eyebrow text-flame mb-4">Une question ?</p>
-          <h1 className="hero-title text-royal lg:text-[5.6rem]">
+          <h1 className="hero-title text-navy lg:text-[5.6rem]">
             Nous{' '}
             <span className="text-flame">contacter</span>
           </h1>
           <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep/82 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-navy/82 sm:text-lg">
             Le club vous répond rapidement - inscriptions, détections, partenariats ou simple curiosité.
           </p>
         </Reveal>
@@ -92,11 +97,11 @@ export default function ContactPage() {
                 </div>
               )}
               {status === 'error' && (
-                <div className="mb-6 flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
+                <div className="mb-6 form-error flex items-center gap-3 rounded-xl p-4">
                   <span className="grid place-items-center w-9 h-9 rounded-lg bg-red-500 text-white shrink-0">
                     <Icon name="close" size={18} strokeWidth={3} />
                   </span>
-                  <p className="text-sm text-red-700">{errorMsg}</p>
+                  <p className="text-sm">{errorMsg}</p>
                 </div>
               )}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -147,17 +152,35 @@ export default function ContactPage() {
               <div className="relative overflow-hidden rounded-[1.6rem] bg-mesh p-7">
                 <h3 className="display-sm text-xl text-white mb-5">Coordonnées</h3>
                 <ul className="space-y-4">
-                  {COORDS.map((c) => (
-                    <li key={c.label} className="flex items-start gap-3">
-                      <span className="grid place-items-center w-10 h-10 rounded-xl bg-white/10 border border-white/15 text-flame shrink-0">
-                        <Icon name={c.icon} size={18} />
-                      </span>
-                      <div>
+                  {COORDS.map((c) => {
+                    const meta = (
+                      <>
                         <p className="text-white/45 text-[0.68rem] uppercase tracking-[0.14em]">{c.label}</p>
                         <p className="text-white text-sm">{c.value}</p>
-                      </div>
-                    </li>
-                  ))}
+                      </>
+                    );
+                    return (
+                      <li key={c.label} className="flex items-start gap-3">
+                        <span className="grid place-items-center w-10 h-10 rounded-xl bg-white/10 border border-white/15 text-flame shrink-0">
+                          <Icon name={c.icon} size={18} />
+                        </span>
+                        <div>
+                          {c.href ? (
+                            <a
+                              href={c.href}
+                              target={c.external ? '_blank' : undefined}
+                              rel={c.external ? 'noreferrer' : undefined}
+                              className="group inline-block hover:underline underline-offset-4 decoration-flame decoration-2"
+                            >
+                              {meta}
+                            </a>
+                          ) : (
+                            meta
+                          )}
+                        </div>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </Reveal>
@@ -178,7 +201,7 @@ export default function ContactPage() {
                     </a>
                   ))}
                 </div>
-                <p className="text-slate-soft text-sm mt-4">@sdus_football</p>
+                <p className="text-slate-soft text-sm mt-4">{INSTA_HANDLE}</p>
               </div>
             </Reveal>
           </div>

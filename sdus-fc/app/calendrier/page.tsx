@@ -21,13 +21,13 @@ export default function CalendrierPage() {
         <div className="absolute inset-0 bg-grid-ink opacity-70" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <Reveal>
-            <p className="eyebrow text-flame mb-4">Saison 2025 / 2026</p>
-            <h1 className="hero-title text-royal lg:text-[5.6rem]">
+            <p className="eyebrow text-flame mb-4">Saison 2026 / 2027</p>
+            <h1 className="hero-title text-navy lg:text-[5.6rem]">
               Calendrier &amp;{' '}
               <span className="text-flame">Résultats</span>
             </h1>
             <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep/82 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-soft sm:text-lg">
               Tous les matchs du club, toutes catégories confondues. Filtrez pour suivre votre équipe.
             </p>
           </Reveal>

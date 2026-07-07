@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { CLUB } from '@/lib/club';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://sdus-fc93.fr/sitemap.xml',
+    sitemap: `${CLUB.domain}/sitemap.xml`,
   };
 }

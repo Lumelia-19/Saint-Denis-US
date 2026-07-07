@@ -51,7 +51,7 @@ const OFFERS: { icon: IconName; title: string; desc: string; cta: string }[] = [
   {
     icon: 'search',
     title: 'Détections',
-    desc: "Intégrez nos détections et tentez de rejoindre l'aventure SDUS.",
+    desc: "Intégrez nos détections et tentez de rejoindre l'aventure UFSD.",
     cta: 'Demander une détection',
   },
   {
@@ -62,14 +62,39 @@ const OFFERS: { icon: IconName; title: string; desc: string; cta: string }[] = [
   },
 ];
 
+// US-013 : prochaines dates de détection / stage (saison 2026/2027).
+const EVENTS: { icon: IconName; date: string; period: string; title: string; desc: string }[] = [
+  {
+    icon: 'search',
+    date: '12 sept. 2026',
+    period: 'Samedi · 10h – 12h',
+    title: 'Détection de rentrée',
+    desc: "Session ouverte aux U13 – U17 au Stade Marville. Venir avec équipement et certificat médical.",
+  },
+  {
+    icon: 'calendar',
+    date: '24 oct. – 1er nov. 2026',
+    period: 'Vacances de la Toussaint',
+    title: 'Stage de la Toussaint',
+    desc: "Stage de 5 jours accessible à tous les niveaux, encadré par nos éducateurs diplômés.",
+  },
+  {
+    icon: 'search',
+    date: '7 fév. 2027',
+    period: 'Dimanche · 14h – 16h',
+    title: 'Détection hivernale',
+    desc: "Nouvelle session de détection mi-saison. Inscription recommandée en amont via le formulaire.",
+  },
+];
+
 export const metadata: Metadata = {
-  title: 'Inscriptions',
+  title: 'Inscriptions | UFSD',
   description:
-    'Rejoignez le SDUS FC 93 : inscriptions, détections, stages et pièces à fournir pour la saison 2025/2026.',
+    "Rejoignez l'United Football Saint-Denis (UFSD) : inscriptions en ligne, détections, stages et pièces à fournir pour la saison 2026/2027.",
   alternates: { canonical: '/inscriptions' },
   openGraph: {
-    title: 'Rejoindre le club | SDUS FC 93',
-    description: 'Inscriptions, détections et stages - saison 2025/2026 du Saint-Denis U.S. Football Club.',
+    title: 'Rejoindre le club | UFSD',
+    description: "Inscriptions, détections et stages - saison 2026/2027 de l'United Football Saint-Denis.",
     url: '/inscriptions',
     type: 'website',
   },
@@ -108,29 +133,29 @@ function TacticalDecor() {
 
 export default function InscriptionsPage() {
   return (
-    <section className="relative overflow-hidden bg-white" aria-labelledby="inscriptions-title">
+    <section className="relative overflow-hidden bg-surface" aria-labelledby="inscriptions-title">
       <div className="relative isolate min-h-screen overflow-hidden pt-28 lg:pt-24">
         <Image
           src="/assets/inscriptions-bg.webp"
-          alt="Jeune joueur du SDUS FC 93 en action pendant une séance d'entraînement."
+          alt="Jeune joueur de l'UFSD en action pendant une séance d'entraînement."
           fill
           priority
           sizes="100vw"
           className="object-cover object-[42%_18%] lg:object-[55%_15%]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.86)_30%,rgba(255,255,255,0.28)_54%,rgba(255,255,255,0)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.42)_0%,rgba(255,255,255,0)_36%,rgba(255,255,255,0)_58%,rgba(255,255,255,0.82)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--color-scrim)_96%,transparent)_0%,color-mix(in_srgb,var(--color-scrim)_86%,transparent)_30%,color-mix(in_srgb,var(--color-scrim)_28%,transparent)_54%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-scrim)_42%,transparent)_0%,transparent_36%,transparent_58%,color-mix(in_srgb,var(--color-scrim)_82%,transparent)_100%)]" />
         <TacticalDecor />
 
         <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6rem)] max-w-[1536px] grid-rows-[auto_1fr] px-5 pb-8 sm:px-8 lg:px-10 min-[1400px]:px-24">
           <div className="grid items-start gap-7 lg:grid-cols-[500px_180px_1fr] min-[1400px]:grid-cols-[540px_190px_1fr]">
             <div className="max-w-[620px] pt-12 lg:pt-24">
-              <h1 id="inscriptions-title" className="hero-title text-royal lg:text-[6.95rem]">
+              <h1 id="inscriptions-title" className="hero-title text-navy lg:text-[6.95rem]">
                 Rejoindre
                 <br />
                 <span className="text-flame">le club.</span>
               </h1>
-              <p className="mt-4 text-xl font-semibold text-deep sm:text-2xl">
+              <p className="mt-4 text-xl font-semibold text-navy sm:text-2xl">
                 Inscriptions, Détections &amp; Stages.
               </p>
             </div>
@@ -138,9 +163,9 @@ export default function InscriptionsPage() {
             <div className="hidden h-48 w-48 place-items-center rounded-full border-4 border-flame bg-royal text-center text-white shadow-[0_24px_60px_-30px_rgba(13,27,75,0.75)] lg:mt-28 lg:grid">
               <p className="display-sm italic leading-[1]">
                 <span className="block text-lg tracking-wide">Saison</span>
-                <span className="mt-1 block text-5xl">2025</span>
+                <span className="mt-1 block text-5xl">2026</span>
                 <span className="block text-base text-flame">/</span>
-                <span className="block text-5xl text-flame">2026</span>
+                <span className="block text-5xl text-flame">2027</span>
               </p>
             </div>
 
@@ -174,7 +199,7 @@ export default function InscriptionsPage() {
               {STEPS.map((step, i) => (
                 <article
                   key={step.title}
-                  className="relative rounded-[1.1rem] bg-white/96 px-4 py-5 shadow-[0_24px_60px_-32px_rgba(13,27,75,0.45)] backdrop-blur min-[1400px]:px-5 min-[1400px]:py-6"
+                  className="relative rounded-[1.1rem] bg-panel/80 px-4 py-5 shadow-[0_24px_60px_-32px_rgba(13,27,75,0.45)] backdrop-blur min-[1400px]:px-5 min-[1400px]:py-6"
                   style={TICKET_PERF}
                 >
                   <div className="flex items-center gap-3 min-h-14 min-[1400px]:gap-4">
@@ -184,9 +209,9 @@ export default function InscriptionsPage() {
                     >
                       {i + 1}
                     </span>
-                    <h3 className="display-sm text-[0.92rem] italic leading-tight text-royal min-[1400px]:text-[1.05rem]">
+                    <h3 className="display-sm text-[0.92rem] italic leading-tight text-navy min-[1400px]:text-[1.05rem]">
                       {step.title.split(' ').slice(0, 1).join(' ').toUpperCase()}
-                      <span className="block text-[0.84rem] not-italic font-bold tracking-wide text-royal/85 min-[1400px]:text-[0.92rem]">
+                      <span className="block text-[0.84rem] not-italic font-bold tracking-wide text-navy/85 min-[1400px]:text-[0.92rem]">
                         {step.title.split(' ').slice(1).join(' ').toUpperCase()}
                       </span>
                     </h3>
@@ -194,7 +219,7 @@ export default function InscriptionsPage() {
                   <div className="mx-auto my-3 grid h-[4.5rem] w-[4.5rem] place-items-center text-flame min-[1400px]:my-4 min-[1400px]:h-20 min-[1400px]:w-20">
                     <Icon name={step.icon} size={72} strokeWidth={1.6} />
                   </div>
-                  <p className="mx-auto max-w-[210px] text-center text-[0.74rem] leading-relaxed text-deep/78 min-[1400px]:text-[0.8rem]">
+                  <p className="mx-auto max-w-[210px] text-center text-[0.74rem] leading-relaxed text-navy/78 min-[1400px]:text-[0.8rem]">
                     {step.desc}
                   </p>
                   {i < STEPS.length - 1 && (
@@ -227,7 +252,7 @@ export default function InscriptionsPage() {
 
               {/* === CTA central (sous le strip) === */}
               <div className="mt-4 flex flex-col items-center gap-5 sm:col-span-full lg:flex-row lg:justify-center">
-                <Link href="/contact" className="btn-primary group min-w-56">
+                <Link href="/inscriptions/formulaire" className="btn-primary group min-w-56">
                   S&apos;inscrire
                   <Icon
                     name="arrow-right"
@@ -236,13 +261,13 @@ export default function InscriptionsPage() {
                     className="transition-transform duration-300 group-hover:translate-x-1"
                   />
                 </Link>
-                <div className="flex items-center gap-3 text-sm font-bold uppercase text-royal">
+                <div className="flex items-center gap-3 text-sm font-bold uppercase text-navy">
                   <span className="grid h-10 w-10 place-items-center rounded-full bg-royal text-white">
                     <Icon name="shield" size={20} />
                   </span>
                   <span>
                     Procédure 100% en ligne
-                    <span className="block text-xs font-semibold text-deep/60">Simple, rapide et sécurisée.</span>
+                    <span className="block text-xs font-semibold text-navy/60">Simple, rapide et sécurisée.</span>
                   </span>
                 </div>
               </div>
@@ -253,24 +278,79 @@ export default function InscriptionsPage() {
               {OFFERS.map((offer) => (
                 <article
                   key={offer.title}
-                  className="rounded-[1.15rem] bg-white/96 p-5 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] backdrop-blur"
+                  className="rounded-[1.15rem] bg-panel/80 p-5 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] backdrop-blur"
                 >
                   <div className="flex items-start gap-4">
                     <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-royal text-white">
                       <Icon name={offer.icon} size={28} strokeWidth={1.9} />
                     </span>
                     <div>
-                      <h3 className="display-sm text-[1.35rem] italic text-royal">{offer.title}</h3>
-                      <p className="mt-1.5 text-[0.8rem] leading-relaxed text-deep/74">{offer.desc}</p>
+                      <h3 className="display-sm text-[1.35rem] italic text-navy">{offer.title}</h3>
+                      <p className="mt-1.5 text-[0.8rem] leading-relaxed text-navy/74">{offer.desc}</p>
                     </div>
                   </div>
-                  <Link href="/contact" className="btn-primary group mt-4 w-full justify-between px-6 py-2.5 text-sm">
+                  <Link href="/inscriptions/formulaire" className="btn-primary group mt-4 w-full justify-between px-6 py-2.5 text-sm">
                     {offer.cta}
                     <Icon name="arrow-right" size={18} strokeWidth={2.4} />
                   </Link>
                 </article>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* === Détections & Stages (US-013) === */}
+        <div className="relative z-10 mx-auto max-w-[1536px] px-5 pb-16 sm:px-8 lg:px-10 min-[1400px]:px-24">
+          <div className="mb-8 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="eyebrow text-flame mb-3">Saison 2026 / 2027</p>
+              <h2 className="display-sm text-3xl italic text-navy sm:text-4xl lg:text-[2.7rem]">
+                Détections &amp; Stages à venir
+              </h2>
+              <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
+            </div>
+            <Link href="/inscriptions/formulaire" className="btn-outline group self-start lg:self-auto">
+              S&apos;inscrire à une session
+              <Icon
+                name="arrow-right"
+                size={18}
+                strokeWidth={2.4}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {EVENTS.map((ev) => (
+              <article
+                key={ev.title}
+                className="card card-hover p-6 flex flex-col"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-royal text-white">
+                    <Icon name={ev.icon} size={24} strokeWidth={1.9} />
+                  </span>
+                  <div>
+                    <p className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-flame">{ev.date}</p>
+                    <p className="text-xs font-semibold text-navy/60">{ev.period}</p>
+                  </div>
+                </div>
+                <h3 className="display-sm text-xl italic text-navy mt-4">{ev.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-soft">{ev.desc}</p>
+                <Link
+                  href="/inscriptions/formulaire"
+                  className="btn-ghost group mt-5 self-start px-0 text-sm text-navy"
+                >
+                  Je m&apos;inscris
+                  <Icon
+                    name="arrow-right"
+                    size={16}
+                    strokeWidth={2.4}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </div>

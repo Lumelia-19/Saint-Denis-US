@@ -1,26 +1,34 @@
 import Image from 'next/image';
-import { Article } from '@/lib/types';
+import Link from 'next/link';
+import type { ArticleEntry } from '@/lib/articles';
 import Icon, { type IconName } from '@/components/Icon';
 
 const CATEGORY_ICON: Record<string, IconName> = {
-  Match: 'trophy',
+  Club: 'shield',
   Formation: 'graduation',
+  'Vie du club': 'heart',
+  Match: 'trophy',
   Stage: 'flame',
 };
 
-export default function ArticleCard({ article }: { article: Article }) {
+export default function ArticleCard({ article }: { article: ArticleEntry }) {
   const date = new Date(article.date)
     .toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
     .toUpperCase();
   const icon = CATEGORY_ICON[article.category] ?? 'ball';
+  const href = `/actualites/${article.slug}`;
 
   return (
-    <article className="card card-hover group overflow-hidden flex flex-col">
+    <Link
+      href={href}
+      aria-label={`Lire l’article : ${article.title}`}
+      className="card card-hover group flex flex-col overflow-hidden rounded-2xl"
+    >
       <div className="relative h-52 bg-mesh overflow-hidden">
         {article.image ? (
           <Image
             src={article.image}
-            alt={`Image de l'article : ${article.title}`}
+            alt={`Image de l’article : ${article.title}`}
             fill
             sizes="(min-width: 768px) 33vw, 100vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -47,9 +55,15 @@ export default function ArticleCard({ article }: { article: Article }) {
         </h3>
         <p className="text-slate-soft text-sm leading-relaxed mb-4 flex-1">{article.excerpt}</p>
         <span className="inline-flex items-center gap-1.5 text-flame text-sm font-semibold">
-          Article bientôt détaillé
+          Lire l’article
+          <Icon
+            name="arrow-right"
+            size={16}
+            strokeWidth={2.4}
+            className="transition-transform duration-300 group-hover:translate-x-1"
+          />
         </span>
       </div>
-    </article>
+    </Link>
   );
 }

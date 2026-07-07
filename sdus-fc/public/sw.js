@@ -1,8 +1,8 @@
 /* eslint-disable */
-// SDUS FC 93 - Service Worker
+// UFSD - Service Worker
 // Squelette fonctionnel : cache d'assets + notifications push.
 
-const CACHE_NAME = 'sdus-fc-v1';
+const CACHE_NAME = 'ufsd-v1';
 const STATIC_ASSETS = ['/', '/assets/logo.png'];
 
 // --- Install : pré-cache des assets essentiels ---
@@ -72,7 +72,7 @@ self.addEventListener('push', (event) => {
     payload = {};
   }
 
-  const title = payload.title || 'SDUS FC 93';
+  const title = payload.title || 'UFSD';
   const options = {
     body: payload.body || 'Nouvelle actualité du club !',
     icon: '/assets/logo.png',

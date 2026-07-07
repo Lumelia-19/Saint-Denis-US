@@ -74,11 +74,6 @@ const PATHWAY: { icon: IconName; label: string }[] = [
   { icon: 'handshake', label: 'Engagement collectif' },
 ];
 
-const ALUMNI = [
-  { firstName: 'Wissam', lastName: 'Ben Yedder', initials: 'WB' },
-  { firstName: 'Jérôme', lastName: 'Roussillon', initials: 'JR' },
-];
-
 export default function EquipesPage() {
   const [active, setActive] = useState<MatchCategory | 'Tous'>('Tous');
 
@@ -92,7 +87,7 @@ export default function EquipesPage() {
   return (
     <>
       {/* ============ HERO ============ */}
-      <section className="relative isolate overflow-hidden bg-white pt-20 lg:pt-16" aria-labelledby="equipes-title">
+      <section className="relative isolate overflow-hidden bg-surface pt-20 lg:pt-16" aria-labelledby="equipes-title">
         {/* ===== Brush strokes bleus en arrière-plan ===== */}
         <svg
           aria-hidden="true"
@@ -144,12 +139,12 @@ export default function EquipesPage() {
           <div className="pt-10 lg:pt-14">
             <Reveal>
               <p className="eyebrow text-flame mb-4">Nos équipes</p>
-              <h1 id="equipes-title" className="hero-title text-royal lg:text-[6rem]">
+              <h1 id="equipes-title" className="hero-title text-navy lg:text-[6rem]">
                 Équipes &amp;
                 <br />
                 <span className="text-flame">Formation</span>
               </h1>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-deep/82 sm:text-lg">
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-navy/82 sm:text-lg">
                 Un parcours structuré, adapté à chaque âge pour développer le potentiel de chaque joueur et former
                 des citoyens sur et en dehors du terrain.
               </p>
@@ -170,7 +165,7 @@ export default function EquipesPage() {
                     >
                       <Image
                         src={stage.image}
-                        alt={`Joueur SDUS FC catégorie ${stage.title}`}
+                        alt={`Joueur UFSD catégorie ${stage.title}`}
                         width={600}
                         height={1200}
                         className={`relative z-[100] w-auto object-contain drop-shadow-[0_22px_30px_rgba(13,27,75,0.28)] ${stage.flip ? 'scale-x-[-1]' : ''}`}
@@ -189,7 +184,7 @@ export default function EquipesPage() {
               </div>
 
               {/* Chevrons (description integree, juste en dessous des photos) */}
-              <div className="mt-7 grid grid-cols-2 gap-2 sm:flex sm:items-stretch sm:gap-2 lg:gap-3">
+              <div className="mt-7 grid grid-cols-1 gap-2.5 sm:flex sm:items-stretch sm:gap-2 lg:gap-3">
                 {STAGES.map((stage, i) => {
                   const isFirst = i === 0;
                   const isLast = i === STAGES.length - 1;
@@ -225,8 +220,8 @@ export default function EquipesPage() {
           {/* ===== Sidebar droite (centree verticalement dans la zone disponible) ===== */}
           <aside className="flex flex-col gap-5 lg:justify-center">
             <Reveal delay={0.1}>
-              <section className="rounded-[1.2rem] border border-cloud bg-white p-7 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] lg:p-8">
-                <h2 className="display-sm text-center text-[1.25rem] italic text-royal">Parcours joueur</h2>
+              <section className="rounded-[1.2rem] border border-cloud bg-panel p-7 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] lg:p-8">
+                <h2 className="display-sm text-center text-[1.25rem] italic text-navy">Parcours joueur</h2>
                 <div className="mt-3 mx-auto h-1 w-14 rounded-full bg-flame" />
                 <ul className="mt-7 space-y-6">
                   {PATHWAY.map((item) => (
@@ -234,7 +229,7 @@ export default function EquipesPage() {
                       <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-royal text-white">
                         <Icon name={item.icon} size={22} />
                       </span>
-                      <span className="text-[0.95rem] font-semibold text-deep">{item.label}</span>
+                      <span className="text-[0.95rem] font-semibold text-navy">{item.label}</span>
                     </li>
                   ))}
                 </ul>
@@ -242,30 +237,18 @@ export default function EquipesPage() {
             </Reveal>
 
             <Reveal delay={0.18}>
-              <section className="rounded-[1.2rem] border border-cloud bg-white p-7 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] lg:p-8">
-                <h2 className="display-sm text-center text-[1.15rem] italic leading-tight text-royal">
-                  Anciens passés
-                  <br />
-                  par le club
-                </h2>
+              <section className="rounded-[1.2rem] border border-cloud bg-panel p-7 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] lg:p-8">
+                <h2 className="display-sm text-center text-[1.25rem] italic text-navy">Pôle Élite</h2>
                 <div className="mt-3 mx-auto h-1 w-14 rounded-full bg-flame" />
-                <ul className="mt-7 space-y-5">
-                  {ALUMNI.map((p) => (
-                    <li key={p.lastName} className="flex items-center gap-4">
-                      <span
-                        className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-royal text-white shadow-[0_10px_22px_-12px_rgba(13,27,75,0.75)] ring-2 ring-flame/60"
-                        style={{ fontFamily: 'var(--font-display)' }}
-                      >
-                        <span className="text-base font-black italic">{p.initials}</span>
-                      </span>
-                      <span className="text-[0.95rem] font-semibold leading-tight text-deep">
-                        {p.firstName}
-                        <br />
-                        {p.lastName}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-6 flex justify-center">
+                  <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-royal text-white shadow-[0_10px_22px_-12px_rgba(13,27,75,0.75)] ring-2 ring-flame/60">
+                    <Icon name="target" size={26} />
+                  </span>
+                </div>
+                <p className="mt-5 text-center text-[0.95rem] leading-relaxed text-slate-soft">
+                  Un accompagnement U13-U21 vers le haut niveau : méthodes modernes,
+                  suivi physique et mental.
+                </p>
               </section>
             </Reveal>
 
@@ -296,6 +279,10 @@ export default function EquipesPage() {
               subtitle="Survolez une carte pour révéler les statistiques de la saison."
             />
           </Reveal>
+
+          <p className="mt-4 text-center text-sm text-slate-soft">
+            Effectifs illustratifs - la liste officielle des licenciés sera publiée prochainement.
+          </p>
 
           <Reveal>
             <div className="mt-8 mb-12 flex flex-wrap gap-2.5">

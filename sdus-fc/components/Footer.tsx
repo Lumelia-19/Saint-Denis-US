@@ -1,15 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Icon, { type IconName } from '@/components/Icon';
+import { CLUB } from '@/lib/club';
 
 const NAV: [string, string][] = [
   ['/', 'Accueil'],
   ['/club', 'Le Club'],
+  ['/projet', 'Projet'],
   ['/equipes', 'Équipes'],
   ['/calendrier', 'Calendrier'],
 ];
 
-const CLUB: [string, string][] = [
+const CLUB_LINKS: [string, string][] = [
   ['/inscriptions', 'Inscriptions'],
   ['/actualites', 'Actualités'],
   ['/partenaires', 'Partenaires'],
@@ -17,7 +19,7 @@ const CLUB: [string, string][] = [
 ];
 
 const SOCIALS: { name: IconName; label: string; href: string }[] = [
-  { name: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/sdus_football/' },
+  { name: 'instagram', label: 'Instagram', href: CLUB.socials.instagram },
 ];
 
 export default function Footer() {
@@ -27,11 +29,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/12">
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <Image src="/assets/logo.png" alt="SDUS FC 93" width={56} height={56} className="h-14 w-auto" />
-              <span className="display-sm text-xl">SDUS FC 93</span>
+              <Image src="/assets/logo.png" alt="United Football Saint-Denis" width={56} height={56} className="h-14 w-auto" />
+              <span className="display-sm text-xl leading-none">United Football<br />Saint-Denis</span>
             </div>
             <p className="text-white/55 text-sm leading-relaxed max-w-xs">
-              Formateur, populaire et ambitieux. Au cœur de Saint-Denis depuis 1993.
+              L’excellence au service de la masse. Former, accompagner, inspirer, au cœur de Saint-Denis.
             </p>
             <div className="flex gap-2.5 mt-6">
               {SOCIALS.map((s) => (
@@ -50,32 +52,36 @@ export default function Footer() {
           </div>
 
           <FooterColumn title="Navigation" links={NAV} />
-          <FooterColumn title="Le Club" links={CLUB} />
+          <FooterColumn title="Le Club" links={CLUB_LINKS} />
 
           <div>
             <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-white/40 mb-5">Contact</h4>
             <ul className="space-y-3.5 text-sm text-white/70">
               <li className="flex items-start gap-2.5">
                 <Icon name="map-pin" size={17} className="mt-0.5 text-flame shrink-0" />
-                Stade Marville, Saint-Denis (93)
+                {CLUB.venue}, {CLUB.address.postalCode} {CLUB.city}
               </li>
               <li className="flex items-center gap-2.5">
                 <Icon name="mail" size={17} className="text-flame shrink-0" />
-                contact@sdus-fc93.fr
+                <a href={`mailto:${CLUB.email}`} className="hover:text-white transition-colors">{CLUB.email}</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Icon name="phone" size={17} className="text-flame shrink-0" />
-                Sur demande par email
+                {CLUB.phoneDisplay}
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-7 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="pt-7 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p className="text-white/45 text-sm">
-            © {new Date().getFullYear()} Saint-Denis U.S. Football Club - Tous droits réservés.
+            © {new Date().getFullYear()} {CLUB.name} - Tous droits réservés.
           </p>
-          <p className="text-white/35 text-xs uppercase tracking-[0.18em]">SDUS FC 93 · Seine-Saint-Denis</p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/50">
+            <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions légales</Link>
+            <Link href="/confidentialite" className="hover:text-white transition-colors">Confidentialité</Link>
+            <span className="uppercase tracking-[0.18em] text-white/35">UFSD · Seine-Saint-Denis</span>
+          </div>
         </div>
       </div>
     </footer>

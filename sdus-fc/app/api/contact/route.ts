@@ -6,7 +6,7 @@ import { Resend } from 'resend';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const VALID_SUBJECTS = ['Inscription', 'Détection', 'Stage vacances', 'Partenariat', 'Autre demande'] as const;
+const VALID_SUBJECTS = ['Inscription', 'Détection', 'Stage vacances', 'Partenariat', 'Autre'] as const;
 type Subject = (typeof VALID_SUBJECTS)[number];
 
 interface ContactPayload {
@@ -50,8 +50,8 @@ function escapeHtml(s: string): string {
 
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
-  const toAddress = process.env.CONTACT_TO_EMAIL || 'contact@sdus-fc93.fr';
-  const fromAddress = process.env.CONTACT_FROM_EMAIL || 'SDUS FC 93 <onboarding@resend.dev>';
+  const toAddress = process.env.CONTACT_TO_EMAIL || 'contact@ufsd.fr';
+  const fromAddress = process.env.CONTACT_FROM_EMAIL || 'UFSD <onboarding@resend.dev>';
 
   if (!apiKey) {
     return NextResponse.json(
@@ -84,7 +84,7 @@ export async function POST(request: Request) {
       <hr style="border: none; border-top: 1px solid #e7ecf6; margin: 20px 0;" />
       <p style="white-space: pre-wrap; line-height: 1.6; margin: 0;">${escapeHtml(message)}</p>
       <hr style="border: none; border-top: 1px solid #e7ecf6; margin: 24px 0;" />
-      <p style="font-size: 12px; color: #5a6478;">Envoye depuis le formulaire de contact sdus-fc93.fr.</p>
+      <p style="font-size: 12px; color: #5a6478;">Envoye depuis le formulaire de contact ufsd.fr.</p>
     </div>
   `;
 
@@ -104,7 +104,7 @@ export async function POST(request: Request) {
       from: fromAddress,
       to: toAddress,
       replyTo: email,
-      subject: `[Site SDUS] ${subject} - ${fullName}`,
+      subject: `[Site UFSD] ${subject} - ${fullName}`,
       html,
       text,
     });
@@ -120,7 +120,7 @@ export async function POST(request: Request) {
       if (raw.includes('domain') && raw.includes('not verified')) {
         userMsg =
           "Le domaine de l'expéditeur n'est pas vérifié sur Resend. " +
-          'Vérifie sdus-fc93.fr sur resend.com/domains ou utilise un sender ' +
+          'Vérifie ufsd.fr sur resend.com/domains ou utilise un sender ' +
           "déjà vérifié (ex. onboarding@resend.dev - réservé à l'email du compte Resend).";
       } else if (raw.includes('api key') || raw.includes('unauthorized') || raw.includes('forbidden')) {
         userMsg = 'Clé API Resend invalide ou expirée.';

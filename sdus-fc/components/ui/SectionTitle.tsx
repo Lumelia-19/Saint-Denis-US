@@ -17,9 +17,7 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <div className={`flex flex-col ${center ? 'items-center text-center' : 'items-start'}`}>
-      {eyebrow && (
-        <span className={`eyebrow mb-4 ${light ? 'text-flame' : 'text-flame'}`}>{eyebrow}</span>
-      )}
+      {eyebrow && <span className="eyebrow mb-4 text-flame">{eyebrow}</span>}
       <h2 className="section-title">
         <span className={light ? 'text-white' : 'text-navy'}>{blue} </span>
         <span className="text-gradient">{orange}</span>
