@@ -1,15 +1,8 @@
 'use client';
-import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import PlayerCard from '@/components/PlayerCard';
-import SectionTitle from '@/components/ui/SectionTitle';
 import Reveal from '@/components/Reveal';
 import Icon, { type IconName } from '@/components/Icon';
-import { PLAYERS, getCategories } from '@/lib/players';
 import { MatchCategory } from '@/lib/types';
-
-const CATEGORIES = getCategories();
 
 type StageDef = {
   category: MatchCategory;
@@ -74,21 +67,7 @@ const PATHWAY: { icon: IconName; label: string }[] = [
   { icon: 'handshake', label: 'Engagement collectif' },
 ];
 
-const ALUMNI = [
-  { firstName: 'Wissam', lastName: 'Ben Yedder', initials: 'WB' },
-  { firstName: 'Jérôme', lastName: 'Roussillon', initials: 'JR' },
-];
-
 export default function EquipesPage() {
-  const [active, setActive] = useState<MatchCategory | 'Tous'>('Tous');
-
-  const filtered = active === 'Tous' ? PLAYERS : PLAYERS.filter((p) => p.category === active);
-
-  const selectStage = (cat: MatchCategory) => {
-    setActive(cat);
-    document.getElementById('roster')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   return (
     <>
       {/* ============ HERO ============ */}
@@ -199,15 +178,14 @@ export default function EquipesPage() {
                       ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%, 20px 50%)'
                       : 'polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%)';
                   return (
-                  <button
+                  <article
                     key={stage.category}
-                    onClick={() => selectStage(stage.category)}
-                    className="group relative flex-1 overflow-hidden bg-royal px-4 py-6 text-left text-white shadow-[0_18px_40px_-24px_rgba(13,27,75,0.7)] transition hover:bg-flame sm:px-6 sm:py-7"
+                    className="relative flex-1 overflow-hidden bg-royal px-4 py-6 text-left text-white shadow-[0_18px_40px_-24px_rgba(13,27,75,0.7)] sm:px-6 sm:py-7"
                     style={{ clipPath }}
                   >
                     <p className="display-sm text-3xl italic leading-none sm:text-4xl lg:text-[2.5rem]">
                       {stage.title.split('-')[0].trim()}-
-                      <span className="text-flame group-hover:text-white">{stage.title.split('-').slice(1).join('-').trim()}</span>
+                      <span className="text-flame">{stage.title.split('-').slice(1).join('-').trim()}</span>
                     </p>
                     <p className="mt-2 text-[0.82rem] font-semibold uppercase leading-tight tracking-wide text-white/85 sm:text-[0.9rem]">
                       {stage.tagline}
@@ -215,7 +193,7 @@ export default function EquipesPage() {
                     <p className="mt-3 text-[0.78rem] leading-snug text-white/78 sm:text-[0.82rem]">
                       {stage.description}
                     </p>
-                  </button>
+                  </article>
                   );
                 })}
               </div>
@@ -241,83 +219,7 @@ export default function EquipesPage() {
               </section>
             </Reveal>
 
-            <Reveal delay={0.18}>
-              <section className="rounded-[1.2rem] border border-cloud bg-panel p-7 shadow-[0_22px_56px_-34px_rgba(13,27,75,0.55)] lg:p-8">
-                <h2 className="display-sm text-center text-[1.15rem] italic leading-tight text-navy">
-                  Anciens passés
-                  <br />
-                  par le club
-                </h2>
-                <div className="mt-3 mx-auto h-1 w-14 rounded-full bg-flame" />
-                <ul className="mt-7 space-y-5">
-                  {ALUMNI.map((p) => (
-                    <li key={p.lastName} className="flex items-center gap-4">
-                      <span
-                        className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-royal text-white shadow-[0_10px_22px_-12px_rgba(13,27,75,0.75)] ring-2 ring-flame/60"
-                        style={{ fontFamily: 'var(--font-display)' }}
-                      >
-                        <span className="text-base font-black italic">{p.initials}</span>
-                      </span>
-                      <span className="text-[0.95rem] font-semibold leading-tight text-navy">
-                        {p.firstName}
-                        <br />
-                        {p.lastName}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            </Reveal>
-
-            {/* Bouton sous la sidebar (a droite) */}
-            <Reveal delay={0.24}>
-              <Link href="#roster" className="btn-primary group w-full justify-center">
-                Voir toutes les équipes
-                <Icon
-                  name="arrow-right"
-                  size={18}
-                  strokeWidth={2.4}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </Link>
-            </Reveal>
           </aside>
-        </div>
-      </section>
-
-      {/* ============ ROSTER ============ */}
-      <section id="roster" className="bg-mist py-20 scroll-mt-24" aria-label="Effectifs">
-        <div className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10 min-[1400px]:px-16">
-          <Reveal>
-            <SectionTitle
-              eyebrow="Effectifs"
-              blue="Nos"
-              orange="joueurs"
-              subtitle="Survolez une carte pour révéler les statistiques de la saison."
-            />
-          </Reveal>
-
-          <Reveal>
-            <div className="mt-8 mb-12 flex flex-wrap gap-2.5">
-              {(['Tous', ...CATEGORIES] as (MatchCategory | 'Tous')[]).map((cat) => (
-                <button key={cat} onClick={() => setActive(cat)} className="pill" data-active={active === cat}>
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </Reveal>
-
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {filtered.map((player, i) => (
-              <Reveal key={player.id} delay={(i % 4) * 0.08}>
-                <PlayerCard player={player} />
-              </Reveal>
-            ))}
-          </div>
-
-          {filtered.length === 0 && (
-            <p className="py-16 text-center text-slate-soft">Aucun joueur dans cette catégorie.</p>
-          )}
         </div>
       </section>
     </>
