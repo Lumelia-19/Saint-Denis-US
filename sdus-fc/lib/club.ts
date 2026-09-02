@@ -25,9 +25,9 @@ export const CLUB = {
     addressLocality: 'Saint-Denis',
     addressCountry: 'FR',
   },
-  // Domaine de production (à confirmer). Sert de canonical pour SEO.
-  domain: 'https://ufsd.fr',
-  email: 'contact@ufsd.fr',
+  // Domaine officiel de production. Sert de canonical pour le SEO.
+  domain: 'https://ufsaintdenis.com',
+  email: 'contact@ufsaintdenis.com',
   phoneDisplay: 'Sur demande par email',
   hosting: 'Vercel Inc.',
   socials: {

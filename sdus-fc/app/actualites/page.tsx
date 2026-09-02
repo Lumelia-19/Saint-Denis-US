@@ -28,12 +28,6 @@ export const metadata: Metadata = {
   },
 };
 
-function formatDate(date: string) {
-  return new Date(date)
-    .toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' })
-    .toUpperCase();
-}
-
 export default function ActualitesPage() {
   const articles = getAllArticles();
 

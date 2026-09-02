@@ -26,12 +26,6 @@ export async function generateMetadata({
     };
   }
 
-  const date = new Date(article.date).toLocaleDateString('fr-FR', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  });
-
   return {
     title: article.title,
     description: article.excerpt,

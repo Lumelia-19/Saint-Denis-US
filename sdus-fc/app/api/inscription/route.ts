@@ -98,7 +98,7 @@ function escapeHtml(s: string): string {
 
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
-  const toAddress = process.env.CONTACT_TO_EMAIL || 'contact@ufsd.fr';
+  const toAddress = process.env.CONTACT_TO_EMAIL || 'contact@ufsaintdenis.com';
   const fromAddress = process.env.CONTACT_FROM_EMAIL || 'UFSD <onboarding@resend.dev>';
 
   // Meme strategie que la route contact : 503 si Resend n'est pas configure.
@@ -152,7 +152,7 @@ export async function POST(request: Request) {
           : ''
       }
       <hr style="border: none; border-top: 1px solid #e7ecf6; margin: 24px 0;" />
-      <p style="font-size: 12px; color: #5a6478;">Envoyé depuis le formulaire d'inscription ufsd.fr.</p>
+      <p style="font-size: 12px; color: #5a6478;">Envoyé depuis le formulaire d'inscription ufsaintdenis.com.</p>
     </div>
   `;
 
@@ -168,7 +168,7 @@ export async function POST(request: Request) {
     ...(p.documents ? ['', 'Documents (note):', p.documents] : []),
     ...(p.message ? ['', 'Message:', p.message] : []),
     '',
-    'Envoyé depuis le formulaire d\'inscription ufsd.fr.',
+    'Envoyé depuis le formulaire d\'inscription ufsaintdenis.com.',
   ].join('\n');
 
   // 2) Confirmation au parent
@@ -191,7 +191,7 @@ export async function POST(request: Request) {
         justificatif de domicile (moins de 3 mois) et fiche d'inscription remplie.
       </p>
       <hr style="border: none; border-top: 1px solid #e7ecf6; margin: 24px 0;" />
-      <p style="font-size: 12px; color: #5a6478;">Cet email vous a été envoyé automatiquement depuis ufsd.fr. Merci de ne pas y répondre.</p>
+      <p style="font-size: 12px; color: #5a6478;">Cet email vous a été envoyé automatiquement depuis ufsaintdenis.com. Merci de ne pas y répondre.</p>
     </div>
   `;
 
@@ -209,7 +209,7 @@ export async function POST(request: Request) {
     '',
     `Pensez à préparer : photo d'identité, certificat médical, justificatif de domicile (moins de 3 mois) et fiche d'inscription remplie.`,
     '',
-    'Cet email vous a été envoyé automatiquement depuis ufsd.fr. Merci de ne pas y répondre.',
+    'Cet email vous a été envoyé automatiquement depuis ufsaintdenis.com. Merci de ne pas y répondre.',
   ].join('\n');
 
   try {
@@ -241,7 +241,7 @@ export async function POST(request: Request) {
       if (raw.includes('domain') && raw.includes('not verified')) {
         userMsg =
           "Le domaine de l'expéditeur n'est pas vérifié sur Resend. " +
-          'Vérifiez ufsd.fr sur resend.com/domains ou utilisez un sender ' +
+          'Vérifiez ufsaintdenis.com sur resend.com/domains ou utilisez un sender ' +
           "déjà vérifié (ex. onboarding@resend.dev - réservé à l'email du compte Resend).";
       } else if (raw.includes('api key') || raw.includes('unauthorized') || raw.includes('forbidden')) {
         userMsg = 'Clé API Resend invalide ou expirée.';
