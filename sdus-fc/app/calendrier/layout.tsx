@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Calendrier & Résultats',
+  title: 'Planning, Calendrier & Résultats',
   description:
-    'Tous les matchs et résultats du United Football Saint-Denis, toutes catégories confondues. Suivez le calendrier de la saison 2025/2026 du UFSD.',
-  keywords: ['calendrier', 'résultats', 'matchs', 'saison 2025 2026', 'UFSD', 'Saint-Denis', 'football'],
+    'Planning des entraînements, matchs et résultats du United Football Saint-Denis pour la saison 2026/2027. Horaires, terrains et catégories du UFSD.',
+  keywords: ['planning entraînements', 'calendrier', 'résultats', 'matchs', 'saison 2026 2027', 'UFSD', 'Saint-Denis', 'football'],
   alternates: { canonical: '/calendrier' },
   openGraph: {
-    title: 'Calendrier & Résultats | UFSD',
-    description: 'Matchs et résultats de toutes les équipes du United Football Saint-Denis.',
+    title: 'Planning, Calendrier & Résultats | UFSD',
+    description: 'Horaires d’entraînement, matchs et résultats de toutes les équipes du United Football Saint-Denis.',
     url: '/calendrier',
     type: 'website',
   },
@@ -17,3 +17,4 @@ export const metadata: Metadata = {
 export default function CalendrierLayout({ children }: { children: React.ReactNode }) {
   return children;
 }
+

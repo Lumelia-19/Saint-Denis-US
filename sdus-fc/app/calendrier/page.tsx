@@ -1,148 +1,85 @@
 'use client';
-import { useState } from 'react';
-import Link from 'next/link';
-import MatchCard from '@/components/MatchCard';
-import Reveal from '@/components/Reveal';
-import Icon from '@/components/Icon';
-import { useMatches } from '@/hooks/useMatches';
-import { Match, MatchCategory } from '@/lib/types';
 
-const TABS: (MatchCategory | 'Tous')[] = ['Tous', 'U6-U9', 'U10-U13', 'U14-U17', 'U18-Seniors', 'Seniors'];
+import { useState } from 'react';
+import Icon from '@/components/Icon';
+import MatchesResults from '@/components/MatchesResults';
+import Reveal from '@/components/Reveal';
+import TrainingSchedule from '@/components/TrainingSchedule';
+
+type CalendarView = 'planning' | 'matches';
+
+const VIEWS: { id: CalendarView; label: string }[] = [
+  { id: 'planning', label: 'Planning entraînements' },
+  { id: 'matches', label: 'Matchs & résultats' },
+];
 
 export default function CalendrierPage() {
-  const [active, setActive] = useState<MatchCategory | 'Tous'>('Tous');
-  // API_INTEGRATION_POINT - cache + refetch gérés par useMatches ; provider dans lib/matches.ts
-  const { upcoming, results, loading, error } = useMatches(active);
+  const [activeView, setActiveView] = useState<CalendarView>('planning');
+  const isPlanning = activeView === 'planning';
 
   return (
     <>
-      {/* ===================== HEADER ===================== */}
-      <section className="relative pt-32 pb-14 bg-surface overflow-hidden">
+      <section className="relative overflow-hidden bg-surface pb-12 pt-32 sm:pb-14">
         <div className="absolute inset-0 bg-grid-ink opacity-70" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="absolute -right-20 top-16 h-72 w-72 rounded-full bg-flame/10 blur-3xl" />
+        <div className="absolute -left-24 bottom-0 h-56 w-56 rounded-full bg-azure/10 blur-3xl" />
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
           <Reveal>
-            <p className="eyebrow text-flame mb-4">Saison 2026 / 2027</p>
-            <h1 className="hero-title text-navy lg:text-[5.6rem]">
-              Calendrier &amp;{' '}
-              <span className="text-flame">Résultats</span>
+            <p className="eyebrow mb-4 text-flame">Saison 2026 / 2027</p>
+            <h1 className="hero-title max-w-4xl text-navy lg:text-[5.6rem]">
+              {isPlanning ? (
+                <>
+                  Planning des <span className="text-flame">entraînements</span>
+                </>
+              ) : (
+                <>
+                  Calendrier & <span className="text-flame">résultats</span>
+                </>
+              )}
             </h1>
             <div className="mt-4 h-1.5 w-16 rounded-full bg-flame" />
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-soft sm:text-lg">
-              Tous les matchs du club, toutes catégories confondues. Filtrez pour suivre votre équipe.
+              {isPlanning
+                ? 'Retrouvez le jour, l’horaire et le terrain de la catégorie de votre enfant au stade Auguste-Delaune.'
+                : 'Suivez les matchs et résultats du club, toutes catégories confondues.'}
             </p>
           </Reveal>
+
           <Reveal>
-            <div className="flex flex-wrap gap-2.5 mt-8">
-              {TABS.map((tab) => (
-                <button key={tab} onClick={() => setActive(tab)} className="pill" data-active={active === tab}>
-                  {tab}
+            <div
+              className="mt-8 inline-flex max-w-full gap-1 overflow-x-auto rounded-2xl border border-cloud bg-panel p-1.5 shadow-soft"
+              aria-label="Choisir le contenu du calendrier"
+            >
+              {VIEWS.map((view) => (
+                <button
+                  key={view.id}
+                  type="button"
+                  onClick={() => setActiveView(view.id)}
+                  className={`min-h-11 shrink-0 rounded-xl px-4 text-sm font-bold transition-colors sm:px-5 ${
+                    activeView === view.id ? 'bg-royal text-white shadow-sm' : 'text-slate-soft hover:bg-mist hover:text-navy'
+                  }`}
+                  data-active={activeView === view.id}
+                  aria-pressed={activeView === view.id}
+                >
+                  {view.label}
                 </button>
               ))}
             </div>
           </Reveal>
-        </div>
-      </section>
 
-      {/* ===================== MATCHES ===================== */}
-      <section className="pb-24 bg-mist">
-        <div className="max-w-7xl mx-auto px-6 pt-14">
-          {loading ? (
-            <MatchesLoader />
-          ) : error ? (
-            <p className="text-center text-red-500 text-sm py-24">{error}</p>
-          ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <MatchColumn
-                icon="calendar"
-                title="À venir"
-                accent="bg-royal"
-                count={upcoming.length}
-                matches={upcoming}
-                emptyMsg="Aucun match à venir pour cette catégorie."
-              />
-              <MatchColumn
-                icon="trophy"
-                title="Résultats"
-                accent="bg-flame"
-                count={results.length}
-                matches={results}
-                emptyMsg="Aucun résultat enregistré pour cette catégorie."
-              />
-            </div>
+          {isPlanning && (
+            <Reveal>
+              <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-slate-soft">
+                <Icon name="map-pin" size={18} className="text-flame" />
+                Stade Auguste-Delaune · Saint-Denis
+              </div>
+            </Reveal>
           )}
         </div>
       </section>
+
+      {isPlanning ? <TrainingSchedule /> : <MatchesResults />}
     </>
   );
 }
 
-function MatchesLoader() {
-  return (
-    <div className="flex items-center justify-center gap-2 py-24" role="status" aria-label="Chargement des matchs">
-      {[0, 1, 2].map((i) => (
-        <span
-          key={i}
-          className="w-3 h-3 rounded-full bg-flame animate-bounce"
-          style={{ animationDelay: `${i * 0.15}s` }}
-        />
-      ))}
-    </div>
-  );
-}
-
-function MatchColumn({
-  icon,
-  title,
-  accent,
-  count,
-  matches,
-  emptyMsg,
-}: {
-  icon: 'calendar' | 'trophy';
-  title: string;
-  accent: string;
-  count: number;
-  matches: Match[];
-  emptyMsg: string;
-}) {
-  return (
-    <div>
-      <Reveal>
-        <div className="flex items-center gap-3 mb-7">
-          <span className={`grid place-items-center w-11 h-11 rounded-xl text-white ${accent}`}>
-            <Icon name={icon} size={20} />
-          </span>
-          <h2 className="display-sm text-3xl text-navy">{title}</h2>
-          <span className="chip bg-surface border border-cloud text-slate-soft nums">{count}</span>
-        </div>
-      </Reveal>
-      {matches.length > 0 ? (
-        <div className="grid grid-cols-1 gap-5">
-          {matches.map((match, i) => (
-            <Reveal key={match.id} delay={(i % 4) * 0.07}>
-              <MatchCard match={match} />
-            </Reveal>
-          ))}
-        </div>
-      ) : (
-        <Reveal>
-          <div className="card p-10 text-center">
-            <span className="grid place-items-center w-16 h-16 rounded-2xl bg-mist text-flame mx-auto mb-4">
-              <Icon name="ball" size={30} />
-            </span>
-            <p className="text-slate-soft mb-6">{emptyMsg}</p>
-            <Link href="/inscriptions" className="btn-outline group">
-              Être notifié des matchs
-              <Icon
-                name="arrow-right"
-                size={16}
-                strokeWidth={2.4}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </Link>
-          </div>
-        </Reveal>
-      )}
-    </div>
-  );
-}
