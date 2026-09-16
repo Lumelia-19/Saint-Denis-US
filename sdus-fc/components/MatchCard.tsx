@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Match } from '@/lib/types';
 import { formatMatchDate, getCategoryColor } from '@/lib/matches';
 import Icon from '@/components/Icon';
@@ -15,11 +16,19 @@ function TeamBadge({ name, highlight }: { name: string; highlight: boolean }) {
     <div className="flex-1 flex flex-col items-center gap-2 text-center">
       <span
         className={`grid place-items-center w-12 h-12 rounded-2xl text-sm font-black ${
-          highlight ? 'bg-royal text-white' : 'bg-mist text-navy'
+          highlight ? '' : 'bg-mist text-navy'
         }`}
         style={{ fontFamily: 'var(--font-display)' }}
       >
-        {initials}
+        {highlight ? (
+          <Image
+            src="/assets/logo.png"
+            alt=""
+            width={48}
+            height={48}
+            className="h-12 w-12 object-contain"
+          />
+        ) : initials}
       </span>
       <p className={`text-xs leading-tight ${highlight ? 'font-bold text-navy' : 'text-slate-soft'}`}>
         {name}
@@ -65,7 +74,7 @@ export default function MatchCard({ match }: { match: Match }) {
             </>
           )}
         </div>
-        <TeamBadge name={match.awayTeam.name} highlight={!isUFSDHome} />
+        <TeamBadge name={match.awayTeam.name} highlight={match.awayTeam.shortName === 'UFSD'} />
       </div>
 
       <div className="border-t border-cloud pt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-soft">
