@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import clubIcon from './icon.png';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -15,16 +16,10 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ['sports', 'education'],
     icons: [
       {
-        src: '/icon.png',
+        src: clubIcon.src,
         sizes: '512x512',
         type: 'image/png',
         purpose: 'any',
-      },
-      {
-        src: '/icon.png',
-        sizes: '512x512',
-        type: 'image/png',
-        purpose: 'maskable',
       },
     ],
   };
