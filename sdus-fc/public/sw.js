@@ -32,6 +32,8 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+  // Match freshness and offline fallback are handled explicitly by useMatches.
+  if (url.pathname === '/api/matches') return;
 
   const isStatic = url.pathname.startsWith('/assets/') || url.pathname.startsWith('/_next/static/');
 

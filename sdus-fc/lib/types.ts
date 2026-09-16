@@ -2,8 +2,8 @@
 // UFSD - Type Definitions
 // ============================================
 
-export type MatchCategory = 'U6-U9' | 'U10-U13' | 'U14-U17' | 'U18-Seniors' | 'Seniors';
-export type MatchStatus = 'upcoming' | 'live' | 'finished';
+export type MatchCategory = 'U6-U9' | 'U10-U13' | 'U14-U17' | 'U18-Seniors' | 'Seniors' | 'Vétérans';
+export type MatchStatus = 'upcoming' | 'live' | 'finished' | 'pending' | 'postponed' | 'cancelled';
 export type APIProvider = 'mock' | 'fff' | 'footclubs' | 'sporteasy' | 'custom';
 
 export interface Team {
@@ -26,6 +26,10 @@ export interface Match {
   homeScore?: number;
   awayScore?: number;
   matchDay?: number;
+  teamLabel?: string;
+  sourceUrl?: string;
+  homePenaltyScore?: number;
+  awayPenaltyScore?: number;
 }
 
 export interface Player {

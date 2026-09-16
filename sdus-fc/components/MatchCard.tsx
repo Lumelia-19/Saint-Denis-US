@@ -35,11 +35,11 @@ export default function MatchCard({ match }: { match: Match }) {
 
   return (
     <article className="card card-hover p-5 flex flex-col gap-4">
-      <div className="flex items-center justify-between">
-        <span className="chip text-white" style={{ backgroundColor: color }}>
-          {match.category}
+      <div className="flex items-start justify-between gap-3">
+        <span className="chip shrink-0 text-white" style={{ backgroundColor: color }}>
+          {match.teamLabel || match.category}
         </span>
-        <span className="text-[0.7rem] font-semibold uppercase tracking-wider text-slate-soft">
+        <span className="text-right text-[0.7rem] font-semibold uppercase tracking-wider text-slate-soft">
           {match.competition}
         </span>
       </div>
@@ -48,20 +48,27 @@ export default function MatchCard({ match }: { match: Match }) {
         <TeamBadge name={match.homeTeam.name} highlight={isUFSDHome} />
         <div className="shrink-0 grid place-items-center min-w-[64px]">
           {isFinished ? (
+            <>
             <span className="nums text-2xl font-black text-navy" style={{ fontFamily: 'var(--font-display)' }}>
               {match.homeScore}<span className="text-cloud px-1">·</span>{match.awayScore}
             </span>
+            {match.homePenaltyScore !== undefined && match.awayPenaltyScore !== undefined &&
+              <span className="text-[0.65rem] text-slate-soft">t.a.b. {match.homePenaltyScore}–{match.awayPenaltyScore}</span>}
+            </>
           ) : (
             <>
               <span className="text-sm font-black text-flame tracking-widest">VS</span>
-              <span className="nums text-xs text-slate-soft mt-0.5">{match.time}</span>
+              <span className="nums mt-0.5 max-w-24 text-center text-xs text-slate-soft">
+                {match.status === 'postponed' ? 'Reporté' : match.status === 'cancelled' ? 'Annulé'
+                  : match.status === 'pending' ? 'Score non publié' : match.time || 'Horaire à confirmer'}
+              </span>
             </>
           )}
         </div>
         <TeamBadge name={match.awayTeam.name} highlight={!isUFSDHome} />
       </div>
 
-      <div className="border-t border-cloud pt-3 flex items-center justify-between text-xs text-slate-soft">
+      <div className="border-t border-cloud pt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-soft">
         <span className="flex items-center gap-1.5">
           <Icon name="calendar" size={14} className="text-flame" />
           {formatMatchDate(match.date)}

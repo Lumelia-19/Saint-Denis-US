@@ -22,10 +22,6 @@ cp .env.local.example .env.local
 
 | Variable | Rôle |
 | --- | --- |
-| `NEXT_PUBLIC_MATCHES_PROVIDER` | Source des matchs : `mock`, `fff`, `footclubs`, `sporteasy`, `custom` |
-| `NEXT_PUBLIC_MATCHES_API_URL` | URL de l'API matchs (si provider distant) |
-| `NEXT_PUBLIC_MATCHES_API_KEY` | Clé d'API matchs |
-| `NEXT_PUBLIC_CLUB_ID` | Identifiant du club (`UFSD93`) |
 | `RESEND_API_KEY` | Clé Resend pour l'envoi du formulaire de contact (serveur) |
 | `CONTACT_TO_EMAIL` | Destinataire des emails du formulaire (défaut `contact@ufsaintdenis.com`) |
 | `CONTACT_FROM_EMAIL` | Expéditeur affiché (domaine vérifié sur Resend ou `onboarding@resend.dev`) |
@@ -39,19 +35,25 @@ Le formulaire `/contact` poste vers la route `app/api/contact/route.ts` qui envo
 3. **En production**, vérifier `ufsaintdenis.com` sur Resend (DNS records SPF + DKIM), puis passer `CONTACT_FROM_EMAIL` à `"UFSD <noreply@ufsaintdenis.com>"` - l'envoi vers `contact@ufsaintdenis.com` (ou n'importe quelle adresse) devient possible.
 4. La route valide les champs côté serveur (longueurs, regex email, sujet dans une liste blanche) avant l'appel à Resend.
 
-## Connecter une vraie API de matchs
+## Matchs et résultats automatiques
 
-Par défaut le site utilise des données **mock**. Pour brancher une API réelle :
+La source est la [fiche publique UFSD de TheFootData](https://thefootdata.com/clubs/united-football-saint-denis), qui republie les données FFF. Aucun compte ni secret n'est nécessaire. Ce n'est pas une connexion directe à la FFF ni un service de scores en direct.
 
-1. Mettre `NEXT_PUBLIC_MATCHES_PROVIDER` sur `fff` / `footclubs` / `sporteasy` / `custom`, et renseigner l'URL + la clé.
-2. Dans [`lib/matches.ts`](lib/matches.ts), implémenter le `case` du provider dans `fetchMatches()` et son parser (les `TODO` sont déjà en place).
-3. Aucune autre modification : le hook [`hooks/useMatches.ts`](hooks/useMatches.ts) gère le cache (TTL 5 min, `localStorage`) et le rafraîchissement automatique toutes les 5 minutes.
+`lib/matches-source.ts` récupère uniquement les équipes du club 8838 (affiliation 523415) explicitement référencées dans la saison courante. L'adaptateur lit les données JSON présentes dans les pages publiques, sans exécuter de scripts. Il valide le club, les équipes, la saison et le format. Les lieux absents et les adversaires non désignés restent à confirmer ; un score absent ne devient jamais un 0–0. Les heures internes sans fuseau ne sont pas utilisées : la vue publique ne les affiche pas et elles divergent d'autres sources. L'horaire reste donc à confirmer auprès du club. La couverture dépend des publications du fournisseur : certains plateaux ne sont pas référencés.
+
+`lib/matches-server.ts` conserve les récupérations complètes dans le Data Cache Next.js, partagé entre l'accueil et `/api/matches`. Après une heure, la prochaine visite déclenche une actualisation. Les visites suivantes obtiennent les nouvelles données. Le navigateur consulte notre API toutes les cinq minutes et au retour sur l'onglet ; aucun appel fournisseur n'est fait depuis le navigateur. L'accueil est régénéré toutes les cinq minutes à la demande.
+
+En cas d'échec ou de changement du format de la source, le cache conserve la dernière récupération réussie. À froid, `lib/matches-snapshot.json` fournit une copie réelle datée de la saison, signalée comme secours. Le navigateur peut aussi conserver sa dernière copie pour une panne réseau. Aucun secours d'une saison précédente ni ancien cache de démonstration n'est réutilisé. La date affichée est la date de récupération, pas la date de publication des scores chez le fournisseur.
+
+La dépendance au format public TheFootData reste à surveiller : en cas de changement, mettre à jour l'adaptateur et son jeu de tests, puis régénérer la copie de secours avec `npm run matches:snapshot` (Node 22.6+). `npm test` couvre notamment scores absents/0–0, reports, erreurs fournisseur, format invalide et changement de saison. Aucun nouveau déploiement n'est nécessaire pour les mises à jour normales de matchs.
 
 ## Couche données & fonctionnalités
 
 | Fichier | Rôle |
 | --- | --- |
-| `hooks/useMatches.ts` | Récupère les matchs : cache `localStorage` (5 min) + refetch auto |
+| `hooks/useMatches.ts` | API du site, rafraîchissement auto et secours local daté |
+| `lib/matches-source.ts` | Adaptateur des pages publiques TheFootData |
+| `lib/matches-server.ts` | Cache serveur horaire et copie de secours |
 | `hooks/useNotifications.ts` | Permission navigateur + abonnements par catégorie |
 | `lib/sw-register.ts` | Enregistre le Service Worker (production uniquement) |
 | `components/ServiceWorkerInit.tsx` | Déclenche l'enregistrement au montage |
@@ -80,7 +82,7 @@ Le site gère un mode clair et un mode sombre (bouton dans la navbar). La préf�
 ## Déploiement sur Vercel
 
 1. Importer le dépôt sur [vercel.com](https://vercel.com/new).
-2. Configurer les variables d'environnement (`NEXT_PUBLIC_*`) dans **Project Settings → Environment Variables**.
+2. Configurer les variables d'environnement serveur pour les formulaires dans **Project Settings → Environment Variables**. Les matchs ne nécessitent aucune variable.
 3. Vercel détecte Next.js automatiquement - aucun réglage de build supplémentaire.
 
 ## Structure

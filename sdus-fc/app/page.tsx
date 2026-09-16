@@ -7,7 +7,10 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import PartnerSponsoringSection from '@/components/PartnerSponsoringSection';
 import StatCounter from '@/components/StatCounter';
 import Icon, { type IconName } from '@/components/Icon';
-import { fetchMatches } from '@/lib/matches';
+import { getMatches } from '@/lib/matches-server';
+import MatchesFreshness from '@/components/MatchesFreshness';
+
+export const revalidate = 300;
 
 const PILLARS: { icon: IconName; title: string; desc: string; href: string }[] = [
   {
@@ -75,7 +78,8 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const { upcoming } = await fetchMatches();
+  const feed = await getMatches();
+  const { upcoming } = feed;
 
   return (
     <>
@@ -284,10 +288,13 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div className="mt-6"><MatchesFreshness feed={feed} /></div>
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
             {upcoming.slice(0, 3).map((match) => (
               <MatchCard key={match.id} match={match} />
             ))}
+            {upcoming.length === 0 && <p className="card p-6 text-slate-soft md:col-span-3">{feed.state === 'unavailable'
+              ? 'Le calendrier est momentanément indisponible.' : 'Aucun prochain match publié pour le moment.'}</p>}
           </div>
         </div>
       </section>

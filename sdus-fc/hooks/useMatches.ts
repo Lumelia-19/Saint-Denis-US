@@ -1,114 +1,69 @@
 'use client';
+
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { fetchMatches, filterMatchesByCategory } from '@/lib/matches';
-import { Match, MatchCategory } from '@/lib/types';
+import { currentSeason, isMatchesFeed, toMatchesFeed, type MatchesFeed } from '@/lib/matches-feed';
+import type { MatchCategory } from '@/lib/types';
 
-const CACHE_KEY = 'sdus_matches_cache';
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
-const REFETCH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+const CACHE_KEY = 'ufsd_matches_v2';
 
-interface RawData {
-  upcoming: Match[];
-  results: Match[];
-}
-
-interface CacheEntry {
-  data: RawData;
-  timestamp: number;
-}
-
-interface MatchesState {
-  upcoming: Match[];
-  results: Match[];
-  loading: boolean;
-  error: string | null;
-  lastUpdated: Date | null;
-  refetch: () => void;
-}
-
-function readCache(): CacheEntry | null {
+function readBackup(): MatchesFeed | null {
   try {
-    const raw = localStorage.getItem(CACHE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as CacheEntry;
-    if (!parsed?.data || Date.now() - parsed.timestamp > CACHE_TTL) return null;
-    return parsed;
-  } catch {
-    /* localStorage indisponible ou JSON corrompu - on ignore le cache */
-    return null;
-  }
+    const data: unknown = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+    if (!isMatchesFeed(data) || data.season !== currentSeason() || !data.fetchedAt) return null;
+    // Reclassify dates on every read, even if the visitor returns days later.
+    return { ...toMatchesFeed({ version: 1, season: data.season, fetchedAt: data.fetchedAt,
+      teamCount: data.teamCount, matches: [...data.upcoming, ...data.results, ...data.pending] }), state: 'cached' };
+  } catch { return null; }
 }
 
-function writeCache(data: RawData): void {
-  try {
-    localStorage.setItem(CACHE_KEY, JSON.stringify({ data, timestamp: Date.now() } satisfies CacheEntry));
-  } catch {
-    /* localStorage indisponible (mode privé, quota) - le cache est simplement ignoré */
-  }
-}
-
-/** Renvoie les données depuis le cache (si valide) ou via fetchMatches(). */
-async function getData(useCache: boolean): Promise<CacheEntry> {
-  if (useCache) {
-    const cached = readCache();
-    if (cached) return cached;
-  }
-  const data = await fetchMatches();
-  writeCache(data);
-  return { data, timestamp: Date.now() };
-}
-
-/**
- * Récupère les matchs via lib/matches, avec cache localStorage (TTL 5 min)
- * et rafraîchissement automatique toutes les 5 minutes.
- * Le paramètre `category` filtre les résultats retournés.
- */
-export function useMatches(category: MatchCategory | 'Tous' = 'Tous'): MatchesState {
-  const [raw, setRaw] = useState<RawData>({ upcoming: [], results: [] });
+export function useMatches(category: MatchCategory | 'Tous' = 'Tous') {
+  const [feed, setFeed] = useState<MatchesFeed | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
-  const mounted = useRef(true);
+  const controller = useRef<AbortController | null>(null);
 
-  // Les mises à jour d'état passent toutes par des callbacks async (.then/.catch/.finally),
-  // jamais de setState synchrone dans l'effet.
-  const load = useCallback((useCache: boolean) => {
-    getData(useCache)
-      .then((entry) => {
-        if (!mounted.current) return;
-        setRaw(entry.data);
-        setLastUpdated(new Date(entry.timestamp));
-        setError(null);
-      })
-      .catch(() => {
-        if (mounted.current) setError('Impossible de charger les matchs pour le moment.');
-      })
-      .finally(() => {
-        if (mounted.current) setLoading(false);
-      });
+  const load = useCallback(() => {
+    controller.current?.abort();
+    const request = new AbortController();
+    controller.current = request;
+    return fetchMatches(request.signal).then((data) => {
+      if (request.signal.aborted) return;
+      const cached = readBackup();
+      const chosen = data.state === 'backup' && cached?.fetchedAt && data.fetchedAt
+        && cached.fetchedAt > data.fetchedAt ? cached : data;
+      setFeed(chosen);
+      setError(null);
+      try {
+        localStorage.removeItem('sdus_matches_cache');
+        localStorage.setItem(CACHE_KEY, JSON.stringify(chosen));
+      } catch { /* Private browsing / quota: the server cache still works. */ }
+    }).catch(() => {
+      if (request.signal.aborted) return;
+      const cached = readBackup();
+      setFeed((previous) => cached ?? (previous ? { ...previous, state: 'cached' } : null));
+      setError('La mise à jour est momentanément indisponible.');
+    }).finally(() => {
+      if (!request.signal.aborted) setLoading(false);
+    });
   }, []);
 
-  const refetch = useCallback(() => {
-    setLoading(true);
-    load(false);
-  }, [load]);
-
   useEffect(() => {
-    mounted.current = true;
-    load(true);
-    const id = setInterval(() => load(false), REFETCH_INTERVAL);
+    void load();
+    const interval = setInterval(() => { if (!document.hidden) void load(); }, 5 * 60 * 1000);
+    const onVisible = () => { if (!document.hidden) void load(); };
+    document.addEventListener('visibilitychange', onVisible);
     return () => {
-      mounted.current = false;
-      clearInterval(id);
+      controller.current?.abort();
+      clearInterval(interval);
+      document.removeEventListener('visibilitychange', onVisible);
     };
   }, [load]);
 
   return {
-    upcoming: filterMatchesByCategory(raw.upcoming, category),
-    results: filterMatchesByCategory(raw.results, category),
-    loading,
-    error,
-    lastUpdated,
-    refetch,
+    feed, loading, error, refetch: load,
+    upcoming: filterMatchesByCategory(feed?.upcoming ?? [], category),
+    results: filterMatchesByCategory(feed?.results ?? [], category),
+    pending: filterMatchesByCategory(feed?.pending ?? [], category),
   };
 }

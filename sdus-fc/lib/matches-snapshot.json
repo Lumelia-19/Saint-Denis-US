@@ -1,0 +1,4158 @@
+{
+  "version": 1,
+  "season": 2026,
+  "fetchedAt": "2026-09-16T05:06:29.129Z",
+  "matches": [
+    {
+      "id": "55698748",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AULNAY CSL — Équipe 1"
+      },
+      "date": "2026-09-05",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "finished",
+      "matchDay": 10,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026",
+      "homeScore": 1,
+      "awayScore": 1
+    },
+    {
+      "id": "56633170",
+      "homeTeam": {
+        "name": "CONFLANS F.C. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-12",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Coupe de France",
+      "status": "finished",
+      "matchDay": 1,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026",
+      "homeScore": 1,
+      "awayScore": 2
+    },
+    {
+      "id": "55698739",
+      "homeTeam": {
+        "name": "HOUILLES A.C. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-19",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698693",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "FC FLEURY 91 — Équipe 2"
+      },
+      "date": "2026-10-03",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698698",
+      "homeTeam": {
+        "name": "CHEVILLY LARUE ELAN — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-17",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 2,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698704",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "CLAYE SOUILLY — Équipe 1"
+      },
+      "date": "2026-10-31",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 3,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698711",
+      "homeTeam": {
+        "name": "MELUN FC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-08",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 4,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698715",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "CHATOU AS — Équipe 1"
+      },
+      "date": "2026-11-21",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 5,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698724",
+      "homeTeam": {
+        "name": "ENTENTE SSG — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-28",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 6,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698727",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "VILLEJUIF U.S. — Équipe 1"
+      },
+      "date": "2026-12-05",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 7,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698737",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "CRETEIL LUSITANOS US — Équipe 2"
+      },
+      "date": "2026-12-12",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 8,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698751",
+      "homeTeam": {
+        "name": "COURBEVOIE SPORTS — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-16",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 11,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698758",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "CHEVILLY LARUE ELAN — Équipe 1"
+      },
+      "date": "2027-01-23",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 12,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698764",
+      "homeTeam": {
+        "name": "CLAYE SOUILLY — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-30",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 13,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698771",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "MELUN FC — Équipe 1"
+      },
+      "date": "2027-02-27",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 14,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698775",
+      "homeTeam": {
+        "name": "CHATOU AS — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 15,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698784",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "ENTENTE SSG — Équipe 1"
+      },
+      "date": "2027-03-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 16,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698787",
+      "homeTeam": {
+        "name": "VILLEJUIF U.S. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 17,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698808",
+      "homeTeam": {
+        "name": "AULNAY CSL — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-04-03",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 20,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698797",
+      "homeTeam": {
+        "name": "CRETEIL LUSITANOS US — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-04-25",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 18,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698799",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "HOUILLES A.C. — Équipe 1"
+      },
+      "date": "2027-05-08",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 19,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698811",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "COURBEVOIE SPORTS — Équipe 2"
+      },
+      "date": "2027-05-22",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 21,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "55698819",
+      "homeTeam": {
+        "name": "FLEURY 91 FC — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-29",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Régional 1",
+      "status": "upcoming",
+      "matchDay": 22,
+      "teamLabel": "Seniors — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-1&saison=2026"
+    },
+    {
+      "id": "56717683",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "GOURNAY FC — Équipe 1"
+      },
+      "date": "2026-09-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "56717686",
+      "homeTeam": {
+        "name": "VILLEMOMBLE SPORTS — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-27",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 10,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "56717633",
+      "homeTeam": {
+        "name": "STAINS ES — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-04",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833800",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "NEUILLY PLAISANCE FC — Équipe 1"
+      },
+      "date": "2026-10-18",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 2,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833809",
+      "homeTeam": {
+        "name": "DRANCY F.C. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-01",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 3,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833811",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "LA COURNEUVE AS — Équipe 2"
+      },
+      "date": "2026-11-08",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 4,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833818",
+      "homeTeam": {
+        "name": "OPB — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-22",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 5,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833822",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "PARIS INTERNATIONAL — Équipe 1"
+      },
+      "date": "2026-11-29",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 6,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833833",
+      "homeTeam": {
+        "name": "VAUJOURS FC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2026-12-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 7,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833834",
+      "homeTeam": {
+        "name": "STADE EST PAVILLON — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2026-12-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 8,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833855",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "MONTREUIL F.C — Équipe 2"
+      },
+      "date": "2027-01-17",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 11,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833860",
+      "homeTeam": {
+        "name": "NEUILLY PLAISANCE FC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-24",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 12,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833869",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "DRANCY F.C. — Équipe 1"
+      },
+      "date": "2027-01-31",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 13,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833871",
+      "homeTeam": {
+        "name": "LA COURNEUVE AS — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2027-02-28",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 14,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833878",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "OPB — Équipe 2"
+      },
+      "date": "2027-03-07",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 15,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833882",
+      "homeTeam": {
+        "name": "PARIS INTERNATIONAL — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-14",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 16,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833893",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "VAUJOURS FC — Équipe 1"
+      },
+      "date": "2027-03-21",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 17,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833907",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "VILLEMOMBLE SPORTS — Équipe 3"
+      },
+      "date": "2027-04-04",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 20,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833894",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "STADE EST PAVILLON — Équipe 2"
+      },
+      "date": "2027-04-25",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 18,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833904",
+      "homeTeam": {
+        "name": "GOURNAY FC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-09",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 19,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833915",
+      "homeTeam": {
+        "name": "MONTREUIL F.C — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-23",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 21,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55833920",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "STAINS ES — Équipe 1"
+      },
+      "date": "2027-05-30",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Seniors",
+      "competition": "Départemental 2",
+      "status": "upcoming",
+      "matchDay": 22,
+      "teamLabel": "Seniors — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-SEM-2&saison=2026"
+    },
+    {
+      "id": "55786611",
+      "homeTeam": {
+        "name": "RED STAR FC — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-19",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786617",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "FC 93 BOBIGNY — Équipe 3"
+      },
+      "date": "2026-09-26",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 2,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786626",
+      "homeTeam": {
+        "name": "AUBERVILLIERS FCM — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-03",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 3,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786628",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AUBERVILLIERS JEUNES — Équipe 4"
+      },
+      "date": "2026-10-10",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 4,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786661",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AULNAY CSL — Équipe 1"
+      },
+      "date": "2026-10-17",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786635",
+      "homeTeam": {
+        "name": "JA DRANCY — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-07",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 5,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786639",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "TREMBLAY F.C. — Équipe 1"
+      },
+      "date": "2026-11-14",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 6,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786650",
+      "homeTeam": {
+        "name": "SEVRAN FC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-28",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 7,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786651",
+      "homeTeam": {
+        "name": "PIERREFITTE F.C. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-12-05",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 8,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786664",
+      "homeTeam": {
+        "name": "AULNAYSIENNE ESP. — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-09",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 10,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786672",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "VILLEPINTE FLAMBOYAN — Équipe 1"
+      },
+      "date": "2027-01-16",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 11,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786677",
+      "homeTeam": {
+        "name": "FC 93 BOBIGNY — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-23",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 12,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786686",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AUBERVILLIERS FCM — Équipe 2"
+      },
+      "date": "2027-01-30",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 13,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786724",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AULNAYSIENNE ESP. — Équipe 2"
+      },
+      "date": "2027-02-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 20,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786688",
+      "homeTeam": {
+        "name": "AUBERVILLIERS JEUNES — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-02-27",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 14,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786695",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "JA DRANCY — Équipe 2"
+      },
+      "date": "2027-03-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 15,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786699",
+      "homeTeam": {
+        "name": "TREMBLAY F.C. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 16,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786710",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "SEVRAN FC — Équipe 1"
+      },
+      "date": "2027-03-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 17,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786721",
+      "homeTeam": {
+        "name": "AULNAY CSL — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-04-03",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 19,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786711",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "PIERREFITTE F.C. — Équipe 1"
+      },
+      "date": "2027-04-24",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 18,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786732",
+      "homeTeam": {
+        "name": "VILLEPINTE FLAMBOYAN — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-22",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 21,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55786737",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "RED STAR FC — Équipe 3"
+      },
+      "date": "2027-05-29",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D1",
+      "status": "upcoming",
+      "matchDay": 22,
+      "teamLabel": "U14 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-1&saison=2026"
+    },
+    {
+      "id": "55803853",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "DRANCY F.C. — Équipe 1"
+      },
+      "date": "2026-09-19",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803858",
+      "homeTeam": {
+        "name": "BFC — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-26",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 2,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803863",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "JA DRANCY — Équipe 4"
+      },
+      "date": "2026-10-03",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 3,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803868",
+      "homeTeam": {
+        "name": "ILE ST DENIS CSM — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-10",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 4,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803872",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "STAINS ES — Équipe 2"
+      },
+      "date": "2026-11-07",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 5,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803878",
+      "homeTeam": {
+        "name": "FC GAGNY — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-14",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 6,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803883",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "NEUILLY MARNE S.F.C. — Équipe 2"
+      },
+      "date": "2026-11-28",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 7,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803888",
+      "homeTeam": {
+        "name": "EPINAY ACADEMIE — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2026-12-05",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 8,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803893",
+      "homeTeam": {
+        "name": "AUBERVILLIERS FCM — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-16",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803964",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "BFC — Équipe 2"
+      },
+      "date": "2027-01-23",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 10,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803969",
+      "homeTeam": {
+        "name": "JA DRANCY — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-30",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 11,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803974",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "ILE ST DENIS CSM — Équipe 1"
+      },
+      "date": "2027-02-27",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 12,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803978",
+      "homeTeam": {
+        "name": "STAINS ES — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 13,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803984",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "FC GAGNY — Équipe 1"
+      },
+      "date": "2027-03-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 14,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803989",
+      "homeTeam": {
+        "name": "NEUILLY MARNE S.F.C. — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 15,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803994",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "EPINAY ACADEMIE — Équipe 3"
+      },
+      "date": "2027-04-24",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 16,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55803999",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AUBERVILLIERS FCM — Équipe 3"
+      },
+      "date": "2027-05-22",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 17,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55804004",
+      "homeTeam": {
+        "name": "DRANCY F.C. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 2",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-29",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D3",
+      "status": "upcoming",
+      "matchDay": 18,
+      "teamLabel": "U14 — Équipe 2",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-2&saison=2026"
+    },
+    {
+      "id": "55804471",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "RCR — Équipe 3"
+      },
+      "date": "2026-09-19",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804474",
+      "homeTeam": {
+        "name": "FC GAGNY — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-26",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 2,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804484",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AULNAY F.C. — Équipe 2"
+      },
+      "date": "2026-10-03",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 3,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804487",
+      "homeTeam": {
+        "name": "BONDY J.S. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-10",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 4,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804516",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "FC SAINT DENIS — Équipe 1"
+      },
+      "date": "2026-10-17",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804495",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "NOISY LE GRAND FC — Équipe 1"
+      },
+      "date": "2026-11-07",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 5,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804500",
+      "homeTeam": {
+        "name": "PARIS INTERNATIONAL — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-14",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 6,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804503",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "Adversaire à désigner"
+      },
+      "date": "2026-11-28",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 7,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804513",
+      "homeTeam": {
+        "name": "GOURNAY FC — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2026-12-05",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 8,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804526",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "BOURGET FC — Équipe 4"
+      },
+      "date": "2027-01-09",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 10,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804527",
+      "homeTeam": {
+        "name": "BFC — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-16",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 11,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804534",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "FC GAGNY — Équipe 2"
+      },
+      "date": "2027-01-23",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 12,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804544",
+      "homeTeam": {
+        "name": "AULNAY F.C. — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-30",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 13,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804586",
+      "homeTeam": {
+        "name": "BOURGET FC — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2027-02-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 20,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804547",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "BONDY J.S. — Équipe 1"
+      },
+      "date": "2027-02-27",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 14,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804555",
+      "homeTeam": {
+        "name": "NOISY LE GRAND FC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 15,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804560",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "PARIS INTERNATIONAL — Équipe 2"
+      },
+      "date": "2027-03-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 16,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804563",
+      "homeTeam": {
+        "name": "Adversaire à désigner"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 17,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804576",
+      "homeTeam": {
+        "name": "FC SAINT DENIS — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2027-04-03",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 19,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804573",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "GOURNAY FC — Équipe 2"
+      },
+      "date": "2027-04-24",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 18,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804587",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "BFC — Équipe 3"
+      },
+      "date": "2027-05-22",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 21,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55804597",
+      "homeTeam": {
+        "name": "RCR — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 3",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-29",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U14 D4",
+      "status": "upcoming",
+      "matchDay": 22,
+      "teamLabel": "U14 — Équipe 3",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-3&saison=2026"
+    },
+    {
+      "id": "55819754",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "LILAS FC — Équipe 3"
+      },
+      "date": "2026-09-19",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819759",
+      "homeTeam": {
+        "name": "BONDY A.S. — Équipe 6"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-26",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 2,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819765",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "MONTREUIL F.C — Équipe 1"
+      },
+      "date": "2026-10-03",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 3,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819772",
+      "homeTeam": {
+        "name": "Adversaire à désigner"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-10",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 4,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819800",
+      "homeTeam": {
+        "name": "MONTFERMEIL FC — Équipe 7"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-17",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819776",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "LIVRY GARGAN FC — Équipe 3"
+      },
+      "date": "2026-11-07",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 5,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819785",
+      "homeTeam": {
+        "name": "RAINCY F.A. — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-14",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 6,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819788",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "NEUILLY PLAISANCE SP — Équipe 2"
+      },
+      "date": "2026-11-28",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 7,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819798",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "BOURGET FC — Équipe 3"
+      },
+      "date": "2026-12-05",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 8,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819809",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "DRANCY F.C. — Équipe 2"
+      },
+      "date": "2027-01-09",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 10,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819812",
+      "homeTeam": {
+        "name": "VILLEPINTE FLAMBOYAN — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-16",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 11,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819819",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "BONDY A.S. — Équipe 6"
+      },
+      "date": "2027-01-23",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 12,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819825",
+      "homeTeam": {
+        "name": "MONTREUIL F.C — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-30",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 13,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819869",
+      "homeTeam": {
+        "name": "DRANCY F.C. — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2027-02-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 20,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819832",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "Adversaire à désigner"
+      },
+      "date": "2027-02-27",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 14,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819836",
+      "homeTeam": {
+        "name": "LIVRY GARGAN FC — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 15,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819845",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "RAINCY F.A. — Équipe 3"
+      },
+      "date": "2027-03-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 16,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819848",
+      "homeTeam": {
+        "name": "NEUILLY PLAISANCE SP — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 17,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819860",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "MONTFERMEIL FC — Équipe 7"
+      },
+      "date": "2027-04-03",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 19,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819858",
+      "homeTeam": {
+        "name": "BOURGET FC — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2027-04-24",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 18,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819872",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "VILLEPINTE FLAMBOYAN — Équipe 3"
+      },
+      "date": "2027-05-22",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 21,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55819880",
+      "homeTeam": {
+        "name": "LILAS FC — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 4",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-29",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U15 D2",
+      "status": "upcoming",
+      "matchDay": 22,
+      "teamLabel": "U15 — Équipe 4",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U15-4&saison=2026"
+    },
+    {
+      "id": "55836241",
+      "homeTeam": {
+        "name": "BONDY A.S. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836189",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "VILLEMOMBLE SPORTS — Équipe 1"
+      },
+      "date": "2026-10-04",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836243",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "JA DRANCY — Équipe 4"
+      },
+      "date": "2026-10-11",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 10,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836199",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "SEVRAN FC — Équipe 1"
+      },
+      "date": "2026-10-18",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 2,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836201",
+      "homeTeam": {
+        "name": "BFC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-01",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 3,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836210",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "RED STAR FC — Équipe 2"
+      },
+      "date": "2026-11-15",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 4,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836213",
+      "homeTeam": {
+        "name": "AUBERVILLIERS FCM — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-22",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 5,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836221",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "FC GAGNY — Équipe 1"
+      },
+      "date": "2026-11-29",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 6,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836226",
+      "homeTeam": {
+        "name": "NEUILLY PLAISANCE FC — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-12-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 7,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836232",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AUBERVILLIERS JEUNES — Équipe 4"
+      },
+      "date": "2026-12-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 8,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836250",
+      "homeTeam": {
+        "name": "EPINAY ACADEMIE — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-17",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 11,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836259",
+      "homeTeam": {
+        "name": "SEVRAN FC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-24",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 12,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836261",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "BFC — Équipe 1"
+      },
+      "date": "2027-01-31",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 13,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836270",
+      "homeTeam": {
+        "name": "RED STAR FC — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-02-28",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 14,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836273",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AUBERVILLIERS FCM — Équipe 1"
+      },
+      "date": "2027-03-07",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 15,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836281",
+      "homeTeam": {
+        "name": "FC GAGNY — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-14",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 16,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836286",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "NEUILLY PLAISANCE FC — Équipe 2"
+      },
+      "date": "2027-03-21",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 17,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836303",
+      "homeTeam": {
+        "name": "JA DRANCY — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-04-04",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 20,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836292",
+      "homeTeam": {
+        "name": "AUBERVILLIERS JEUNES — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-04-25",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 18,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836301",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "BONDY A.S. — Équipe 1"
+      },
+      "date": "2027-05-02",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 19,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836310",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "EPINAY ACADEMIE — Équipe 3"
+      },
+      "date": "2027-05-23",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 21,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "55836315",
+      "homeTeam": {
+        "name": "VILLEMOMBLE SPORTS — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-30",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U14-U17",
+      "competition": "U16 D1",
+      "status": "upcoming",
+      "matchDay": 22,
+      "teamLabel": "U16 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U17-1&saison=2026"
+    },
+    {
+      "id": "78829095",
+      "homeTeam": {
+        "name": "HOUILLES S.O. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "Gambardella",
+      "status": "finished",
+      "matchDay": 1,
+      "teamLabel": "U19 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026",
+      "homeScore": 0,
+      "awayScore": 10
+    },
+    {
+      "id": "55836909",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "RED STAR FC — Équipe 2"
+      },
+      "date": "2026-09-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836866",
+      "homeTeam": {
+        "name": "ATLETICO DE BAGNOLET — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-04",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836919",
+      "homeTeam": {
+        "name": "JA DRANCY — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-11",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 10,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836867",
+      "homeTeam": {
+        "name": "AULNAY F.C. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-18",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 2,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836877",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "FC GAGNY — Équipe 1"
+      },
+      "date": "2026-11-01",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 3,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836880",
+      "homeTeam": {
+        "name": "MONTREUIL F.C — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-15",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 4,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836888",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "CLICHOIS UF — Équipe 1"
+      },
+      "date": "2026-11-22",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 5,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836893",
+      "homeTeam": {
+        "name": "LA COURNEUVE AS — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-29",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 6,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836899",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AULNAY CSL — Équipe 2"
+      },
+      "date": "2026-12-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 7,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836906",
+      "homeTeam": {
+        "name": "SEVRAN FC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-12-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 8,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836921",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "TREMBLAY F.C. — Équipe 1"
+      },
+      "date": "2027-01-17",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 11,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836927",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AULNAY F.C. — Équipe 1"
+      },
+      "date": "2027-01-24",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 12,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836937",
+      "homeTeam": {
+        "name": "FC GAGNY — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-31",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 13,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836940",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "MONTREUIL F.C — Équipe 1"
+      },
+      "date": "2027-02-28",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 14,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836948",
+      "homeTeam": {
+        "name": "CLICHOIS UF — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-07",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 15,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836953",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "LA COURNEUVE AS — Équipe 1"
+      },
+      "date": "2027-03-14",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 16,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836959",
+      "homeTeam": {
+        "name": "AULNAY CSL — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-21",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 17,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836979",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "JA DRANCY — Équipe 2"
+      },
+      "date": "2027-04-04",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 20,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836966",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "SEVRAN FC — Équipe 1"
+      },
+      "date": "2027-04-25",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 18,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836969",
+      "homeTeam": {
+        "name": "RED STAR FC — Équipe 2"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-02",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 19,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836981",
+      "homeTeam": {
+        "name": "TREMBLAY F.C. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-23",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 21,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55836992",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "ATLETICO DE BAGNOLET — Équipe 1"
+      },
+      "date": "2027-05-30",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "U18-Seniors",
+      "competition": "U18 D1",
+      "status": "upcoming",
+      "matchDay": 22,
+      "teamLabel": "U18 — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-U19-1&saison=2026"
+    },
+    {
+      "id": "55693734",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "CHELLES AS — Équipe 1"
+      },
+      "date": "2026-09-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "finished",
+      "matchDay": 10,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026",
+      "homeScore": 0,
+      "awayScore": 5
+    },
+    {
+      "id": "55693725",
+      "homeTeam": {
+        "name": "BAGNOLET FC — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55856993",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "LA COURNEUVE AS — Équipe 3"
+      },
+      "date": "2026-09-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "79123987",
+      "homeTeam": {
+        "name": "AULNAY F.C. — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-20",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55856998",
+      "homeTeam": {
+        "name": "RED STAR FC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-27",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 2,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "79123996",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "MONTFERMEIL FC — Équipe 4"
+      },
+      "date": "2026-09-27",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 10,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "79474637",
+      "homeTeam": {
+        "name": "CHAMPAGNE 95 SFC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-09-27",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "#458526",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693679",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "NEUILLY MARNE S.F.C. — Équipe 1"
+      },
+      "date": "2026-10-04",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857003",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "BFC — Équipe 4"
+      },
+      "date": "2026-10-04",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 3,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "79123941",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "RED STAR FC — Équipe 1"
+      },
+      "date": "2026-10-04",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 1,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857010",
+      "homeTeam": {
+        "name": "PARIS 19 ESP — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-11",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 4,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693684",
+      "homeTeam": {
+        "name": "CLICHOIS UF — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-10-18",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 2,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693690",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AM. ANTIL. DU 93 — Équipe 1"
+      },
+      "date": "2026-11-01",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 3,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857013",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "LIVRY GARGAN FC — Équipe 4"
+      },
+      "date": "2026-11-08",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 5,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693697",
+      "homeTeam": {
+        "name": "GONESSE RC — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-15",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 4,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857021",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "Adversaire à désigner"
+      },
+      "date": "2026-11-15",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 6,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693701",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "PONTAULT COMB. PORT. — Équipe 1"
+      },
+      "date": "2026-11-22",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 5,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693710",
+      "homeTeam": {
+        "name": "MONTFERMEIL FC — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-29",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 6,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857025",
+      "homeTeam": {
+        "name": "SEVRAN FC — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2026-11-29",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 7,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693713",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "LA COURNEUVE AS — Équipe 3"
+      },
+      "date": "2026-12-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 7,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857030",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "AULNAY F.C. — Équipe 4"
+      },
+      "date": "2026-12-06",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 8,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693723",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "V.F.F.A 77 — Équipe 1"
+      },
+      "date": "2026-12-13",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 8,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693737",
+      "homeTeam": {
+        "name": "CHAMPIGNY F.C. 94 — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-17",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 11,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857033",
+      "homeTeam": {
+        "name": "MONTFERMEIL FC — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-17",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 9,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693744",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "CLICHOIS UF — Équipe 1"
+      },
+      "date": "2027-01-24",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 12,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857038",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "RED STAR FC — Équipe 1"
+      },
+      "date": "2027-01-24",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 10,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693750",
+      "homeTeam": {
+        "name": "AM. ANTIL. DU 93 — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-31",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 13,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857043",
+      "homeTeam": {
+        "name": "BFC — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-01-31",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 11,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693757",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "GONESSE RC — Équipe 1"
+      },
+      "date": "2027-02-28",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 14,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857050",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "PARIS 19 ESP — Équipe 1"
+      },
+      "date": "2027-02-28",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 12,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693761",
+      "homeTeam": {
+        "name": "PONTAULT COMB. PORT. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-07",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 15,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857053",
+      "homeTeam": {
+        "name": "LIVRY GARGAN FC — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-07",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 13,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693770",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "MONTFERMEIL FC — Équipe 4"
+      },
+      "date": "2027-03-14",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 16,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857061",
+      "homeTeam": {
+        "name": "Adversaire à désigner"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-14",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 14,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693773",
+      "homeTeam": {
+        "name": "LA COURNEUVE AS — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-03-21",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 17,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857065",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "SEVRAN FC — Équipe 4"
+      },
+      "date": "2027-03-21",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 15,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693794",
+      "homeTeam": {
+        "name": "CHELLES AS — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-04-04",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 20,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693783",
+      "homeTeam": {
+        "name": "V.F.F.A 77 — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-04-25",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 18,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857070",
+      "homeTeam": {
+        "name": "AULNAY F.C. — Équipe 4"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-04-25",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 16,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693785",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "BFC — Équipe 4"
+      },
+      "date": "2027-05-02",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 19,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693797",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "CHAMPIGNY F.C. 94 — Équipe 1"
+      },
+      "date": "2027-05-23",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 21,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857073",
+      "homeTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "awayTeam": {
+        "name": "MONTFERMEIL FC — Équipe 4"
+      },
+      "date": "2027-05-23",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 17,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55693805",
+      "homeTeam": {
+        "name": "NEUILLY MARNE S.F.C. — Équipe 1"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-30",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Anciens R3",
+      "status": "upcoming",
+      "matchDay": 22,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    },
+    {
+      "id": "55857078",
+      "homeTeam": {
+        "name": "LA COURNEUVE AS — Équipe 3"
+      },
+      "awayTeam": {
+        "name": "UF Saint-Denis — Équipe 1",
+        "shortName": "UFSD"
+      },
+      "date": "2027-05-30",
+      "time": "",
+      "venue": "Lieu à confirmer",
+      "category": "Vétérans",
+      "competition": "Super Vétérans",
+      "status": "upcoming",
+      "matchDay": 18,
+      "teamLabel": "Vétérans — Équipe 1",
+      "sourceUrl": "https://thefootdata.com/clubs/united-football-saint-denis?equipe=8838-VET-1&saison=2026"
+    }
+  ],
+  "teamCount": 9
+}
