@@ -272,7 +272,7 @@ export default async function HomePage() {
               subtitle="Les rendez-vous à venir pour suivre les équipes du club sur les terrains."
             />
             <div className="flex flex-wrap gap-3 lg:justify-end">
-              <Link href="/calendrier" className="btn-outline group bg-white">
+              <Link href="/calendrier?view=matches" className="btn-outline group bg-white">
                 Tout le calendrier
                 <Icon
                   name="arrow-right"

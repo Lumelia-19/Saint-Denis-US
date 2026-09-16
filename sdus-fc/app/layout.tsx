@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     images: ['/assets/hero_bg.jpeg'],
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/assets/logo.png',
+    icon: [{ url: '/icon.png', type: 'image/png', sizes: '512x512' }],
+    apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '180x180' }],
   },
 };
 
